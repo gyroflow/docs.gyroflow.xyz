@@ -15,7 +15,7 @@ It contains 4 layers of data:
 3. Sync points - vertical lines with time values below them. This is the time offset by which the motion data is shifted to match the video movement.
 4. Dynamic zooming percentage - the bottom half of the chart shows a very light, filled overlay - this is the amount of zoom at a particular video time.
 
-<figure><img src="../../.gitbook/assets/timeline.png" alt=""><figcaption><p>Timeline elements overview</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/timeline.jpg" alt=""><figcaption><p>Timeline elements overview</p></figcaption></figure>
 
 {% hint style="info" %}
 When using sync-less video files (GoPro Hero 8+ and DJI) you can skip this part entirely, as the synchronization is already correct and accurate, and no additional sync points should be added.
