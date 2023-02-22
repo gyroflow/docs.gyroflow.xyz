@@ -34,7 +34,7 @@ Here's an example of a calibration footage that covers all needed angles:&#x20;
 
 The calibration pattern can be displayed from the calibration utility. Alternatively, the default (14x8 radon) calibration pattern is available here:
 
-<figure><img src="https://docs.gyroflow.xyz/guide/img/calibration_pattern_radon_14x8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/calibration_pattern_radon_14x8.png" alt=""><figcaption></figcaption></figure>
 
 ## Rolling shutter correction
 
