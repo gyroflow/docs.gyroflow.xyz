@@ -40,7 +40,7 @@ Learn more about zoom lens profiles in the [🔭 **Advanced usage -> Lens profil
 
 A common thing in the FPV community is to decase the BMPCC in order to reduce the weight. This separates the sensor and lens from the main board and makes the gyro data rotated in relation to the pixels captured by the sensor, because the IMU chip is on the main board.
 
-<figure><img src="../../.gitbook/assets/[removal.ai]_tmp-63eff408df9bd_5DJJZH.png" alt=""><figcaption><p>Naked BMPCC 6K from HaloRC</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/naked_bmpcc.png" alt=""><figcaption><p>Naked BMPCC 6K from HaloRC</p></figcaption></figure>
 
 In order to use naked BMPCC with internal gyro data in Gyroflow you have to&#x20;
 

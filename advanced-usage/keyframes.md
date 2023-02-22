@@ -14,19 +14,19 @@ Most parameters in Gyroflow can be keyframed, i.e. their value can be changing i
 
 Keyframes can be enalbed by right-clicking on the slider and choosing **Enable keyframing.**
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/enable_keyframing.png" alt=""><figcaption></figcaption></figure>
 
 Then, go to a time in the video when you want the value to be different and just change the slider value. This will create a keyframe on the timeline chart.
 
-<figure><img src="../.gitbook/assets/image (12).png" alt=""><figcaption><p>Smoothness keyframe</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/keyframe_example.png" alt=""><figcaption><p>Smoothness keyframe</p></figcaption></figure>
 
 ### Keyframe easing
 
 You can right click the keyframe point to enable or disable easing (it's enabled by default).
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/keyframe_easing_menu.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption><p>Ease in + out vs. linear keyframe</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/keyframe_easing.png" alt=""><figcaption><p>Ease in + out vs. linear keyframe</p></figcaption></figure>
 
 ### Removing/disabling keyframes
 

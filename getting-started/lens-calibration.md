@@ -81,7 +81,7 @@ Nurk FPV's tutorial contains a calibration example:
 
 Radial lens undistortion typically results in the image being stretched more in the horizontal axis (use the FOV slider to see this). For instance, undistorted 4:3 GoPro video:
 
-![](<../.gitbook/assets/image (21).png>)
+![](../.gitbook/assets/43\_aspect\_after\_destretching.png)
 
 Notice that the area of the valid rectangle is close to a 16:9 aspect ratio as opposed to 4:3. In these cases, the default output size can be modified to a 16:9 one.
 

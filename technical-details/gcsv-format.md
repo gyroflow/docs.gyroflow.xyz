@@ -118,7 +118,7 @@ For a logger/camera implementation, some other things to think about:
 
 For the IMU Orientation string, the following figure corresponds to `YxZ`.
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/gcsv_imu_orientation.png" alt=""><figcaption></figcaption></figure>
 
 * For the gyroscope, data for an axis correspond to the right-handed rotation rate of the camera body about that axis.
 * The accelerometer data correspond to linear acceleration applied in the given direction. Due to the nature of gravity, a stationary object will experience an _upwards_ acceleration of 9.81 m/s2, while an object in freefall will experience _zero_ acceleration.

@@ -10,7 +10,7 @@ description: >-
 
 You can set the desired section of your video to be renderred by setting the Trim range on the timeline. You can use `[` and `]` buttons or `i` and `o` keys to set the start and end of the range you want to export.
 
-<figure><img src="../../.gitbook/assets/image (16).png" alt=""><figcaption><p>Trim range</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/trim_range.png" alt=""><figcaption><p>Trim range</p></figcaption></figure>
 
 ## Output path
 
@@ -70,7 +70,7 @@ Once you have all settings dialed in, you can proceed to render by just clicking
 
 Render queue is available by clicking the icon on the right of the `Export` button. You can add your render task to the queue by clicking the arrow on the `Export` button and choosing `Add to render queue`
 
-<figure><img src="../../.gitbook/assets/image (23).png" alt=""><figcaption><p>Render queue icon</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/render_queue_icon.png" alt=""><figcaption><p>Render queue icon</p></figcaption></figure>
 
 For more information about the render queue, see the `Advanced usage -> Render queue` section
 

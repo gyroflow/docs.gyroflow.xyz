@@ -25,7 +25,7 @@ description: >-
 
 
 
-<figure><img src="../../.gitbook/assets/image (17).png" alt=""><figcaption><p>Properly installed plugin on Windows</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/openfx_install_windows.png" alt=""><figcaption><p>Properly installed plugin on Windows</p></figcaption></figure>
 
 
 
@@ -59,7 +59,7 @@ Make sure the OFX folder is in the root `/Library` folder, not your user `/Users
 
 ``
 
-<figure><img src="../../.gitbook/assets/Image 15-02-2023 at 16.44.jpg" alt=""><figcaption><p>Properly installed plugin on macOS</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/openfx_install_macos.jpg" alt=""><figcaption><p>Properly installed plugin on macOS</p></figcaption></figure>
 
 
 
@@ -86,7 +86,7 @@ The list of all nightly builds is available on [GitHub actions](https://github.c
 
 
 
-<figure><img src="../../.gitbook/assets/image (28).png" alt=""><figcaption><p>Properly installed plugin on Linux</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/openfx_install_linux.png" alt=""><figcaption><p>Properly installed plugin on Linux</p></figcaption></figure>
 
 
 

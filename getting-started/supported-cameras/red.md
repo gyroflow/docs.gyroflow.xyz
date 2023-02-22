@@ -37,7 +37,7 @@ Basically when you click **Export** Gyroflow will call _REDline_ program to conv
 
 You can control the format of that intermedia file in the Advanced tab:
 
-<figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption><p>You need REDCINE-X installed to see these settings</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/r3d_conversion_options.png" alt=""><figcaption><p>You need REDCINE-X installed to see these settings</p></figcaption></figure>
 
 {% hint style="info" %}
 The ProRes format used for the conversion is not related to the actual Export settings.
@@ -75,7 +75,7 @@ Estimating gyro bias can help achieve better stabilization results. To estimate 
 
 To estimate gyro bias, go to the moment where the camera is not moving, right click on the timeline and select **Estimate gyro bias here**. Then remove all sync points and do the synchronization again.
 
-<figure><img src="../../.gitbook/assets/20230218023727_1.gif" alt=""><figcaption><p>Gyro bias estimation</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/gyro_bias.gif" alt=""><figcaption><p>Gyro bias estimation</p></figcaption></figure>
 
 ## Shutter speed, ND filters and motion blur
 

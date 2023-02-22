@@ -12,17 +12,17 @@ Presets can be used to store your common preferred settings in the UI. You can t
 
 In order to create a preset, set any settings you want in the UI, then click on the arrow on the **Export** button and choose **Create settings preset.**
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/create_preset_menu.png" alt=""><figcaption></figcaption></figure>
 
 Then simply select settings you want to include in the preset:
 
-<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/select_preset_settings.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 If you save the preset in `camera_presets` directory, it will show up in the Lens profile search box. It can be favorited and searched.
 {% endhint %}
 
-<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption><p>Preset in the lens profile search box</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/search_preset.png" alt=""><figcaption><p>Preset in the lens profile search box</p></figcaption></figure>
 
 ## Default preset
 

@@ -18,7 +18,7 @@ Refer to the official product page on amd.com to find out if it supports hardwar
 
 For example the [AMD Radeon™ RX 6800](https://www.amd.com/en/products/graphics/amd-radeon-rx-6800) supports both H.264 and H.265 encoding, as per the specification:
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption><p>Look for H264 Encode and HEVC Encode in the specs</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/amd_specs.png" alt=""><figcaption><p>Look for H264 Encode and HEVC Encode in the specs</p></figcaption></figure>
 
 ## 10-bit support
 

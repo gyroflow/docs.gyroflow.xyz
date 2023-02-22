@@ -40,13 +40,13 @@ The default 24 kHz PWM frequency creates interference with the IMU sampling freq
 
 You should avoid hard mounting the O3 Air Unit camera to the drone frame. It needs some kind of dampening to filter out the noise from the motors. Here's a good example of a soft mounted camera:
 
-![](<../../.gitbook/assets/20230213145359\_1 (1).gif>)
+![](broken-reference)
 
 Link to thingiverse: [https://www.thingiverse.com/thing:5674654](https://www.thingiverse.com/thing:5674654)
 
 TPU or rubber inserts also work fine, here are some other examples:
 
-<figure><img src="../../.gitbook/assets/image (20).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/o3_other_mounts.png" alt=""><figcaption></figcaption></figure>
 
 ### 3. Make sure your lens is not loose
 

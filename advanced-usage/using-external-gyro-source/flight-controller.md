@@ -37,7 +37,7 @@ If you're running Betaflight 4.3 or newer, it is possible to deselect specific e
 
 We have a gyroflow-betaflight presets source for your convenience. You can easily set it up like the picture shown below:
 
-<figure><img src="../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/betaflight_setup_2.png" alt=""><figcaption></figcaption></figure>
 
 Once the gyroflow logger preset is actived, you'll see some special gyroflow presets:
 
@@ -63,7 +63,7 @@ set blackbox_disable_motors = ON
 set blackbox_disable_gps = ON
 ```
 
-<figure><img src="../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/betaflight_setup_1.png" alt=""><figcaption></figcaption></figure>
 
 ### Acknowledgements <a href="#acknowledgements" id="acknowledgements"></a>
 
