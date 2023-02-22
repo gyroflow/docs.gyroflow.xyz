@@ -67,11 +67,13 @@ Keyboard shortcut: `p`
 
 #### Guess IMU orientation here
 
-If your motion data is facing a different direction than the video and lines on the chart don't align (or have different colors when aligned) - you'll need to determine correct IMU orientation. You can use this option to attempt to guess the correct IMU orientation. Read [**🔀 IMU orientation and rotation**](../../advanced-usage/imu-orientation-and-rotation.md) **** to learn the exact process.
+If your motion data is facing a different direction than the video and lines on the chart don't align (or have different colors when aligned) - you'll need to determine correct IMU orientation. You can use this option to attempt to guess the correct IMU orientation. Read [**🔀 IMU orientation and rotation**](../../advanced-usage/imu-orientation-and-rotation.md) **** to learn the exact process. After changing IMU orientation, remove all sync points and do the synchronization again.
 
 #### Estimate gyro bias here
 
-TODO
+Estimating gyro bias can help achieve better stabilization results. To estimate the bias, you'll need to have a moment in your video where the camera is not moving at all. In the FPV case it can be before take off. After estimating bias, remove all sync points and do the synchronization again.
+
+<figure><img src="../../.gitbook/assets/20230218023727_1.gif" alt=""><figcaption><p>Gyro bias estimation</p></figcaption></figure>
 
 #### Estimate rolling shutter here
 
