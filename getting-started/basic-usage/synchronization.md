@@ -22,7 +22,7 @@ When using internal gyro data, the time offset will never be larger than 1 secon
 When using external gyro data, the offset can be arbitrary and it's the time between starting recording of the motion data and video file.
 {% endhint %}
 
-Synchronization works by analyzing the video visually, using an optical flow algorithm to recreate the visual camera motion. Once that motion is calculated, it tries to match the motion data from file, with the motion data from optical flow. It then adds a sync point with the value (time offset) that makes these two motions overlap.
+Synchronization works by analyzing the video visually, using an optical flow algorithm to recreate the camera motion from pixels. Once that motion is calculated, it tries to match the motion data from file with the motion data from optical flow. It then adds a sync point with the value (time offset) that makes these two motions overlap.
 
 Estimating motion from optical flow is not accurate and depends on a lot of factors, so sometimes this algorithm will fail and produce bad sync point. It is therefore important for you to learn how to detect that and correct it.
 
@@ -67,6 +67,8 @@ The algorithm doesn't work in places where there is no motion, or very little, b
 
 If you're not getting good sync points, make sure the **Sync search size** parameter covers possible offset range. Like mentioned before for internal gyro data it should be within 1s, and for external gyro data it will be the time you waited between recording gyro and video.
 
+Usually 2-3 sync points are enough and the recommended amount for good quality cameras is 3. In certain challenging situations you will need more sync points, maybe 10 or even more.
+
 ## How to check if my synchronization is accurate?
 
 TODO
@@ -78,6 +80,12 @@ TODO
 ## Figuring out the offset manually
 
 TODO
+
+## Settings that affect the synchronization algorithm
+
+If you edit any of the following settings, you have to run the autosync again, because it depends on these values: **Motion data low pass filter, rotation, bias, IMU orientation, integration method and rolling shutter correction**.&#x20;
+
+Remove all sync points after changing these settings and run the autosync again.
 
 ## Synchronizing external gyro source
 
@@ -94,3 +102,5 @@ These two parameters work together. The scanned range is from `rough_offset - se
 | 0s                | 5s               | -5s to 5s     |
 | 15s               | 2s               |  13s to 17s   |
 | -30s              | 10s              | -40s to -20s  |
+
+Read more on the [**🌀 Using external gyro source**](../../advanced-usage/using-external-gyro-source/) page.
