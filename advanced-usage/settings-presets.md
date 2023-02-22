@@ -1,0 +1,32 @@
+---
+description: >-
+  Gyroflow allows you to create a preset with all or some settings you commonly
+  use and then load that preset to videos and in the render queue.
+---
+
+# ⚙ Settings presets
+
+Presets can be used to store your common preferred settings in the UI. You can then have them in the Lens profile search box, or you can drag &  drop them in the UI or in the [render queue](render-queue.md), or use in the [CLI](command-line-cli.md).
+
+## Creating presets
+
+In order to create a preset, set any settings you want in the UI, then click on the arrow on the **Export** button and choose **Create settings preset.**
+
+<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+
+Then simply select settings you want to include in the preset:
+
+<figure><img src="../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+If you save the preset in `camera_presets` directory, it will show up in the Lens profile search box. It can be favorited and searched.
+{% endhint %}
+
+<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption><p>Preset in the lens profile search box</p></figcaption></figure>
+
+## Default preset
+
+If you save your preset as `default.gyroflow` in the `camera_presets` directory, it will be loaded automatically with every video.
+
+Currently `default.gyroflow` loads only in the main window, and is not loaded in the render queue. \
+If you want to apply the preset to the render queue, you can drag & drop it to the render queue.
