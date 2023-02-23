@@ -71,7 +71,11 @@ Usually 2-3 sync points are enough and the recommended amount for good quality c
 
 ## How to check if my synchronization is accurate?
 
-TODO
+The best way to check if a sync point is accurate it to just play the video at that time. You can create a trim range around the sync point to loop the video on it. If the video is stabilized then you're good. If not, then zoom in on the chart and make sure the lighter lines overlap the darker lines. If they don't, remove that sync point. If you don't see lighter lines, right click there and choose "Auto sync here".
+
+Keep in mind that other sync points can affect this sync point. For example, if your video is 10s long and you have a correct sync point of 5 ms in the middle, but then have a sync point with -7000 ms, then the entire data will be stretched and won't be correct even at that one 5 ms sync point.
+
+If you want to rely on the sync point colors, you'll need to have more than 2, because 2 sync points are always linear, and the colors show how linear all the offsets are.
 
 ## Examples
 
