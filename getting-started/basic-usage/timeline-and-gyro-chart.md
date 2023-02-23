@@ -91,6 +91,12 @@ Gyroscope readings represent a speed of rotation (rotating up/down/right/left) a
 In the quaternion chart mode, lighter lines represent **smoothed orientation**, instead of optical flow data.
 {% endhint %}
 
+Buttons on the left and right can be used to show or hide the display of axis or zooming data. This does not affect any stabilization settings.
+
+### Sync points debug layer
+
+The fourth button on the right \[`S`] can be used to show the sync points line fit that is used to calculate sync point colors. It will also show the offset value visually on the chart. It can be useful for debugging the synchronization.
+
 ## Zooming information
 
 The bottom half of the chart contains dynamic zooming information - it's the light filled overlay on the chart, and it indicates how much a video is zoomed in at that time. It can be enabled or disabled by clicking the "Z" button on the left side of the chart.&#x20;
