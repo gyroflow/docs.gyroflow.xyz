@@ -39,13 +39,13 @@ TODO
 
 With post-stabilization, we only have as much information as the sensor captured. If we move these pixels around, we'll end up missing some information on the sides. Because of that, applying the stabilization only will result in moving empty sides around the video.
 
-To compensate for that, we need to zoom in the image to only show available pixels. This is also referred to as cropping.
+To compensate for that, we need to zoom in the image to show the available pixels only. This is also referred to as cropping.
 
 Gyroflow has 3 available zooming modes:
 
 1. **No zooming** - This mode simply disables all zooming and applies only the stabilization.
 2. **Dynamic zooming** - In this mode, the zoom amount will be dynamically changing throughout the video to use as much pixels as we have available. Some parts of the video will need to be zoomed in more and some less, and this mode creates smooth transition between these zoom levels.
-3. **Static zooming** - this mode will apply one, static crop for the entire duration of the video. This will remove the zooming in-and-out effect, but it will use the maximum needed zoom level, thus cropping the video a lot. It may work in some cases if there is not much movement, but it's generally recommended the use the _Dynamic zooming_ mode instead (and if you want to avoid the visible zooming in-and-out effect, use high zooming speed (like 20-30s)).
+3. **Static zoom** - this mode will apply one, static crop for the entire duration of the video. This will remove the zooming in-and-out effect, but it will use the maximum needed zoom level, thus cropping the video a lot. It may work in some cases if there is not much movement, but it's generally recommended the use the _Dynamic zooming_ mode instead (and if you want to avoid the visible zooming in-and-out effect, use high zooming speed, like 20-30s).
 
 ### Zooming speed
 
