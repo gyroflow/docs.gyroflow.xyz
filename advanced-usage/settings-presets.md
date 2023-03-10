@@ -29,3 +29,7 @@ If you save the preset in `camera_presets` directory, it will show up in the Len
 If you save your preset as `default.gyroflow` in the `camera_presets` directory, it will be loaded automatically with every video.
 
 `default.gyroflow` loads in the main window, as well as in the render queue.&#x20;
+
+{% hint style="info" %}
+On macOS, the `camera_presets` directory is located by right-clicking on the Gyroflow app -> Show package contents -> Contents -> Resources -> camera\_presets
+{% endhint %}
