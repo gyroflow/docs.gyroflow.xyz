@@ -83,7 +83,15 @@ TODO
 
 ## Figuring out the offset manually
 
-TODO
+If everything else fails, there's also an option to figure out the offset manually. You can right click on the timeline and **Add manual sync point here**, and then you can click on the point and adjust the value using the slider below it, or the value field on the right of the slider.
+
+By moving the slider or entering a different value, you'll see the gyro data moving left or right on the chart. You can then try to match it with the optical flow, or (if optical flow failed) you can change the value in intervals and observe the video visually until it's stable.
+
+The default range of the slider is -VALUE to +VALUE, so the more value (time offset) the point has, the slider will have greater range. By default it starts with 15ms, but you can enter any higher value in the value field, and the range of the slider will adjust.
+
+TODO: example with optical flow
+
+TODO: example video without optical flow
 
 ## Settings that affect the synchronization algorithm
 

@@ -77,7 +77,7 @@ Estimating gyro bias can help achieve better stabilization results. To estimate 
 
 #### Estimate rolling shutter here
 
-TODO
+This function was created to help estimating the rolling shutter value, but in practice it's rarely accurate and its use is discouraged. Read more about figuring out the rolling shutter time on the [**🔥Stabilization -> Rolling shutter correction**](stabilization.md#rolling-shutter-correction) page.
 
 #### Chart display mode
 
