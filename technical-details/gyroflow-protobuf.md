@@ -135,9 +135,9 @@ message Header {
 }
 
 message FrameMetadata {
-    float start_timestamp_us = 1; // Frame capture start - the timestamp when the first row of pixels was captured. Internal camera clock timestamp
-    float end_timestamp_us   = 2; // Frame capture end - the timestamp when the last row of pixels was captured. Internal camera clock timestamp
-    uint32 frame_number      = 3; // Frame number in sequence. The first frame of the video clip should have this set to 1.
+    double start_timestamp_us = 1; // Frame capture start - the timestamp when the first row of pixels was captured. Internal camera clock timestamp. Unit: microseconds
+    double end_timestamp_us   = 2; // Frame capture end - the timestamp when the last row of pixels was captured. Internal camera clock timestamp. Unit: microseconds
+    uint32 frame_number       = 3; // Frame number in sequence. The first frame of the video clip should have this set to 1.
 
     optional uint32 iso                       = 4; // ISO Value
     optional float  exposure_time_us          = 5; // Actual exposure time in microseconds
@@ -167,14 +167,14 @@ message LensData {
     }
     DistortionModel distortion_model       = 1;
     repeated float distortion_coefficients = 2; // Distortion model coefficients as an array of float values.
-    repeated float camera_intrinsic_matrix = 3; // Row-major 3x3 camera intrinsic matrix. Usually [[fx, 0, cx] [0, fy, cy], [0, 0, 1]], where fx and fy are focal length values in pixels (f_mm = f_pixels * sensor_width_mm / image_width_px ; f_pixels = f_mm / sensor_width_mm * image_width_px), and cx and cy is the principal point in pixels (usually width/2, height/2).
+    repeated float camera_intrinsic_matrix = 3; // Row-major 3x3 camera intrinsic matrix. Usually [[fx, 0, cx], [0, fy, cy], [0, 0, 1]], where fx and fy are focal length values in pixels (f_mm = f_pixels * sensor_width_mm / image_width_px ; f_pixels = f_mm / sensor_width_mm * image_width_px), and cx and cy is the principal point in pixels (usually width/2, height/2).
     float focal_length_mm                  = 4; // Native lens focal length in mm
     float f_number                         = 5; // Lens aperture number. E.g. 2.8
     float focus_distance_mm                = 6; // Focal plane distance in millimeters
 }
 
 message IMUData {
-    float sample_timestamp_us     = 1;  // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
+    double sample_timestamp_us    = 1;  // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
     float gyroscope_x             = 2;  // Gyroscope X reading. Unit: degrees/sec
     float gyroscope_y             = 3;  // Gyroscope Y reading. Unit: degrees/sec
     float gyroscope_z             = 4;  // Gyroscope Z reading. Unit: degrees/sec
@@ -194,12 +194,12 @@ message Quaternion {
 }
 
 message QuaternionData {
-    float sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
+    double sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
     Quaternion quat = 2; // Quaternion
 }
 
 message LensOISData {
-    float sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
+    double sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
     float x = 3; // Optical element shift value in the X axis. ??? Units to be determined ???
     float y = 4; // Optical element shift value in the Y axis. ??? Units to be determined ???
 }
@@ -209,7 +209,7 @@ message IBISData {
         IBIS_3AXIS = 0; // IBIS mode 3-axis: X and Y shift + Roll angle.
         IBIS_5AXIS = 1; // IBIS mode 5-axis: X and Y shift + Pitch/Roll/Yaw angles.
     }
-    float sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
+    double sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
     IBISDataType type = 2; // IBIS mode: 3-axis or 5-axis
     float shift_x = 3; // X Sensor shift value. ??? Units to be determined ???
     float shift_y = 4; // Y Sensor shift value. ??? Units to be determined ???
@@ -222,7 +222,7 @@ message EISData {
         MESH_WARP  = 1; // Mesh warp. Allows for arbitrary mapping of the video frame. Contains exact transform/deform of the video frame read from the sensor to the final pixels in the encoded video file.
         MATRIX_4X4 = 2; // 4x4 matrix - rotation, translation and scaling. Indicates how the frame was transformed in the 3d space by the camera EIS, from pixels read from the sensor to the final pixels in the encoded video file.
     }
-    optional float sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds. Timestamp is ignored if there's only one entry of EISData per frame.
+    optional double sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds. Timestamp is ignored if there's only one entry of EISData per frame.
     EISDataType type          = 2; // Type of EIS. Can be quaternion, mesh warp or 4x4 transform matrix.
     Quaternion quaternion     = 3; // If type is QUATERNION, this field contains the quaternion data
     MeshWarpData mesh_warp    = 4; // If type is MESH_WARP, this field contains the mesh values
