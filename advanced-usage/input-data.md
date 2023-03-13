@@ -46,11 +46,25 @@ TODO: Video example of that
 
 In some rare cases, the gyroscope and accelerometer are actually two separate chips, in two different places. If you **right click on the Rotation label** you'll be able to enable **Separate accelerometer rotation.** You can then control gyroscope and accelerometer rotation separately. One example of such setup is the naked GoPro in [Umma95](https://ummagawd.com/products/umma95-beta95x-naked-gopro-cinewhoop-kit) design (you can try accelerometer pitch: 90°).
 
-### Gyro bias
-
-TODO
-
 ### IMU orientation
+
+Similar to **gyro rotation**, the IMU orientation field describes the direction of the IMU chip. IMU orientation however, describes the general direction of the IMU chip.
+
+The default value, indicating no direction changes is `XYZ`. This means that the X, Y and Z axes correspond directly to the expected X, Y and Z axes.&#x20;
+
+If we need to invert an axis, the letter will be lowercased, so `xYZ` will mean the X axis corresponds to the inverted expected X axis, and Y and Z are not changed.&#x20;
+
+If we need to swap the axes, we can put another axis on the expcted position, for example `ZYX` will mean that the X axis corresponds to the Z axis, and Z axis corresponds to the X axis, and Y axis is not changed.
+
+The first letter describes what axis is expected at the X axis, the second letter at the Y axis, and third at the Z axis.
+
+You can use the same technique as described in the **Gyro rotation** section to determine the IMU orientation: Adjust the value and observe the lines on the chart until the light lines (optical flow) and dark lines (motion data) align up.&#x20;
+
+You can also right click on the timeline and choose **Guess IMU orientation here** to attempt to determine the IMU orientation automatically. Note that this function needs large enough **Sync search size**, same as used for the [**⌛Synchronization**](../getting-started/basic-usage/synchronization.md).
+
+TODO: video example
+
+### Gyro bias
 
 TODO
 
