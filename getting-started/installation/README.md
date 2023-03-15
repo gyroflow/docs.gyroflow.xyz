@@ -102,9 +102,7 @@ Android is not officially supported yet, but alpha builds are available and can 
 
 Don't expect a fully working app though
 
-Hardware encoding acceleration is not yet supported.
-
-{% file src="../../.gitbook/assets/Gyroflow-v1.4.2.apk" %}
+{% file src="../../.gitbook/assets/Gyroflow-v1.5.0.apk" %}
 
 You can track progress with the Android build [here](https://github.com/gyroflow/gyroflow/issues/33).
 {% endtab %}
