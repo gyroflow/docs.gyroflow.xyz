@@ -100,11 +100,13 @@ Other distros require glibc 2.28+ (**`ldd --version`** to check)
 {% tab title="Android" %}
 Android is not officially supported yet, but alpha builds are available and can be tested.
 
-Don't expect a fully working app though
+Don't expect a fully working app though.
 
-{% file src="../../.gitbook/assets/Gyroflow-v1.5.0.apk" %}
+### [Download Gyroflow-v1.5.0.apk](https://github.com/gyroflow/docs.gyroflow.xyz/raw/main/.gitbook/assets/Gyroflow-v1.5.0.apk)
 
 You can track progress with the Android build [here](https://github.com/gyroflow/gyroflow/issues/33).
+
+
 {% endtab %}
 
 {% tab title="iOS" %}

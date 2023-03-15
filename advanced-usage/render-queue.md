@@ -41,7 +41,7 @@ If you want to change just one or a few parameters in all items of the queue, yo
 
 ### Queue settings
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption><p>Render queue settings menu</p></figcaption></figure>
+<figure><img src="../.gitbook/assets/queue_settings_menu.png" alt=""><figcaption><p>Render queue settings menu</p></figcaption></figure>
 
 #### Number of parallel renders
 
