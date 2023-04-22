@@ -106,13 +106,23 @@ Don't expect a fully working app though.
 
 You can track progress with the Android build [here](https://github.com/gyroflow/gyroflow/issues/33).
 
+## Minimum system requirements
 
+* Android 8
 {% endtab %}
 
 {% tab title="iOS" %}
-iOS build is not available yet, you can watch [this ](https://github.com/gyroflow/gyroflow/issues/34)issue to get notified when it becomes available.
+iOS build is currently available for a limited number of testers, although you can always compile it yourself.
+
+You can watch [this ](https://github.com/gyroflow/gyroflow/issues/34)issue to get notified when something more general is available.
+
+## Minimum system requirements
+
+* iOS 14
 {% endtab %}
 {% endtabs %}
+
+
 
 
 
