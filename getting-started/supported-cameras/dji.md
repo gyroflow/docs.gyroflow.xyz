@@ -10,13 +10,7 @@ Ultrawide and Normal lens modes are **not supported.**
 
 ## Supported models
 
-| Model       | Gyro data | Lens profile | Synchronization | Remarks                            |
-| ----------- | --------- | ------------ | --------------- | ---------------------------------- |
-| Avata       | ✅         | ✅ Official   | ✅ Not needed    |                                    |
-| O3 Air Unit | ✅         | ✅ Official   | ✅ Not needed    | Needs to be soft-mounted           |
-| Action 2    | ✅         | ✅ Official   | ✅ Not needed    | Since firmware v01.04.0510         |
-| Action 3    | ❌         | ❌            | ❌               | 🚧 Will be supported in the future |
-| DJI FPV     | ❌         | ❌            | ❌               | ❌ Won't be supported               |
+<table><thead><tr><th width="142">Model</th><th width="111">Gyro data</th><th width="124">Lens profile</th><th width="159">Synchronization</th><th>Remarks</th></tr></thead><tbody><tr><td>Avata</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>O3 Air Unit</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td>Needs to be soft-mounted</td></tr><tr><td>Action 2</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td>Since firmware v01.04.0510</td></tr><tr><td>Action 3</td><td>❌</td><td>❌</td><td>❌</td><td>🚧 Will be supported in the future</td></tr><tr><td>DJI FPV</td><td>❌</td><td>❌</td><td>❌</td><td>❌ Won't be supported</td></tr></tbody></table>
 
 ## Split recording
 

@@ -67,7 +67,7 @@ Keyboard shortcut: `p`
 
 #### Guess IMU orientation here
 
-If your motion data is facing a different direction than the video and lines on the chart don't align (or have different colors when aligned) - you'll need to determine correct IMU orientation. You can use this option to attempt to guess the correct IMU orientation. Read [**🔀 IMU orientation and rotation**](../../advanced-usage/imu-orientation-and-rotation.md) **** to learn the exact process. After changing IMU orientation, remove all sync points and do the synchronization again.
+If your motion data is facing a different direction than the video and lines on the chart don't align (or have different colors when aligned) - you'll need to determine correct IMU orientation. You can use this option to attempt to guess the correct IMU orientation. Read [**🔀 IMU orientation and rotation**](../../advanced-usage/imu-orientation-and-rotation.md) to learn the exact process. After changing IMU orientation, remove all sync points and do the synchronization again.
 
 #### Estimate gyro bias here
 

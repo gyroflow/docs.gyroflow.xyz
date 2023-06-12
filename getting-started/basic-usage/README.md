@@ -70,7 +70,7 @@ The search box here can also hold your [⚙ **settings presets**](../../advanced
 
 The search box also understands shortcuts for some common camera names: `bmpcc4k, bmpcc6k, bmpcc, gopro5, gopro6, gopro7, gopro8, gopro9, gopro10, gopro11, session5, a73, a74, a7r3, a7r4, a7s2, a7s3`
 
-To learn how to calibrate your own lens, go to [🏁 **Lens calibration**](../lens-calibration.md)****
+To learn how to calibrate your own lens, go to [🏁 **Lens calibration**](../lens-calibration.md)
 
 To learn more about advanced lens profile features, see [🔭 **Advanced usage -> Lens profile**](../../advanced-usage/lens-profiles.md).
 

@@ -8,11 +8,7 @@ Blackmagic has added recording of internal motion data with the firmware **v7.9*
 
 ## Supported models
 
-| Model                      | Gyro data | Lens profile                                   | Synchronization |
-| -------------------------- | --------- | ---------------------------------------------- | --------------- |
-| Pocket Cinema Camera 4K    | ✅         | <mark style="color:yellow;">⚠️</mark> By users | ❗Needed         |
-| Pocket Cinema Camera 6K    | ✅         | <mark style="color:yellow;">⚠️</mark> By users | ❗Needed         |
-| Pocket Cinema Camera 6K G2 | ✅         | <mark style="color:yellow;">⚠️</mark> By users | ❗Needed         |
+<table><thead><tr><th width="283">Model</th><th width="110">Gyro data</th><th width="129">Lens profile</th><th width="166">Synchronization</th></tr></thead><tbody><tr><td>Pocket Cinema Camera 4K</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>❗Needed</td></tr><tr><td>Pocket Cinema Camera 6K</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>❗Needed</td></tr><tr><td>Pocket Cinema Camera 6K G2</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>❗Needed</td></tr></tbody></table>
 
 {% hint style="info" %}
 Gyro data is recorded only in the **.braw** file format.&#x20;

@@ -18,12 +18,7 @@ It's also highly recommended to update to the newest macOS version, as the video
 
 ## Hardware acceleration support
 
-| Processor        | H.264 | H.265 | ProRes                                  |
-| ---------------- | ----- | ----- | --------------------------------------- |
-| Intel            | ✅     | ✅     | [❌](https://emojipedia.org/cross-mark/) |
-| M1 Air           | ✅     | ✅     | [❌](https://emojipedia.org/cross-mark/) |
-| M1 Pro/Max/Ultra | ✅     | ✅     | ✅                                       |
-| M2 (all)         | ✅     | ✅     | ✅                                       |
+<table><thead><tr><th width="240">Processor</th><th width="85">H.264</th><th width="91">H.265</th><th>ProRes</th></tr></thead><tbody><tr><td>Intel</td><td>✅</td><td>✅</td><td><a href="https://emojipedia.org/cross-mark/">❌</a></td></tr><tr><td>M1 Air</td><td>✅</td><td>✅</td><td><a href="https://emojipedia.org/cross-mark/">❌</a></td></tr><tr><td>M1 Pro/Max/Ultra</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>M2 (all)</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
 
 
 

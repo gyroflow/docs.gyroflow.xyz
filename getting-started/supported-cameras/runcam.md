@@ -12,12 +12,7 @@ You can download it from [here](https://www.runcam.com/download/actioncameras).
 
 ## Supported models
 
-| Model       | Gyro data | Lens profile | Synchronization | Quality  |
-| ----------- | --------- | ------------ | --------------- | -------- |
-| 5 Orange    | ✅         | ✅ Official   | ❗Needed         | ✅ Decent |
-| Thumb       | ✅         | ✅ Official   | ❗Needed         | ❌ Bad    |
-| Thumb Pro   | ✅         | ✅ Official   | ❗Needed         | ✅ Decent |
-| Thumb Pro-W | ✅         | ✅ Official   | ❗Needed         | ✅ Decent |
+<table><thead><tr><th width="167">Model</th><th width="111">Gyro data</th><th width="126">Lens profile</th><th width="159">Synchronization</th><th>Quality</th></tr></thead><tbody><tr><td>5 Orange</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>✅ Decent</td></tr><tr><td>Thumb</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>❌ Bad</td></tr><tr><td>Thumb Pro</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>✅ Decent</td></tr><tr><td>Thumb Pro-W</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>✅ Decent</td></tr></tbody></table>
 
 ## Caveats
 

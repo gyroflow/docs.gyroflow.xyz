@@ -57,7 +57,7 @@ The list of all nightly builds is available on [GitHub actions](https://github.c
 Make sure the OFX folder is in the root `/Library` folder, not your user `/Users/you/Library`
 {% endhint %}
 
-``
+
 
 <figure><img src="../../.gitbook/assets/openfx_install_macos.jpg" alt=""><figcaption><p>Properly installed plugin on macOS</p></figcaption></figure>
 

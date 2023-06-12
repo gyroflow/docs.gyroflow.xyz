@@ -10,10 +10,7 @@ RED cameras record motion data internally in the **.R3D** files and Gyroflow sup
 
 ## Supported models
 
-| Model        | Gyro data | Lens profile                                   | Synchronization |
-| ------------ | --------- | ---------------------------------------------- | --------------- |
-| RED V-Raptor | ✅         | <mark style="color:yellow;">⚠️</mark> By users | ❗Needed         |
-| RED KOMODO   | ✅         | <mark style="color:yellow;">⚠️</mark> By users | ❗Needed         |
+<table><thead><tr><th width="208">Model</th><th width="110">Gyro data</th><th width="129">Lens profile</th><th width="166">Synchronization</th></tr></thead><tbody><tr><td>RED V-Raptor</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>❗Needed</td></tr><tr><td>RED KOMODO</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>❗Needed</td></tr></tbody></table>
 
 {% hint style="info" %}
 Gyro data is recorded only in the **.R3D** file format.&#x20;

@@ -55,12 +55,7 @@ Both Intel and Apple Silicon are supported natively.
 
 ### Hardware acceleration support:
 
-| Processor        | H.264 | H.265 | ProRes                                  |
-| ---------------- | ----- | ----- | --------------------------------------- |
-| Intel            | ✅     | ✅     | [❌](https://emojipedia.org/cross-mark/) |
-| M1 Air           | ✅     | ✅     | [❌](https://emojipedia.org/cross-mark/) |
-| M1 Pro/Max/Ultra | ✅     | ✅     | ✅                                       |
-| M2 (all)         | ✅     | ✅     | ✅                                       |
+<table><thead><tr><th width="287">Processor</th><th width="85">H.264</th><th width="91">H.265</th><th>ProRes</th></tr></thead><tbody><tr><td>Intel</td><td>✅</td><td>✅</td><td><a href="https://emojipedia.org/cross-mark/">❌</a></td></tr><tr><td>M1 Air</td><td>✅</td><td>✅</td><td><a href="https://emojipedia.org/cross-mark/">❌</a></td></tr><tr><td>M1 Pro/Max/Ultra</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>M2 (all)</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Linux" %}
@@ -102,7 +97,7 @@ Android is not officially supported yet, but alpha builds are available and can 
 
 Don't expect a fully working app though.
 
-### [Download Gyroflow-v1.5.0.apk](https://github.com/gyroflow/docs.gyroflow.xyz/raw/main/.gitbook/assets/Gyroflow-v1.5.0.apk)
+### [Download Gyroflow-v1.5.1.apk](../../.gitbook/assets/Gyroflow-v1.5.1.apk)
 
 You can track progress with the Android build [here](https://github.com/gyroflow/gyroflow/issues/33).
 

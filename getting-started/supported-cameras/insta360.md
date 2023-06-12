@@ -8,15 +8,7 @@ Insta360 has two types of cameras: action cameras and 360° cameras. Action came
 
 ## Supported models
 
-| Model                                    | Type   | Support         | Synchronization |
-| ---------------------------------------- | ------ | --------------- | --------------- |
-| Insta360 Go                              | Action | ✅ Supported     | ❗Needed         |
-| <p>Insta360 GO 2<br>Caddx Peanut</p>     | Action | ✅ Supported     | ❗Needed         |
-| <p>Insta360 ONE R<br>Insta360 SMO 4k</p> | Action | ✅ Supported     | ❗Needed         |
-| Insta360 ONE RS                          | Action | ✅ Supported     | ❗Needed         |
-| Insta360 ONE RS 1-Inch 360               | 360°   | ❌ Not supported | ❌               |
-| Insta360 ONE X2                          | 360°   | ❌ Not supported | ❌               |
-| Insta360 X3                              | 360°   | ❌ Not supported | ❌               |
+<table><thead><tr><th width="197">Model</th><th width="83">Type</th><th width="174">Support</th><th width="158">Synchronization</th></tr></thead><tbody><tr><td>Insta360 Go</td><td>Action</td><td>✅ Supported</td><td>❗Needed</td></tr><tr><td>Insta360 GO 2<br>Caddx Peanut</td><td>Action</td><td>✅ Supported</td><td>❗Needed</td></tr><tr><td>Insta360 ONE R<br>Insta360 SMO 4k</td><td>Action</td><td>✅ Supported</td><td>❗Needed</td></tr><tr><td>Insta360 ONE RS</td><td>Action</td><td>✅ Supported</td><td>❗Needed</td></tr><tr><td>Insta360 ONE RS 1-Inch 360</td><td>360°</td><td>❌ Not supported</td><td>❌</td></tr><tr><td>Insta360 ONE X2</td><td>360°</td><td>❌ Not supported</td><td>❌</td></tr><tr><td>Insta360 X3</td><td>360°</td><td>❌ Not supported</td><td>❌</td></tr></tbody></table>
 
 Most supported cameras have official lens profiles built-in, except for the older _Insta360 Go_
 

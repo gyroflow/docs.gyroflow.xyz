@@ -39,7 +39,7 @@ More examples:\
 **BAD:** 0.5ms, -100ms, -150ms, 20ms\
 **BAD:** -120ms, -130ms, 25ms, -150ms (the 25ms is the contradicting one)\
 **BAD:** 1500ms, 120ms, 45ms, 5ms\
-****\
+\
 **GOOD:** -1400ms, -1405ms, -1407ms, -1408ms\
 **GOOD:**  49.5ms, 50ms, 50.5ms, 51ms\
 **GOOD:**  20.4ms, 20.4ms, 20.2ms, 20.0ms

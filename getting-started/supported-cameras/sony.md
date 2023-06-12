@@ -8,20 +8,7 @@ Most newer Sony mirrorless cameras record the motion data internally.
 
 ## Supported models
 
-| Model                                                | Gyro data     | Lens profile                                               | Synchronization     |
-| ---------------------------------------------------- | ------------- | ---------------------------------------------------------- | ------------------- |
-| Sony α1                                              | ✅             | <mark style="color:yellow;">⚠️</mark> By users             | ❗Needed             |
-| Sony α7 IV                                           | ✅             | <mark style="color:yellow;">⚠️</mark> By users             | ❗Needed             |
-| Sony α7C                                             | ✅             | <mark style="color:yellow;">⚠️</mark> By users             | ❗Needed             |
-| <p>Sony α7R IV<br>Sony α7R V</p>                     | ✅             | <mark style="color:yellow;">⚠️</mark> By users             | ❗Needed             |
-| Sony α7S III                                         | ✅             | <mark style="color:yellow;">⚠️</mark> By users             | ❗Needed             |
-| Sony α9 II                                           | ✅             | <mark style="color:yellow;">⚠️</mark> By users             | ❗Needed             |
-| <p>Sony FX3<br>Sony FX6<br>Sony FX9<br>Sony FX30</p> | ✅             | <mark style="color:yellow;">⚠️</mark> By users             | ❗Needed             |
-| <p>Sony RX0<br>Sony RX0 II</p>                       | <p>❌<br>✅</p> | <p>❌<br><mark style="color:yellow;">⚠️</mark> By users</p> | <p>❌<br>❗Needed</p> |
-| <p>Sony RX100 VI<br>Sony RX100 VII</p>               | <p>❌<br>✅</p> | <p>❌<br><mark style="color:yellow;">⚠️</mark> By users</p> | <p>❌<br>❗Needed</p> |
-| Sony ZV-1                                            | ✅             | <mark style="color:yellow;">⚠️</mark> By users             | ❗Needed             |
-| Sony ZV-E10                                          | ✅             | <mark style="color:yellow;">⚠️</mark> By users             | ❗Needed             |
-| Sony α6xxx                                           | ❌             | ❌                                                          | ❌                   |
+<table><thead><tr><th width="289">Model</th><th width="174">Gyro data</th><th width="320">Lens profile</th></tr></thead><tbody><tr><td>Sony α1</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony α7 IV</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony α7C</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony α7R IV<br>Sony α7R V</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony α7S III</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony α9 II</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony FX3<br>Sony FX6<br>Sony FX9<br>Sony FX30</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony RX0<br>Sony RX0 II</td><td>❌<br>✅</td><td>❌<br><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony RX100 VI<br>Sony RX100 VII</td><td>❌<br>✅</td><td>❌<br><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony ZV-1</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony ZV-E10</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td></tr><tr><td>Sony α6xxx</td><td>❌</td><td>❌</td></tr></tbody></table>
 
 That list might not be exhaustive as Sony will probably add the motion data to all their new cameras. In general if the stabilization is available in Sony's _Catalyst Browse_ software, Gyroflow should support it too.
 
