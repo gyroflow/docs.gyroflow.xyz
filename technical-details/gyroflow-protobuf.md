@@ -97,23 +97,22 @@ message Header {
         optional string firmware_version     = 4; // Camera firmware version
                  string lens_brand           = 5; // Lens manufacturer
                  string lens_model           = 6; // Lens model
-                 float  sensor_width_mm      = 7; // Physical sensor width in millimeters
-                 float  sensor_height_mm     = 8; // Physical sensor height in millimeters
-                 uint32 sensor_pixel_width   = 9; // Full sensor width in pixels
-                 uint32 sensor_pixel_height  = 10; // Full sensor height in pixels
-        optional float  crop_factor          = 11; // Crop factor in relation to full frame sensor size. e.g. 1.6x for APS-C
-        optional string lens_profile         = 12; // The Gyroflow lens identifier, or a path to lens profile json file (relative to the `camera_presets` directory), or the json contents directly
-        optional string imu_orientation      = 13; // IMU orientation used by Gyroflow as XYZ, Xyz, Zyx etc. Defaults to "XYZ". Read more in the Gyroflow documentation about this orientation convention.
-        optional Quaternion imu_rotation     = 14; // Arbitrary IMU rotation. Applies to the raw IMU samples (FrameMetadata.imu field).
-        optional Quaternion quats_rotation   = 15; // Arbitrary IMU rotation. Applies to the quaternions after sensor fusion (FrameMetadata.quaternions field).
-        optional string additional_data      = 16; // Optional note or additional data. If it starts with {, it will be parsed as JSON
+                 uint32 pixel_pitch_nm       = 7; // Sensor pixel pitch in nanometers
+                 uint32 sensor_pixel_width   = 8; // Full sensor width in pixels
+                 uint32 sensor_pixel_height  = 9; // Full sensor height in pixels
+        optional float  crop_factor          = 10; // Crop factor in relation to full frame sensor size. e.g. 1.6x for APS-C
+        optional string lens_profile         = 11; // The Gyroflow lens identifier, or a path to lens profile json file (relative to the `camera_presets` directory), or the json contents directly
+        optional string imu_orientation      = 12; // IMU orientation used by Gyroflow as XYZ, Xyz, Zyx etc. Defaults to "XYZ". Read more in the Gyroflow documentation about this orientation convention.
+        optional Quaternion imu_rotation     = 13; // Arbitrary IMU rotation. Applies to the raw IMU samples (FrameMetadata.imu field).
+        optional Quaternion quats_rotation   = 14; // Arbitrary IMU rotation. Applies to the quaternions after sensor fusion (FrameMetadata.quaternions field).
+        optional string additional_data      = 15; // Optional note or additional data. If it starts with {, it will be parsed as JSON
     }
     message ClipMetadata {
         enum ReadoutDirection {
             TopToBottom = 0; // Sensor reads pixels from top to bottom.
             BottomToTop = 1; // Sensor reads pixels from bottom to top.
-            RightToLeft = 2; // Sensor reads pixels from right to left. !!! Not implemented yet !!!
-            LeftToRight = 3; // Sensor reads pixels from left to right. !!! Not implemented yet !!!
+            RightToLeft = 2; // Sensor reads pixels from right to left.
+            LeftToRight = 3; // Sensor reads pixels from left to right.
         }
 
         uint32 frame_width            = 1; // Video frame width in pixels
@@ -205,15 +204,10 @@ message LensOISData {
 }
 
 message IBISData {
-    enum IBISDataType {
-        IBIS_3AXIS = 0; // IBIS mode 3-axis: X and Y shift + Roll angle.
-        IBIS_5AXIS = 1; // IBIS mode 5-axis: X and Y shift + Pitch/Roll/Yaw angles.
-    }
     double sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
-    IBISDataType type = 2; // IBIS mode: 3-axis or 5-axis
-    float shift_x = 3; // X Sensor shift value. ??? Units to be determined ???
-    float shift_y = 4; // Y Sensor shift value. ??? Units to be determined ???
-    float roll_angle_degrees = 5; // Sensor roll rotation angle in degrees.
+    float shift_x = 2; // X Sensor shift value. ??? Units to be determined ???
+    float shift_y = 3; // Y Sensor shift value. ??? Units to be determined ???
+    float roll_angle_degrees = 4; // Sensor roll rotation angle in degrees.
 }
 
 message EISData {
