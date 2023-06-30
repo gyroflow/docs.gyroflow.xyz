@@ -13,7 +13,7 @@ Synchronization in Gyroflow is the process of adding sync points - the time offs
 Most cameras record the motion data outside of the video pipeline and this causes time difference between capturing actual pixels and capturing camera position. In order to compensate for that, we have to figure out that time offset so Gyroflow can know exactly where the camera was at a particular pixel of the video.
 
 {% hint style="info" %}
-Synchronization is needed for all cameras except GoPro Hero 8+ and DJI.
+Synchronization is needed for all cameras except GoPro Hero 8+, DJI, Insta360, Sony and BRAW.
 {% endhint %}
 
 {% hint style="warning" %}
