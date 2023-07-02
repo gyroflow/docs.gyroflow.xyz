@@ -111,6 +111,8 @@ iOS build is currently available for a limited number of testers, although you c
 
 You can watch [this ](https://github.com/gyroflow/gyroflow/issues/34)issue to get notified when something more general is available.
 
+If you know how to re-sign an .ipa with your developer key, the .ipa is available [here](https://gyroflow.xyz/Gyroflow.ipa).
+
 ## Minimum system requirements
 
 * iOS 14
