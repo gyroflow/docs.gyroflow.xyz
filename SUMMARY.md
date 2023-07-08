@@ -8,8 +8,8 @@
 ## Getting started
 
 * [⚙ Installation](getting-started/installation/README.md)
-  * [DaVinci Resolve plugin (OpenFX)](getting-started/installation/davinci-resolve-plugin-openfx.md)
-  * [Final Cut Pro plugin](https://gyroflowtoolbox.io/installation/)
+  * [DaVinci Resolve (OpenFX)](http://localhost:5000/s/gogMettXiFqbEAwJmvy8/video-editor-plugins/davinci-resolve-openfx#installation)
+  * [Final Cut Pro (Gyroflow Toolbox)](https://gyroflowtoolbox.io/installation/)
 * [🎥 Supported cameras](getting-started/supported-cameras/README.md)
   * [GoPro](getting-started/supported-cameras/gopro.md)
   * [DJI](getting-started/supported-cameras/dji.md)
@@ -69,7 +69,7 @@
 ## Video editor plugins
 
 * [💡 General plugin workflow](video-editor-plugins/general-plugin-workflow.md)
-* [🔌 OpenFX](video-editor-plugins/openfx.md)
+* [🔌 DaVinci Resolve (OpenFX)](video-editor-plugins/davinci-resolve-openfx.md)
 * [🎬 Final Cut Pro X](video-editor-plugins/final-cut-pro-x.md)
 * [🔴 Adobe](video-editor-plugins/adobe.md)
 * [Other tools](video-editor-plugins/other-tools.md)
