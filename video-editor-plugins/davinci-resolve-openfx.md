@@ -174,6 +174,10 @@ This section allows you to manually adjust several Gyroflow parameters directly 
 
 <figure><img src="../.gitbook/assets/davinci-resolve-mac-gyroflow-adjust-parameters.png" alt=""><figcaption></figcaption></figure>
 
+#### Input & Video Rotation
+
+**Input Rotation** is when the Host (i.e. DaVinci Resolve) rotates the input pixels before feeding to the OpenFX Plugin. For example, if an `.mp4` contains rotation in the metadata, the Host will automatically rotate it. Gyroflow expects raw pixels directly from the source file, so if the Host has already rotated them, it won't match. Given this, the **Input rotation** is the rotation done by the host BEFORE feeding to the OpenFX plugin, whereas **Video rotation** is a rotation by the Gyroflow engine AFTER stabilisation.
+
 #### Video Speed
 
 Use this slider to change video speed or keyframe it, instead of built-in speed changes in the editor.
