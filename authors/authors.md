@@ -10,6 +10,6 @@
 * [Maik Menz](https://github.com/mycosd/) - _Contributed to all areas of Gyroflow with fixes and improvements_
 * [Aphobius](https://github.com/Aphobius/) - _Author of the velocity dampened smoothing algorithm_
 * [Marc Roeschlin](https://github.com/marcroe/) - _Author of the adaptive zoom algorithm_
-* [Ilya Epifanov](https://github.com/ilya-epifanov/) - _Author of the OpenFX plugin_
+* [Ilya Epifanov](https://github.com/ilya-epifanov/) - _Author of the DaVinci Resolve (OpenFX) Plugin_
 * [Vladimir Pinchuk](https://github.com/VladimirP1/) - _Author of robust gyro-to-video synchronization algorithm_
-* [Chris Hocking](https://github.com/latenitefilms) - _Author of the BRAW Toolbox Final Cut Pro Plugin_
+* [Chris Hocking](https://github.com/latenitefilms) - _Author of the Gyroflow Toolbox Plugin for Final Cut Pro_
