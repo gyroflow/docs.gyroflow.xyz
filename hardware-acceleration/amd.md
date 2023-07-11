@@ -10,6 +10,8 @@ The AMF[^1] encoder is well supported in Gyroflow and offers fast video render t
 
 {% hint style="warning" %}
 **Important!** Always make sure you have the latest driver installed from the official [AMD Drivers](https://www.amd.com/en/support) page. As long as your GPU has the hardware encoder, most acceleration issues are solved by installing the latest driver.
+
+However, someone reported a crash in a certain driver with Rx550, so if you're getting [this issue](https://github.com/gyroflow/gyroflow/issues/677), try a different driver version.
 {% endhint %}
 
 ## Supported graphic cards
