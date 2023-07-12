@@ -97,7 +97,7 @@ Android is not officially supported yet, but alpha builds are available and can 
 
 Don't expect a fully working app though.
 
-### [Download Gyroflow-v1.5.1.apk](https://github.com/gyroflow/docs.gyroflow.xyz/raw/main/.gitbook/assets/Gyroflow-v1.5.1.apk)
+### [Download Gyroflow-v1.5.2.apk](https://github.com/gyroflow/docs.gyroflow.xyz/raw/main/.gitbook/assets/Gyroflow-v1.5.2.apk)
 
 You can track progress with the Android build [here](https://github.com/gyroflow/gyroflow/issues/33).
 
