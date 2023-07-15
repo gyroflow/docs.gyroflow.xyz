@@ -1,4 +1,4 @@
-# 🔴 Adobe
+# 🎞 Adobe After Effects/Premiere
 
 Plugin for Adobe Premiere and After Effects is planned, but not ready yet.
 

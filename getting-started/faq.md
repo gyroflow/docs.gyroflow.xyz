@@ -8,6 +8,30 @@ description: Frequently asked questions
 Most issues with settings can be solved by resetting them to defaults. Go to **Advanced** on bottom right and click <mark style="color:red;">**Reset all settings to defaults.**</mark>
 {% endhint %}
 
+## ❓Forcefully Reset Settings
+
+Because Gyroflow development moves fast, and the software is constantly being updated and improved, it's possible that your Settings files can get corrupted, or contain bad data between updates. If Gyroflow fails to open, or you're having crashes on launch, you can try forcefully trashing your settings, to give Gyroflow a fresh slate:
+
+{% tabs %}
+{% tab title="Mac" %}
+Open the `Terminal.app` and enter the following command:
+
+`rm -f $HOME/Library/Preferences/com.gyroflow-xyz.Gyroflow.plist ; killall cfprefsd`
+{% endtab %}
+
+{% tab title="Windows" %}
+1. Press **Windows + R** on your keyboard and type `regedit` or look for `Registry Editor` in the Start Menu.
+2. Go to `Computer\HKEY_CURRENT_USER\SOFTWARE\Gyroflow` (enter this in the top bar and hit **ENTER**).
+3. Delete the entire key.
+{% endtab %}
+
+{% tab title="Linux" %}
+Open Terminal and enter:
+
+`rm -f $HOME/.config/Gyroflow/Gyroflow.conf`
+{% endtab %}
+{% endtabs %}
+
 ## ❓GPU encoding is not available or not working
 
 Support for codecs and modes varies greatly between GPU brands and models, for more information refer to specific guides for [NVIDIA](../hardware-acceleration/nvidia.md), [AMD](../hardware-acceleration/amd.md), [Intel](../hardware-acceleration/intel.md), [macOS ](../hardware-acceleration/apple-macos.md)or [Android](../hardware-acceleration/android.md). If you don't know what GPU you have, refer to your computer specifications.
