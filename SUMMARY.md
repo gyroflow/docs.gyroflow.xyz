@@ -33,6 +33,7 @@
 * [⌨ Keyboard shortcuts](getting-started/keyboard-shortcuts.md)
 * [🎞 File joiner](getting-started/file-joiner.md)
 * [❔ FAQ](getting-started/faq.md)
+* [🐞 Troubleshooting](getting-started/troubleshooting.md)
 * [🗣 Translations](https://crowdin.com/project/gyroflow)
 * [🐛 Report an issue](https://github.com/gyroflow/gyroflow/issues)
 
