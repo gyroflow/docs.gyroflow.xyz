@@ -83,7 +83,7 @@
 * [🧪 Building from Source](technical-details/building-from-source.md)
 * [🗃 GCSV Format](technical-details/gcsv-format.md)
 * [🗄 Gyroflow protobuf](technical-details/gyroflow-protobuf.md)
-* [GitHub Repository](https://github.com/gyroflow/gyroflow/)
+* [👨💻 GitHub Repository](https://github.com/gyroflow/gyroflow/)
 
 ## Authors
 
