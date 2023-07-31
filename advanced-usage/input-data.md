@@ -30,7 +30,7 @@ In some extreme cases, very low low pass filter can be useful if the motion data
 
 The low pass filter is applied to gyroscope and accelerometer readings. If the Integration method is None, then it applies it to the Quaternions as well.
 
-TODO: example video of this in action
+**`TODO:`**` ``example video of this in action`
 
 ### Gyro rotation
 
@@ -40,7 +40,7 @@ A common example is using [blackbox gyro data](#user-content-fn-1)[^1] with came
 
 You can use optical flow data to determine the rotation values. When you change the rotation here, the lines on chart will move as well. Optical flow never moves, so you can change the rotation values by a few degrees and observe how it's changing on the chart, and when they match/align with the optical flow lines.
 
-TODO: Video example of that
+**`TODO:`**` ``Video example of that`
 
 ### Accelerometer rotation
 
@@ -62,11 +62,11 @@ You can use the same technique as described in the **Gyro rotation** section to 
 
 You can also right click on the timeline and choose **Guess IMU orientation here** to attempt to determine the IMU orientation automatically. Note that this function needs large enough **Sync search size**, same as used for the [**⌛Synchronization**](../getting-started/basic-usage/synchronization.md).
 
-TODO: video example
+**`TODO:`**` ``add video example`
 
 ### Gyro bias
 
-TODO
+**`TODO:`**` ``add information about gyro bias`
 
 ### Integration method
 

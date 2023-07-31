@@ -13,7 +13,7 @@ Synchronization in Gyroflow is the process of adding sync points - the time offs
 Most cameras record the motion data outside of the video pipeline and this causes time difference between capturing actual pixels and capturing camera position. In order to compensate for that, we have to figure out that time offset so Gyroflow can know exactly where the camera was at a particular pixel of the video.
 
 {% hint style="info" %}
-Synchronization is needed for all cameras except GoPro Hero 8+, DJI, Insta360, Sony and BRAW.
+Synchronization is needed for all cameras except **GoPro Hero 8+, DJI, Insta360, Sony and Blackmagic RAW**.
 {% endhint %}
 
 {% hint style="warning" %}
@@ -36,8 +36,9 @@ A sync point is a time offset by which the motion data should be shifted in eith
 **Very important!** All sync points should have similar values. Sometimes the values will be linearly increasing or decreasing, and sometimes they will be very similar, but in general you can't have multiple sync points with contradicting values. For example, 3 sync points with values 10, -50, 70 is definitely wrong, but 3 sync points with values 10, 12, 16 is plausible. 10.5, 11, 10.7 is also plausible because they are very close to each other.
 
 More examples:\
+\
 **BAD:** 0.5ms, -100ms, -150ms, 20ms\
-**BAD:** -120ms, -130ms, 25ms, -150ms (the 25ms is the contradicting one)\
+**BAD:** -120ms, -130ms, 25ms, -150ms _(the 25ms is the contradicting one)_\
 **BAD:** 1500ms, 120ms, 45ms, 5ms\
 \
 **GOOD:** -1400ms, -1405ms, -1407ms, -1408ms\
@@ -79,7 +80,7 @@ If you want to rely on the sync point colors, you'll need to have more than 2, b
 
 ## Examples
 
-TODO
+**`TODO:`**` ``Add examples`
 
 ## Figuring out the offset manually
 
@@ -89,9 +90,9 @@ By moving the slider or entering a different value, you'll see the gyro data mov
 
 The default range of the slider is -VALUE to +VALUE, so the more value (time offset) the point has, the slider will have greater range. By default it starts with 15ms, but you can enter any higher value in the value field, and the range of the slider will adjust.
 
-TODO: example with optical flow
+**`TODO:`**` ``example with optical flow`
 
-TODO: example video without optical flow
+**`TODO:`**` ``example video without optical flow`
 
 ## Settings that affect the synchronization algorithm
 

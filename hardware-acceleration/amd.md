@@ -24,7 +24,7 @@ For example the [AMD Radeon™ RX 6800](https://www.amd.com/en/products/graphics
 
 ## 10-bit support
 
-TODO: find documentation
+**`TODO:`**` ``find documentation`
 
 ## ProRes/DNxHD support
 
@@ -34,7 +34,7 @@ AMD's AMF encoder supports only H.264 and H.265. No other codec is hardware acce
 
 8192x8192 is the maximum supported resolution on modern cards.
 
-TODO: find documentation
+**`TODO:`**` ``find documentation`
 
 ## Known issues
 

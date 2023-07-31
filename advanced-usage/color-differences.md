@@ -1,8 +1,6 @@
 # 🎨 Color differences
 
-TODO
-
-
+**`TODO:`**` ``Cleanup this page`
 
 color range is either Full/JPEG (0-255) or Limited/MPEG (16-235), and is generally in metadata&#x20;
 

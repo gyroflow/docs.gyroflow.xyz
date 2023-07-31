@@ -50,7 +50,7 @@ If your calibration video has matching gyro data, the following approach can be 
 2. Focus on that fast sideways motion part, go to **Stabilization** -> **Rolling shutter correction**, and move the slider until the rolling shutter effect is fixed, ie. the lines become straight and are not bent anymore. You may need to reverse the rolling shutter direction.
 3. Edit your created lens profile json with notepad, and replace `"frame_readout_time": null,`, to e.g. `"frame_readout_time": 15.5,` (15.5ms is an example value). This value will automatically be applied when using this preset.
 
-TODO: add a video sample
+**`TODO:`**` ``add a video sample`
 
 An alternative and much more accurate method doesn't require gyro data, but instead requires an Arduino+LED or similar to generate a precise blinking frequency at e.g. 1 KHz. If you have the hardware, this is recommended over the visual method since it's an order of magnitude more accurate. Read more at [gyroflow/rollingshutter](https://github.com/gyroflow/rollingshutter).
 

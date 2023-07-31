@@ -16,7 +16,7 @@ The QSV[^1] encoder is well supported in Gyroflow and offers fast video render t
 
 Refer to the [Wikipedia](https://en.wikipedia.org/wiki/Intel\_Quick\_Sync\_Video) page for a list of supported hardware.
 
-TODO: CPU support?
+**`TODO:`**` ``CPU support?`
 
 ## 10-bit support
 
@@ -30,7 +30,7 @@ _Intel® Quick Sync Video_ supports only H.264 and H.265. No other codec is hard
 
 8192x8192 is the maximum supported resolution on modern cards.
 
-TODO: verify this
+**`TODO:`**` ``verify this`
 
 
 

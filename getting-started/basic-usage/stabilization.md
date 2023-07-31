@@ -67,7 +67,7 @@ Read more about advanced zooming options in [**🔥Advanced -> Stabilization**](
 
 ## Rolling shutter correction
 
-Rolling shutter correction is a very important part of accurate stabilization process. Most digital cameras have rolling shutter sensors, meaning that the image is not captured all at once, but it is read sequentially from top to bottom. This makes the captured video prone to skews and wobbles when the side-to-side motion is significant. You can observe this effect by quickly panning left-right with your camera and looking at straight lines - they will be bent. You can learn more about rolling shutter \[here] (TODO: add link)
+Rolling shutter correction is a very important part of accurate stabilization process. Most digital cameras have rolling shutter sensors, meaning that the image is not captured all at once, but it is read sequentially from top to bottom. This makes the captured video prone to skews and wobbles when the side-to-side motion is significant. You can observe this effect by quickly panning left-right with your camera and looking at straight lines - they will be bent. You can learn more about rolling shutter here. (**`TODO:`**` ``add link`)
 
 To compensate for that, Gyroflow needs to know the **Frame readout time** which is the time it took the sensor to capture the entire image. Some cameras have this value built-in, and some cameras have rolling shutter already corrected in the camera (e.g. GoPro). There are also cameras with global shutter which don't create this effect, but they are rare (one example is RED KOMODO).
 
@@ -75,7 +75,7 @@ All other cameras need to have this option enabled and the **Frame readout time*
 
 #### Example of rolling shutter distortions
 
-TODO: video
+**`TODO:`**` ``add video`
 
 #### How to determine the frame readout time?
 
@@ -92,7 +92,7 @@ Frame readout time affects synchronization, so make sure you synchronize your fo
 Frame readout time will also be different depending on the camera shooting mode (e.g. in 4k vs 1080p).
 
 {% hint style="info" %}
-If you're using GoPro, Insta360, DJI or BRAW, then you don't have to worry about it as it's handled automatically.
+If you're using **Sony, GoPro, Insta360, DJI or Blackmagic RAW**, then you don't have to worry about it as it's handled automatically.
 {% endhint %}
 
 ### For more control over stabilization settings, see the Advanced section:

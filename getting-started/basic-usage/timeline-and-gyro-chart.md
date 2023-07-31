@@ -18,7 +18,7 @@ It contains 4 layers of data:
 <figure><img src="../../.gitbook/assets/timeline.png" alt=""><figcaption><p>Timeline elements overview</p></figcaption></figure>
 
 {% hint style="info" %}
-When using sync-less video files (GoPro Hero 8+ and DJI) you can skip this part entirely, as the synchronization is already correct and accurate, and no additional sync points should be added.
+When using **sync-less video files (GoPro Hero 8+, DJI, Sony, Blackmagic RAW & Insta360)** you can skip this part entirely, as the synchronization is already correct and accurate, and no additional sync points should be added.
 {% endhint %}
 
 **The goal is to have the lighter lines lined up with the darker lines.**
