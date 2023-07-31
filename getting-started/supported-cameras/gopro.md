@@ -51,8 +51,8 @@ In general try to avoid these cameras if possible. If you want a budget-friendly
 
 ## Using GoPro as external logger
 
-{% content-ref url="../../advanced-usage/using-external-gyro-source/action-camera-as-a-logger.md" %}
-[action-camera-as-a-logger.md](../../advanced-usage/using-external-gyro-source/action-camera-as-a-logger.md)
+{% content-ref url="../../advanced-usage/using-external-gyro-sources/action-camera-as-a-logger.md" %}
+[action-camera-as-a-logger.md](../../advanced-usage/using-external-gyro-sources/action-camera-as-a-logger.md)
 {% endcontent-ref %}
 
 [^1]: Usage on FPV drone is not recommended because of motor vibrations which messes up the gyro data. \
