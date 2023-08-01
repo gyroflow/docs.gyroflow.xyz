@@ -43,3 +43,15 @@ If you see an popup like this:
 It means your physical GPU hardware doesn't support the pixel format you're attempting to render to (i.e. normally it means your GPU hardware doesn't support 4:2:2 10-bit).
 
 You can click **Render using CPU**, to render using the CPU instead of the GPU to maintain full quality, or you can pick another pixel format.
+
+## Unknown Error Occurred
+
+If you see an error message like this:
+
+<figure><img src="../.gitbook/assets/ffmpeg-error.jpg" alt=""><figcaption></figcaption></figure>
+
+...then:
+
+* If you're on Windows or Linux, make sure you're using the latest drivers for your GPU.
+* If you're using an older GPU, it may not support hardware HEVC encoding, in which case, you should try H.264 instead.
+* If H.264 also fails, try disable GPU encoding completely.
