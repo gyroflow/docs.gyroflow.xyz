@@ -78,6 +78,16 @@ Go to **Export settings**, uncheck the lock icon and enter 9:16 resolution there
 
 Most likely the window is shown outside of your monitor. You can Shift+Right click on the taskbar icon, and select **Maximize** to bring the window back to the visible area.
 
+## ❓What logging rate should I use?
+
+**50Hz** is the absolute minimum.&#x20;
+
+For reference:
+
+* GoPro uses **200Hz**
+* DJI & Insta360 uses **1000Hz** &#x20;
+* Sony uses **2000Hz**
+
 ## ❓Where can I ask questions?
 
 You can get support and ask all questions on [**Discord**](https://discord.com/invite/BBJ2UVAr2D).
