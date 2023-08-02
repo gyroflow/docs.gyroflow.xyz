@@ -55,3 +55,19 @@ If you see an error message like this:
 * If you're on Windows or Linux, make sure you're using the latest drivers for your GPU.
 * If you're using an older GPU, it may not support hardware HEVC encoding, in which case, you should try H.264 instead.
 * If H.264 also fails, try disable GPU encoding completely.
+
+## Read Only File System
+
+If you see an error message like this:
+
+<figure><img src="../.gitbook/assets/dont-run-from-bundle.png" alt=""><figcaption></figcaption></figure>
+
+...and you're on Mac, make sure you install **Gyroflow** in your **Applications** folder and do NOT run it from the downloaded DMG package. Due to macOS sandboxing, Gyroflow isn't allowed to write to inside the package.&#x20;
+
+## Invalid data found when processing input
+
+If you see an error message like this:
+
+<figure><img src="../.gitbook/assets/existing-red-transcode.png" alt=""><figcaption></figcaption></figure>
+
+...and you're working with RED `R3D` files, try deleting the `MOV` file that Gyroflow created next to the `R3D` file, and try again.
