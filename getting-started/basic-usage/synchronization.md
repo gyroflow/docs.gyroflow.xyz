@@ -116,4 +116,4 @@ These two parameters work together. The scanned range is from `rough_offset - se
 | 15s               | 2s               |  13s to 17s   |
 | -30s              | 10s              | -40s to -20s  |
 
-Read more on the [**🌀 Using external gyro source**](../../advanced-usage/using-external-gyro-sources/) page.
+Read more on the [**🌀 Using external gyro source**](../../advanced-usage/using-external-gyro-source/) page.
