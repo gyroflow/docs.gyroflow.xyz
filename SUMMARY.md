@@ -3,14 +3,14 @@
 * [👋 Welcome to Gyroflow](README.md)
   * [💎 Features](welcome-to-gyroflow/features.md)
   * [✨ Examples](welcome-to-gyroflow/examples.md)
-  * [🧪 Test files](welcome-to-gyroflow/test-files.md)
+  * [🧪 Test Files](welcome-to-gyroflow/test-files.md)
 
 ## Getting started
 
 * [⚙ Installation](getting-started/installation/README.md)
   * [DaVinci Resolve (OpenFX)](http://127.0.0.1:5000/s/gogMettXiFqbEAwJmvy8/video-editor-plugins/davinci-resolve-openfx#installation)
   * [Final Cut Pro (Gyroflow Toolbox)](https://gyroflowtoolbox.io/installation/)
-* [🎥 Supported cameras](getting-started/supported-cameras/README.md)
+* [🎥 Supported Cameras](getting-started/supported-cameras/README.md)
   * [GoPro](getting-started/supported-cameras/gopro.md)
   * [DJI](getting-started/supported-cameras/dji.md)
   * [Sony](getting-started/supported-cameras/sony.md)
@@ -21,53 +21,53 @@
   * [RunCam](getting-started/supported-cameras/runcam.md)
   * [Caddx](getting-started/supported-cameras/caddx.md)
   * [Hawkeye](getting-started/supported-cameras/hawkeye.md)
-  * [Mobile phones](getting-started/supported-cameras/mobile-phones.md)
-  * [Other](getting-started/supported-cameras/other.md)
-* [🔧 Basic usage](getting-started/basic-usage/README.md)
-  * [📈 Timeline and gyro chart](getting-started/basic-usage/timeline-and-gyro-chart.md)
+  * [Mobile Phones](getting-started/supported-cameras/mobile-phones.md)
+  * [Other Cameras](getting-started/supported-cameras/other.md)
+* [🔧 Basic Usage](getting-started/basic-usage/README.md)
+  * [📈 Timeline & Gyro Chart](getting-started/basic-usage/timeline-and-gyro-chart.md)
   * [⌛ Synchronization](getting-started/basic-usage/synchronization.md)
   * [🔥 Stabilization](getting-started/basic-usage/stabilization.md)
   * [🎬 Exporting](getting-started/basic-usage/exporting.md)
-* [📸 Common filming tips and issues](getting-started/common-filming-tips-and-issues.md)
-* [🏁 Lens calibration](getting-started/lens-calibration.md)
-* [⌨ Keyboard shortcuts](getting-started/keyboard-shortcuts.md)
-* [🎞 File joiner](getting-started/file-joiner.md)
+* [📸 Common Filming Tips & Issues](getting-started/common-filming-tips-and-issues.md)
+* [🏁 Lens Calibration](getting-started/lens-calibration.md)
+* [⌨ Keyboard Shortcuts](getting-started/keyboard-shortcuts.md)
+* [🎞 File Joiner](getting-started/file-joiner.md)
 * [❔ FAQ](getting-started/faq.md)
 * [🐞 Troubleshooting](getting-started/troubleshooting.md)
 * [🗣 Translations](https://crowdin.com/project/gyroflow)
-* [🐛 Report an issue](https://github.com/gyroflow/gyroflow/issues)
+* [🐛 Report an Issue](https://github.com/gyroflow/gyroflow/issues)
 
 ## Advanced usage
 
-* [🎬 Input data](advanced-usage/input-data.md)
-* [🔭 Lens profiles](advanced-usage/lens-profiles.md)
+* [🎬 Input Data](advanced-usage/input-data.md)
+* [🔭 Lens Profiles](advanced-usage/lens-profiles.md)
 * [⌛ Synchronization](advanced-usage/synchronization.md)
 * [🔥 Stabilization](advanced-usage/stabilization.md)
 * [🔑 Keyframes](advanced-usage/keyframes.md)
-* [⚙ Settings presets](advanced-usage/settings-presets.md)
-* [⏩ Render queue](advanced-usage/render-queue.md)
+* [⚙ Settings Presets](advanced-usage/settings-presets.md)
+* [⏩ Render Queue](advanced-usage/render-queue.md)
 * [🎬 Exporting](advanced-usage/exporting.md)
-* [🏗 Command line (CLI)](advanced-usage/command-line-cli.md)
+* [🏗 Command Line (CLI)](advanced-usage/command-line-cli.md)
 * [💻 Other](advanced-usage/other.md)
-* [🔀 IMU orientation and rotation](advanced-usage/imu-orientation-and-rotation.md)
-* [🎨 Color differences](advanced-usage/color-differences.md)
-* [🌀 Using external gyro source](advanced-usage/using-external-gyro-source/README.md)
-  * [Action camera as a logger](advanced-usage/using-external-gyro-source/action-camera-as-a-logger.md)
-  * [Flight controller](advanced-usage/using-external-gyro-source/flight-controller.md)
+* [🔀 IMU Orientation and rotation](advanced-usage/imu-orientation-and-rotation.md)
+* [🎨 Color Differences](advanced-usage/color-differences.md)
+* [🌀 Using External Gyro Source](advanced-usage/using-external-gyro-source/README.md)
+  * [Action Camera as a Logger](advanced-usage/using-external-gyro-source/action-camera-as-a-logger.md)
+  * [Flight Controller](advanced-usage/using-external-gyro-source/flight-controller.md)
   * [ESP-gyrologger](advanced-usage/using-external-gyro-source/esp-gyrologger.md)
   * [Flowshutter](advanced-usage/using-external-gyro-source/flowshutter.md)
-* [📺 Live feed stabilization](advanced-usage/live-feed-stabilization.md)
-* [🥽 360° cameras](advanced-usage/360-cameras.md)
+* [📺 Live Feed Stabilization](advanced-usage/live-feed-stabilization.md)
+* [🥽 360° Cameras](advanced-usage/360-cameras.md)
 
-## Hardware acceleration
+## Hardware Acceleration
 
 * [🟢 NVIDIA](hardware-acceleration/nvidia.md)
 * [🔴 AMD](hardware-acceleration/amd.md)
 * [🔵 Intel](hardware-acceleration/intel.md)
-* [⚪ Apple macOS](hardware-acceleration/apple-macos.md)
+* [⚪ Apple](hardware-acceleration/apple-macos.md)
 * [🟢 Android](hardware-acceleration/android.md)
 
-## Video editor plugins
+## Video Editor Plugins
 
 * [💡 General Plugin Workflow](video-editor-plugins/general-plugin-workflow.md)
 * [🔌 DaVinci Resolve (OpenFX)](video-editor-plugins/davinci-resolve-openfx.md)
@@ -75,16 +75,16 @@
 * [🎞 Adobe After Effects/Premiere](video-editor-plugins/adobe-after-effects-premiere.md)
 * [🗃 CSV Export](video-editor-plugins/csv-export.md)
 
-## Technical details
+## Technical Details
 
-* [🦀 Used technologies](technical-details/used-technologies.md)
-* [🖇 Parsing gyro data](technical-details/parsing-gyro-data.md)
-* [🛠 Gyroflow core](technical-details/gyroflow-core.md)
-* [🧪 Building from source](technical-details/building-from-source.md)
-* [🗃 GCSV format](technical-details/gcsv-format.md)
+* [💻 Used Technologies](technical-details/used-technologies.md)
+* [🖇 Parsing Gyro Data](technical-details/parsing-gyro-data.md)
+* [🛠 Gyroflow Core](technical-details/gyroflow-core.md)
+* [🧪 Building from Source](technical-details/building-from-source.md)
+* [🗃 GCSV Format](technical-details/gcsv-format.md)
 * [🗄 Gyroflow protobuf](technical-details/gyroflow-protobuf.md)
-* [👨💻 GitHub repository](https://github.com/gyroflow/gyroflow/)
+* [🖥 GitHub Repository](https://github.com/gyroflow/gyroflow/)
 
 ## Authors
 
-* [👨🔧 👨🔧 Authors](authors/authors.md)
+* [🧑🏼‍💻 Authors](authors/authors.md)
