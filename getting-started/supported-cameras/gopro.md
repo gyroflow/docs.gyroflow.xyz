@@ -8,7 +8,7 @@ description: >-
 
 ## Supported models
 
-<table><thead><tr><th width="167">Model</th><th width="111">Gyro data</th><th width="126">Lens profile</th><th width="159">Synchronization</th><th>Remarks</th></tr></thead><tbody><tr><td>Hero 4 or older</td><td> ❌</td><td>❌</td><td>❌</td><td></td></tr><tr><td>Hero 5 Black<br>Hero 5 Session</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>❌ <a data-footnote-ref href="#user-content-fn-1">Bad on FPV drone</a><br><a data-footnote-ref href="#user-content-fn-2">🚧 Superview</a></td></tr><tr><td>Hero 6 Black</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td><a href="http://everythingfpv.com/how-to-downgrade-your-gopro-hero6-to-1-6/">Firmware v1.6</a><a data-footnote-ref href="#user-content-fn-3"> recommended.</a><br><a data-footnote-ref href="#user-content-fn-4">🚧 Superview</a></td></tr><tr><td>Hero 7 White<br>Hero 7 Silver</td><td>❌</td><td>❌</td><td>❌</td><td></td></tr><tr><td>Hero 7 Black</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>❌ <a data-footnote-ref href="#user-content-fn-5">Bad on FPV drone</a><br><a data-footnote-ref href="#user-content-fn-6">❌ Hypersmooth</a><br><a data-footnote-ref href="#user-content-fn-7">🚧 Superview</a></td></tr><tr><td>Hero 8 Black<br>Hero 9 Black<br>Hero 10 Black</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td><a data-footnote-ref href="#user-content-fn-8">✅ Hypersmooth</a><br><a data-footnote-ref href="#user-content-fn-9">🚧 Superview</a></td></tr><tr><td>Hero 11 Black<br>Hero 11 Mini</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td><p><a data-footnote-ref href="#user-content-fn-10">✅ Hypersmooth</a></p><p>✅ Autoboost<br><a data-footnote-ref href="#user-content-fn-11">🚧 Superview</a><br><a data-footnote-ref href="#user-content-fn-12">🚧 Hyperview</a></p></td></tr></tbody></table>
+<table><thead><tr><th width="167">Model</th><th width="111">Gyro data</th><th width="126">Lens profile</th><th width="159">Synchronization</th><th>Remarks</th></tr></thead><tbody><tr><td>Hero 4 or older</td><td>❌</td><td>❌</td><td>❌</td><td></td></tr><tr><td>Hero 5 Black<br>Hero 5 Session</td><td>✅</td><td>✅ Official</td><td>❗Needed</td><td>❌ <a data-footnote-ref href="#user-content-fn-1">Bad on FPV drone</a><br>🚧 Superview</td></tr><tr><td>Hero 6 Black</td><td>✅</td><td>✅ Official</td><td>❗Needed</td><td><a href="http://everythingfpv.com/how-to-downgrade-your-gopro-hero6-to-1-6/">Firmware v1.6</a><a data-footnote-ref href="#user-content-fn-2"> recommended.</a><br>🚧 Superview</td></tr><tr><td>Hero 7 White<br>Hero 7 Silver</td><td>❌</td><td>❌</td><td>❌</td><td></td></tr><tr><td>Hero 7 Black</td><td>✅</td><td>✅ Official</td><td>❗Needed</td><td>❌ <a data-footnote-ref href="#user-content-fn-3">Bad on FPV drone</a><br>❌ Hypersmooth<br><a data-footnote-ref href="#user-content-fn-4">🚧 Superview</a></td></tr><tr><td>Hero 8 Black<br>Hero 9 Black<br>Hero 10 Black</td><td>✅</td><td>✅ Official</td><td>✅ Not needed</td><td>✅ Hypersmooth<br><a data-footnote-ref href="#user-content-fn-5">🚧 Superview</a></td></tr><tr><td>Hero 11 Black<br>Hero 11 Mini</td><td>✅</td><td>✅ Official</td><td>✅ Not needed</td><td><p>✅ Hypersmooth</p><p>✅ Autoboost<br><a data-footnote-ref href="#user-content-fn-6">🚧 Superview</a><br>🚧 Hyperview</p></td></tr></tbody></table>
 
 ## Sensor and aspect ratio
 
@@ -55,30 +55,25 @@ In general try to avoid these cameras if possible. If you want a budget-friendly
 [action-camera-as-a-logger.md](../../advanced-usage/using-external-gyro-source/action-camera-as-a-logger.md)
 {% endcontent-ref %}
 
-[^1]: Usage on FPV drone is not recommended because of motor vibrations which messes up the gyro data. \
+1. Superview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended
+2. Superview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended
+3. Hypersmooth mode is not supported, ie. all in-camera stabilization needs to be turned **OFF**
+4. Hypersmooth mode is supported.\
+   This means you can record with in-camera stabilization turned on and then stabilize further in Gyroflow
+5. Hypersmooth mode is supported.\
+   This means you can record with in-camera stabilization turned on and then stabilize further in Gyroflow
+6. Hyperview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended
+
+[^1]: Usage on FPV drone is not recommended because of motor vibrations which messes up the gyro data.\
     Handheld footage should work fine
 
-[^2]: Superview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended
+[^2]: Hero 6 is a well supported and reliable model
 
-[^3]: Hero 6 is a well supported and reliable model
+[^3]: Usage on FPV drone is not recommended because of motor vibrations which messes up the gyro data.\
+    Handheld footage should work fine
 
 [^4]: Superview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended
 
-[^5]: Usage on FPV drone is not recommended because of motor vibrations which messes up the gyro data. \
-    Handheld footage should work fine
+[^5]: Superview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended
 
-[^6]: Hypersmooth mode is not supported, ie. all in-camera stabilization needs to be turned **OFF**
-
-[^7]: Superview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended
-
-[^8]: Hypersmooth mode is supported.\
-    This means you can record with in-camera stabilization turned on and then stabilize further in Gyroflow
-
-[^9]: Superview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended
-
-[^10]: Hypersmooth mode is supported.\
-    This means you can record with in-camera stabilization turned on and then stabilize further in Gyroflow
-
-[^11]: Superview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended
-
-[^12]: Hyperview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended
+[^6]: Superview mode is supported, but it's not 100% accurate. It may work for your case but is generally not recommended

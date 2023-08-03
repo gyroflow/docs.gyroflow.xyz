@@ -16,5 +16,5 @@ Gyroflow requires the camera to have a hardware gyroscope and to record it toget
 
 You can try to reach the camera manufacturer and express interest in adding gyro data. If they see enough interest, they may add that functionality to the camera.\
 \
-However, it is possible to use an external gyro source with cameras that don't record gyro data internally. You can learn more [here](../../advanced-usage/using-external-gyro-sources/).
+However, it is possible to use an external gyro source with cameras that don't record gyro data internally. You can learn more [here](../../advanced-usage/using-external-gyro-source/).
 {% endhint %}
