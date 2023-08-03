@@ -8,6 +8,7 @@
 ## Getting started
 
 * [⚙ Installation](getting-started/installation/README.md)
+  * [DaVinci Resolve (OpenFX)](http://127.0.0.1:5000/s/gogMettXiFqbEAwJmvy8/video-editor-plugins/davinci-resolve-openfx#installation)
   * [Final Cut Pro (Gyroflow Toolbox)](https://gyroflowtoolbox.io/installation/)
 * [🎥 Supported Cameras](getting-started/supported-cameras/README.md)
   * [GoPro](getting-started/supported-cameras/gopro.md)
