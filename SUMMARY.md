@@ -8,7 +8,6 @@
 ## Getting started
 
 * [⚙ Installation](getting-started/installation/README.md)
-  * [🔌 DaVinci Resolve (OpenFX)](video-editor-plugins/davinci-resolve-openfx.md)
   * [Final Cut Pro (Gyroflow Toolbox)](https://gyroflowtoolbox.io/installation/)
 * [🎥 Supported Cameras](getting-started/supported-cameras/README.md)
   * [GoPro](getting-started/supported-cameras/gopro.md)
@@ -70,6 +69,7 @@
 ## Video Editor Plugins
 
 * [💡 General Plugin Workflow](video-editor-plugins/general-plugin-workflow.md)
+* [🔌 DaVinci Resolve (OpenFX)](video-editor-plugins/davinci-resolve-openfx.md)
 * [🎬 Final Cut Pro X](video-editor-plugins/final-cut-pro-x.md)
 * [🎞 Adobe After Effects/Premiere](video-editor-plugins/adobe-after-effects-premiere.md)
 * [🗃 CSV Export](video-editor-plugins/csv-export.md)
@@ -86,4 +86,4 @@
 
 ## Authors
 
-* [👨🔧 🧑🏼‍💻 Authors](authors/authors.md)
+* [👨🔧 Authors](authors/authors.md)
