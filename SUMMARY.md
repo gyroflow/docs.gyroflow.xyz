@@ -32,7 +32,7 @@
 * [🏁 Lens Calibration](getting-started/lens-calibration.md)
 * [⌨ Keyboard Shortcuts](getting-started/keyboard-shortcuts.md)
 * [🎞 File Joiner](getting-started/file-joiner.md)
-* [❔ FAQ](getting-started/faq.md)
+* [❓ FAQ](getting-started/faq.md)
 * [🐞 Troubleshooting](getting-started/troubleshooting.md)
 * [🗣 Translations](https://crowdin.com/project/gyroflow)
 * [🐛 Report an Issue](https://github.com/gyroflow/gyroflow/issues)
