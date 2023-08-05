@@ -3,6 +3,7 @@ description: >-
   Gyroflow is an advanced video stabilization tool, which uses gyro data for
   accurate motion compensation. It's blazingly fast, easy to use and available
   for all platforms. It's free and open-source.
+coverY: 0
 ---
 
 # 👋 Welcome to Gyroflow

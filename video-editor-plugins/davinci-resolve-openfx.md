@@ -220,6 +220,13 @@ If you intend to share the host (i.e. DaVinci Resolve) project to someone else, 
 
 ## Workflow
 
+### Vertical Video
+
+For vertical video, you have two options:
+
+1. The perferred option is to add the Gyroflow OpenFX plugin in a Fusion node, then open the video in Gyroflow, set the target resolution there in **Export settings** (for example 2160x3840). Then save the project file (press **COMMAND+S** on Mac or **CONTROL+S** on Windows) and load that Gyroflow Project file in the Gyroflow OpenFX plugin (you can use the **Last saved project** button). Then go to plugin Settings and check **Use plugin RoD for output size** and then you can continue on the vertical timeline in the edit/color pages.
+2. Alternatively, change your timeline scaling settings to **Scale image to fit** instead of **Scale image with crop** - this is easier method but if you have 16:9 video that you want to export as 9:16, it will negatively affect the quality.
+
 ### Using on the Cut/Edit Page
 
 Under Construction.
