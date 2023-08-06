@@ -92,5 +92,11 @@ For reference:
 * DJI & Insta360 uses **1000Hz** &#x20;
 * Sony uses **2000Hz**
 
+## Is there a way to rotate video in Gyroflow?
 
+Yes, you can rotate in the **Video Information** panel. There's an editable field called **Rotation**.
+
+Simply click the little blue pencil icon, then adjust the rotation value as required.
+
+<figure><img src="../.gitbook/assets/video-information.png" alt=""><figcaption></figcaption></figure>
 
