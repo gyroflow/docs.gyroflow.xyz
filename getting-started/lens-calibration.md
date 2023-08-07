@@ -5,7 +5,7 @@ description: >-
   Gyroflow.
 ---
 
-# 🏁 Lens calibration
+# 🏁 Lens Calibration
 
 The purpose of the lens calibration process is to accurately determine the _intrinsic_ parameters of a camera system. This consists of:
 
@@ -18,7 +18,7 @@ The lens calibration process is divided into 2 steps:
 ## 1. Recording the calibration footage
 
 1. Open Gyroflow, go to **Lens profile** -> **Create new -> Open calibration target**
-2. Display the calibration pattern on a flat computer monitor, in full screen. In general, larger calibration patterns are preferred since focus will be closer to the focus during actual use, so use your largest screen/monitor. If you have a large flatscreen TV, it's preferred to display it on the TV (you can use HDMI, or the TV browser to open this page). A bright screen with a slightly darkened room works well.
+2. Display the calibration pattern on a **flat** computer monitor (a curved display will **not** work), in full screen. In general, larger calibration patterns are preferred since focus will be closer to the focus during actual use, so use your largest screen/monitor. If you have a large flatscreen TV, it's preferred to display it on the TV (you can use HDMI, or the TV browser to open this page). A bright screen with a slightly darkened room works well.
 3. Select the desired camera settings to calibrate for. Most importantly the field of view/focal length and aspect ratio, if applicable. Framerate and resolution doesn't matter, only if the resolution changes the field of view. Use high shutter speed to avoid motion blur, and make sure the calibration target stays in focus.
 4. Record the pattern while slowly moving around to different angles and distances in one clip. 60 seconds is typically enough. Try to avoid motion blur and rolling shutter distortion with slow and steady movements, and make sure the full chessboard is in view. The following angles are recommended for getting distortion information from the full frame:
 5. Chessboard filling whole frame
@@ -28,7 +28,7 @@ The lens calibration process is divided into 2 steps:
 9. Corner of chessboard aligned with corner of video.
 10. Finally, get fast motion for rolling shutter reference/estimation by doing a fast side-to-side yaw motions with the camera. This will produce rolling shutter effect where the lines will be bent, instead of straight.
 
-Here's an example of a calibration footage that covers all needed angles:&#x20;
+Here's an example of a calibration footage that covers all needed angles:
 
 {% embed url="https://drive.google.com/file/d/1IplUxul0piiqeX90CsrWrquwKGVMLSNv/view" %}
 
@@ -38,7 +38,7 @@ The calibration pattern can be displayed from the calibration utility. Alternati
 
 ## Rolling shutter correction
 
-Related to lens calibration is estimating the rolling shutter frame readout time. Most DSLR's and consumer-grade video cameras use a [rolling shutter](https://en.wikipedia.org/wiki/Rolling\_shutter) sensors, which introduce warps and distortions in moving footage. It is highly recommended to get an accurate estimate of the rolling shutter _before_ lens calibration and fill in the value in the calibration utility, but it can be done afterwards as well.&#x20;
+Related to lens calibration is estimating the rolling shutter frame readout time. Most DSLR's and consumer-grade video cameras use a [rolling shutter](https://en.wikipedia.org/wiki/Rolling\_shutter) sensors, which introduce warps and distortions in moving footage. It is highly recommended to get an accurate estimate of the rolling shutter _before_ lens calibration and fill in the value in the calibration utility, but it can be done afterwards as well.
 
 Please have a look at [gyroflow/rollingshutter](https://github.com/gyroflow/rollingshutter) for an accurate method of measuring rolling shutter or below for an estimated approach.
 
@@ -50,7 +50,7 @@ If your calibration video has matching gyro data, the following approach can be 
 2. Focus on that fast sideways motion part, go to **Stabilization** -> **Rolling shutter correction**, and move the slider until the rolling shutter effect is fixed, ie. the lines become straight and are not bent anymore. You may need to reverse the rolling shutter direction.
 3. Edit your created lens profile json with notepad, and replace `"frame_readout_time": null,`, to e.g. `"frame_readout_time": 15.5,` (15.5ms is an example value). This value will automatically be applied when using this preset.
 
-**`TODO:`**` ``add a video sample`
+**`TODO:`**` `` ``add a video sample `
 
 An alternative and much more accurate method doesn't require gyro data, but instead requires an Arduino+LED or similar to generate a precise blinking frequency at e.g. 1 KHz. If you have the hardware, this is recommended over the visual method since it's an order of magnitude more accurate. Read more at [gyroflow/rollingshutter](https://github.com/gyroflow/rollingshutter).
 
@@ -97,9 +97,9 @@ If the video file is not exact representation of a real world viewed through a p
 
 A common example of that is an anamorphic lens. In this case, you need to set the `Input horizontal stretch` to the squeeze factor of the anamorphic lens, to stretch the video horizontally and reverse the anamorphic distortion. This needs to be set before starting autocalibration process.
 
-Another example is a digital processing in camera, like Superview/Hyperview in GoPro cameras, or XV mode in RunCam cameras.&#x20;
+Another example is a digital processing in camera, like Superview/Hyperview in GoPro cameras, or XV mode in RunCam cameras.
 
-In case of GoPro, the stretch is a custom equation and you can set `Digital lens` to `GoPro Superview`&#x20;
+In case of GoPro, the stretch is a custom equation and you can set `Digital lens` to `GoPro Superview`
 
 In case or RunCam, the XV mode is a simple linear stretch, so to reverse it's effect, enter `1.3333` in the `Input vertical stretch` field.
 
@@ -108,4 +108,3 @@ In case or RunCam, the XV mode is a simple linear stretch, so to reverse it's ef
 If you know the focal length of the lens you're calibrating (most DSLR lenses), you should enter the focal length in that field in Advanced.
 
 If you also know the crop factor (a factor that describes sensor size relation to full frame size), you can also enter it here
-
