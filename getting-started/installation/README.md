@@ -107,9 +107,9 @@ You can track progress with the Android build [here](https://github.com/gyroflow
 {% endtab %}
 
 {% tab title="iOS" %}
-iOS build is currently available for a limited number of testers, although you can always compile it yourself.
+iOS build is currently available for testing using public TestFlight link: [https://testflight.apple.com/join/e0RI1n5i](https://testflight.apple.com/join/e0RI1n5i)
 
-You can watch [this ](https://github.com/gyroflow/gyroflow/issues/34)issue to get notified when something more general is available.
+You can watch [this ](https://github.com/gyroflow/gyroflow/issues/34)issue to get notified when there's progress on the iOS version of the app.
 
 If you know how to re-sign an .ipa with your developer key, the .ipa is available [here](https://gyroflow.xyz/Gyroflow.ipa).
 
