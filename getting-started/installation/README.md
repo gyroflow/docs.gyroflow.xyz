@@ -1,14 +1,18 @@
 ---
 description: >-
-  Gyroflow doesn't have an installer, instead you just download the files,
-  extract them and run the executable.
+  Gyroflow is officially available in Microsoft Store, Apple Store and Google
+  Play store. Downloadable binaries are available as well.
 ---
 
 # ⚙ Installation
 
 {% tabs %}
 {% tab title="Windows" %}
-## Installing Gyroflow
+## Install from the Microsoft Store:
+
+[![](../../.gitbook/assets/badge\_microsoft\_store.png)](https://apps.microsoft.com/store/detail/gyroflow/9NZG7T0JCG9H)
+
+## Manual install:
 
 1. Download the latest version from [https://gyroflow.xyz/download](https://gyroflow.xyz/download)
 2. Extract `Gyroflow-windows64.zip` somewhere
@@ -29,7 +33,15 @@ Windows 7 is not supported, because of Qt 6 requirements
 {% endtab %}
 
 {% tab title="macOS" %}
-## Installing Gyroflow
+## Install from the App Store:
+
+[![](../../.gitbook/assets/badge\_apple\_store.png)](https://apps.apple.com/us/app/gyroflow/id6447994244)
+
+## Beta channel:
+
+Updates are pushed more often to TestFlight. Use this link to join as tester and get most recent updates first: [https://testflight.apple.com/join/e0RI1n5i](https://testflight.apple.com/join/e0RI1n5i)
+
+## Manual install:
 
 1. Download the latest version from [https://gyroflow.xyz/download](https://gyroflow.xyz/download)
 2. Run`Gyroflow-mac-universal.dmg`
@@ -93,13 +105,13 @@ Other distros require glibc 2.28+ (**`ldd --version`** to check)
 {% endtab %}
 
 {% tab title="Android" %}
-Android is not officially supported yet, but alpha builds are available and can be tested.
+## Install from the Google Play Store:
 
-Don't expect a fully working app though.
+[<img src="../../.gitbook/assets/badge_google_play.png" alt="" data-size="original">](https://play.google.com/store/apps/details?id=xyz.gyroflow)
 
-### [Download Gyroflow-v1.5.2.apk](https://github.com/gyroflow/docs.gyroflow.xyz/raw/main/.gitbook/assets/Gyroflow-v1.5.2.apk)
+## Manual install:
 
-You can track progress with the Android build [here](https://github.com/gyroflow/gyroflow/issues/33).
+Nightly .apk can be downloaded from [https://nightly.link/gyroflow/gyroflow/workflows/release/master/Gyroflow-android.zip](https://nightly.link/gyroflow/gyroflow/workflows/release/master/Gyroflow-android.zip)
 
 ## Minimum system requirements
 
@@ -107,11 +119,17 @@ You can track progress with the Android build [here](https://github.com/gyroflow
 {% endtab %}
 
 {% tab title="iOS" %}
-iOS build is currently available for testing using public TestFlight link: [https://testflight.apple.com/join/e0RI1n5i](https://testflight.apple.com/join/e0RI1n5i)
+## Install from the App Store:
 
-You can watch [this ](https://github.com/gyroflow/gyroflow/issues/34)issue to get notified when there's progress on the iOS version of the app.
+[![](../../.gitbook/assets/badge\_apple\_store.png)](https://apps.apple.com/us/app/gyroflow/id6447994244)
 
-If you know how to re-sign an .ipa with your developer key, the .ipa is available [here](https://gyroflow.xyz/Gyroflow.ipa).
+## Beta channel:
+
+Updates are pushed more often to TestFlight. Use this link to join as tester and get most recent updates first: [https://testflight.apple.com/join/e0RI1n5i](https://testflight.apple.com/join/e0RI1n5i)
+
+## Manual install:
+
+Installing from outside of Apple Store is possible only on jailbroken devices or if you have a developer account and know how to re-sign an .ipa. Nightly .ipa can be downloaded from [https://nightly.link/gyroflow/gyroflow/workflows/release/master/Gyroflow-ios.zip](https://nightly.link/gyroflow/gyroflow/workflows/release/master/Gyroflow-ios.zip)
 
 ## Minimum system requirements
 
