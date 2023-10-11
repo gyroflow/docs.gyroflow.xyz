@@ -72,10 +72,4 @@ If you see an error message like this:
 
 ...and you're working with RED `R3D` files, try deleting the `MOV` file that Gyroflow created next to the `R3D` file, and try again.
 
-## Operation Not Permitted
-
-If you see an error message like this on an **Android** device:
-
-<figure><img src="../.gitbook/assets/samsung.jpg" alt=""><figcaption></figcaption></figure>
-
-Try disable GPU encoding and decoding. Android support is still very much a work-in-progress.
+##
