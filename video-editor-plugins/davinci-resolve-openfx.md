@@ -46,7 +46,7 @@ Gyroflow OFX plugin supports **Metal** acceleration on Mac.
 
 ### Hardware Acceleration
 
-Gyroflow OFX plugin supports OpenCL and CUDA acceleration on Windows
+Gyroflow OFX plugin supports **OpenGL**, **OpenCL** and **CUDA** acceleration on Windows
 {% endtab %}
 
 {% tab title="Linux" %}
@@ -61,7 +61,7 @@ Gyroflow OFX plugin supports OpenCL and CUDA acceleration on Windows
 
 ### Hardware Acceleration
 
-Gyroflow OFX plugin supports OpenCL and CUDA acceleration on Linux
+Gyroflow OFX plugin supports **OpenGL**, **OpenCL** and **CUDA** acceleration on Linux
 {% endtab %}
 {% endtabs %}
 
@@ -82,17 +82,13 @@ The list of all nightly builds is available on [GitHub actions](https://github.c
 
 ## Supported Hosts
 
-This **OpenFX** plugin has been primarily built for Blackmagic's **DaVinci Resolve**, however it has also been tested in **MAGIX Vegas**.
+This **OpenFX** plugin has been primarily built for Blackmagic's **DaVinci Resolve**, however it has also been tested in **MAGIX Vegas** and **ASSIMILATE Scratch**.
 
 It may also work in other OpenFX-compatible hosts, such as **Baselight**, **DVS Clipster**, **Nuke** & **SCRATCH**, however it's currently untested.&#x20;
 
 If you would like to this OpenFX Plugin it in another application, and it's not working correctly, please [post a GitHub issue](https://github.com/gyroflow/gyroflow-ofx/issues).
 
-## Known Issues
 
-**MAGIX Vegas** only works in Full resolution preview. Things will look incorrect when in preview mode, but will appear correct when in Full resolution and after rendering.
-
-MAGIX Vegas uses non-standard BGR pixel data in previews, and there's currently not enough interest in adding support for this in Gyroflow. Please [submit an issue](https://github.com/gyroflow/gyroflow-ofx/issues) if you disagree.
 
 ## Interface
 
