@@ -84,9 +84,9 @@ The list of all nightly builds is available on [GitHub actions](https://github.c
 
 This **OpenFX** plugin has been primarily built for Blackmagic's **DaVinci Resolve**, however it has also been tested in **MAGIX Vegas** and **ASSIMILATE Scratch**.
 
-It may also work in other OpenFX-compatible hosts, such as **Baselight**, **DVS Clipster**, **Nuke** & **SCRATCH**, however it's currently untested.&#x20;
+It may also work in other OpenFX-compatible hosts, such as **Baselight**, **DVS Clipster**, **Nuke** & **Flame**, however it's currently untested.&#x20;
 
-If you would like to this OpenFX Plugin it in another application, and it's not working correctly, please [post a GitHub issue](https://github.com/gyroflow/gyroflow-ofx/issues).
+If you would like to use this OpenFX Plugin in another application, and it's not working correctly, please [post a GitHub issue](https://github.com/gyroflow/gyroflow-ofx/issues).
 
 
 
