@@ -73,6 +73,7 @@
 * [🔌 DaVinci Resolve (OpenFX)](video-editor-plugins/davinci-resolve-openfx.md)
 * [🎬 Final Cut Pro X](video-editor-plugins/final-cut-pro-x.md)
 * [🎞 Adobe After Effects/Premiere](video-editor-plugins/adobe-after-effects-premiere.md)
+* [🪄 frei0r](video-editor-plugins/frei0r.md)
 * [🗃 CSV Export](video-editor-plugins/csv-export.md)
 
 ## Technical Details
