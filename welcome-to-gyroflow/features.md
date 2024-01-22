@@ -25,6 +25,7 @@
 * Supports variable and high frame rate videos, all calculations are done on timestamps
 * H.264/AVC, H.265/HEVC, ProRes, DNxHD, CineForm, PNG and OpenEXR outputs, with H.264 and H.265 fully GPU accelerated (ProRes also accelerated on Apple M1 Pro/Max/Ultra)
 * Automatic lens calibration process
+* Supports multiple trim ranges, can either render as single video or separate videos
 * Fully zero-copy GPU preview rendering
 * Core engine is a separate library without external dependencies (no Qt, no ffmpeg, no OpenCV), and can be used to create OpenFX and Adobe plugins (on the TODO list)
 * Automatic updates of lens profile database
