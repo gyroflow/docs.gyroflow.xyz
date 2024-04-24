@@ -7,7 +7,7 @@
 
 ## Getting started
 
-* [⚙ Installation](getting-started/installation/README.md)
+* [⚙️ Installation](getting-started/installation/README.md)
   * [DaVinci Resolve (OpenFX)](video-editor-plugins/davinci-resolve-openfx.md#installation)
   * [Final Cut Pro (Gyroflow Toolbox)](https://gyroflowtoolbox.io/installation/)
 * [🎥 Supported Cameras](getting-started/supported-cameras/README.md)
@@ -30,11 +30,11 @@
   * [🎬 Exporting](getting-started/basic-usage/exporting.md)
 * [📸 Common Filming Tips & Issues](getting-started/common-filming-tips-and-issues.md)
 * [🏁 Lens Calibration](getting-started/lens-calibration.md)
-* [⌨ Keyboard Shortcuts](getting-started/keyboard-shortcuts.md)
-* [🎞 File Joiner](getting-started/file-joiner.md)
+* [⌨️ Keyboard Shortcuts](getting-started/keyboard-shortcuts.md)
+* [🎞️ File Joiner](getting-started/file-joiner.md)
 * [❓ FAQ](getting-started/faq.md)
 * [🐞 Troubleshooting](getting-started/troubleshooting.md)
-* [🗣 Translations](https://crowdin.com/project/gyroflow)
+* [🗣️ Translations](https://crowdin.com/project/gyroflow)
 * [🐛 Report an Issue](https://github.com/gyroflow/gyroflow/issues)
 
 ## Advanced usage
@@ -44,10 +44,10 @@
 * [⌛ Synchronization](advanced-usage/synchronization.md)
 * [🔥 Stabilization](advanced-usage/stabilization.md)
 * [🔑 Keyframes](advanced-usage/keyframes.md)
-* [⚙ Settings Presets](advanced-usage/settings-presets.md)
+* [⚙️ Settings Presets](advanced-usage/settings-presets.md)
 * [⏩ Render Queue](advanced-usage/render-queue.md)
 * [🎬 Exporting](advanced-usage/exporting.md)
-* [🏗 Command Line (CLI)](advanced-usage/command-line-cli.md)
+* [🏗️ Command Line (CLI)](advanced-usage/command-line-cli.md)
 * [💻 Other](advanced-usage/other.md)
 * [🔀 IMU Orientation and rotation](advanced-usage/imu-orientation-and-rotation.md)
 * [🎨 Color Differences](advanced-usage/color-differences.md)
@@ -72,20 +72,20 @@
 * [💡 General Plugin Workflow](video-editor-plugins/general-plugin-workflow.md)
 * [🔌 DaVinci Resolve (OpenFX)](video-editor-plugins/davinci-resolve-openfx.md)
 * [🎬 Final Cut Pro X](video-editor-plugins/final-cut-pro-x.md)
-* [🎞 Adobe After Effects/Premiere](video-editor-plugins/adobe-after-effects-premiere.md)
+* [🎞️ Adobe After Effects/Premiere](video-editor-plugins/adobe-after-effects-premiere.md)
 * [🪄 frei0r](video-editor-plugins/frei0r.md)
-* [🗃 CSV Export](video-editor-plugins/csv-export.md)
+* [🗃️ CSV Export](video-editor-plugins/csv-export.md)
 
 ## Technical Details
 
 * [🦀 Used Technologies](technical-details/used-technologies.md)
-* [🖇 Parsing Gyro Data](technical-details/parsing-gyro-data.md)
-* [🛠 Gyroflow Core](technical-details/gyroflow-core.md)
+* [🖇️ Parsing Gyro Data](technical-details/parsing-gyro-data.md)
+* [🛠️ Gyroflow Core](technical-details/gyroflow-core.md)
 * [🧪 Building from Source](technical-details/building-from-source.md)
-* [🗃 GCSV Format](technical-details/gcsv-format.md)
-* [🗄 Gyroflow protobuf](technical-details/gyroflow-protobuf.md)
-* [🖥 GitHub Repository](https://github.com/gyroflow/gyroflow/)
+* [🗃️ GCSV Format](technical-details/gcsv-format.md)
+* [🗄️ Gyroflow protobuf](technical-details/gyroflow-protobuf.md)
+* [🖥️ GitHub Repository](https://github.com/gyroflow/gyroflow/)
 
 ## Authors
 
-* [👨🔧 Authors](authors/authors.md)
+* [👨‍🔧 Authors](authors/authors.md)
