@@ -36,7 +36,7 @@
 * [x] &#x20;GoPro (HERO 5 and later)
 * [x] &#x20;Sony (a1, a7c, a7r IV, a7 IV, a7s III, a9 II, FX3, FX6, FX9, RX0 II, RX100 VII, ZV1, ZV-E10, ZV-E1, a6700)
 * [x] &#x20;Insta360 (OneR, OneRS, SMO 4k, Go, GO2, GO3, Caddx Peanut, Ace, Ace Pro)
-* [x] &#x20;DJI (Avata, O3 Air Unit, Action 2, Action 4)
+* [x] &#x20;DJI (Avata, Avata 2, O3 Air Unit, Action 2, Action 4)
 * [x] &#x20;Blackmagic RAW (\*.braw)
 * [x] &#x20;RED RAW (V-Raptor, KOMODO) (\*.r3d)
 * [x] &#x20;Betaflight blackbox (\*.bfl, \*.bbl, \*.csv)
