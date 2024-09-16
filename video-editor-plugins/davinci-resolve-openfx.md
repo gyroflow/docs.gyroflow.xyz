@@ -73,12 +73,12 @@ You can find the source code for this OpenFX plugin on GitHub [here](https://git
 
 Development moves fast and there are new features added very often, check them out by downloading the nightly build:
 
-* [Nightly OpenFX Build for Mac](https://nightly.link/gyroflow/gyroflow-ofx/workflows/build/main/gyroflow-ofx-macosx.zip)
-* [Nightly OpenFX Build for Windows](https://nightly.link/gyroflow/gyroflow-ofx/workflows/build/main/gyroflow-ofx-windows.zip)
-* [Nightly OpenFX Build for Linux](https://nightly.link/gyroflow/gyroflow-ofx/workflows/build/main/gyroflow-ofx-linux.zip)
+* [Nightly OpenFX Build for Mac](https://nightly.link/gyroflow/gyroflow-plugins/workflows/release/main/Gyroflow-OpenFX-macos.zip)
+* [Nightly OpenFX Build for Windows](https://nightly.link/gyroflow/gyroflow-plugins/workflows/release/main/Gyroflow-OpenFX-windows.zip)
+* [Nightly OpenFX Build for Linux](https://nightly.link/gyroflow/gyroflow-plugins/workflows/release/main/Gyroflow-OpenFX-linux.zip)
 * [Nightly Gyroflow Build](https://gyroflow.xyz/devbuild/?autodownload)
 
-The list of all nightly builds is available on [GitHub actions](https://github.com/gyroflow/gyroflow-ofx/actions).
+The list of all nightly builds is available on [GitHub actions](https://github.com/gyroflow/gyroflow-plugins/actions).
 
 ## Supported Hosts
 
