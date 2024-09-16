@@ -86,7 +86,7 @@ This **OpenFX** plugin has been primarily built for Blackmagic's **DaVinci Resol
 
 It may also work in other OpenFX-compatible hosts, such as **Baselight**, **DVS Clipster**, **Nuke** & **Flame**, however it's currently untested.&#x20;
 
-If you would like to use this OpenFX Plugin in another application, and it's not working correctly, please [post a GitHub issue](https://github.com/gyroflow/gyroflow-ofx/issues).
+If you would like to use this OpenFX Plugin in another application, and it's not working correctly, please [post a GitHub issue](https://github.com/gyroflow/gyroflow-plugins/issues).
 
 
 
@@ -220,27 +220,31 @@ If you intend to share the host (i.e. DaVinci Resolve) project to someone else, 
 
 For vertical video, you have two options:
 
-1. The perferred option is to add the Gyroflow OpenFX plugin in a Fusion node, then open the video in Gyroflow, set the target resolution there in **Export settings** (for example 2160x3840). Then save the project file (press **COMMAND+S** on Mac or **CONTROL+S** on Windows) and load that Gyroflow Project file in the Gyroflow OpenFX plugin (you can use the **Last saved project** button). Then go to plugin Settings and check **Use plugin RoD for output size** and then you can continue on the vertical timeline in the edit/color pages.
+1. The preferred option is to add the Gyroflow OpenFX plugin in a Fusion node, then set the target resolution in the **Output size** area in the plugin. Then go to plugin Settings and check **Use plugin RoD for output size** and then you can continue on the vertical timeline in the edit/color pages.
 2. Alternatively, change your timeline scaling settings to **Scale image to fit** instead of **Scale image with crop** - this is easier method but if you have 16:9 video that you want to export as 9:16, it will negatively affect the quality.
 
 ### Using on the Cut/Edit Page
 
-Under Construction.
+TODO
 
 ### Using on the Color Page
 
-Under Construction.
+TODO
 
 ### Using as a Fusion Node
 
-Under Construction.
+TODO
 
 ## Troubleshooting
 
 ### Frame Rate Mismatch
 
-Under Construction _(make sure your timeline framerate matches your clip framerate)_
+TODO
+
+_Make sure your timeline framerate matches your clip framerate or use the plugin in Fusion_
 
 ### Handling Different Aspect Ratios
 
-Under Construction _(AdrianEddy to write)_
+TODO
+
+_Use the plugin in Fusion_

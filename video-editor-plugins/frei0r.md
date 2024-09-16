@@ -23,6 +23,6 @@ This plugin allows you to apply the stabilization right in your frei0r-capable v
 
 ### More information and download:
 
-## [https://github.com/gyroflow/gyroflow-frei0r](https://github.com/gyroflow/gyroflow-frei0r)
+## [https://github.com/gyroflow/gyroflow-plugins](frei0r.md#https-github.com-gyroflow-gyroflow-plugins)
 
 ##
