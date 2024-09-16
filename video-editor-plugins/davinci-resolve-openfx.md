@@ -67,7 +67,7 @@ Gyroflow OFX plugin supports **OpenGL**, **OpenCL** and **CUDA** acceleration on
 
 ## Source Code
 
-You can find the source code for this OpenFX plugin on GitHub [here](https://github.com/gyroflow/gyroflow-ofx).
+You can find the source code for this OpenFX plugin on GitHub [here](https://github.com/gyroflow/gyroflow-plugins).
 
 ## Nightly Builds
 

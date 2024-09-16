@@ -30,7 +30,7 @@ The Gyroflow Adobe Plugin works on Mac and Windows:
 
 ## Source Code
 
-You can find the source code for this Adobe plugin on GitHub [here](https://github.com/gyroflow/gyroflow-ofx).
+You can find the source code for this Adobe plugin on GitHub [here](https://github.com/gyroflow/gyroflow-plugins).
 
 ## Nightly Builds
 
