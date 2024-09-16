@@ -12,7 +12,7 @@ You can download it from [here](https://www.runcam.com/download/actioncameras).
 
 ## Supported models
 
-<table><thead><tr><th width="167">Model</th><th width="111">Gyro data</th><th width="126">Lens profile</th><th width="159">Synchronization</th><th>Quality</th></tr></thead><tbody><tr><td>5 Orange</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>✅ Decent</td></tr><tr><td>Thumb</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>❌ Bad</td></tr><tr><td>Thumb Pro</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>✅ Decent</td></tr><tr><td>Thumb Pro-W</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>✅ Decent</td></tr></tbody></table>
+<table><thead><tr><th width="167">Model</th><th width="111">Gyro data</th><th width="126">Lens profile</th><th width="159">Synchronization</th><th>Quality</th></tr></thead><tbody><tr><td>5 Orange</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>✅ Decent</td></tr><tr><td>Thumb</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>❌ Bad</td></tr><tr><td>Thumb Pro</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>✅ Decent</td></tr><tr><td>Thumb Pro-W</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>✅ Decent</td></tr><tr><td>Thumb 2</td><td>✅ </td><td>✅ Official</td><td>❗Needed</td><td>✅ Good</td></tr></tbody></table>
 
 ## Caveats
 
