@@ -8,7 +8,7 @@ Blackmagic has added recording of internal motion data with the firmware **v7.9*
 
 ## Supported models
 
-<table><thead><tr><th width="283">Model</th><th width="110">Gyro data</th><th width="129">Lens profile</th><th width="166">Synchronization</th></tr></thead><tbody><tr><td>Pocket Cinema Camera 4K</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>✅ Not needed</td></tr><tr><td>Pocket Cinema Camera 6K</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>✅ Not needed</td></tr><tr><td>Pocket Cinema Camera 6K G2</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>✅ Not needed</td></tr></tbody></table>
+<table><thead><tr><th width="283">Model</th><th width="110">Gyro data</th><th width="129">Lens profile</th><th width="166">Synchronization</th></tr></thead><tbody><tr><td>Pocket Cinema Camera 4K</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>✅ Not needed</td></tr><tr><td>Pocket Cinema Camera 6K<br>Pocket Cinema Camera 6K G2<br>Pocket Cinema Camera 6K Pro</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>✅ Not needed</td></tr><tr><td>Micro Studio G2</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>❗<a data-footnote-ref href="#user-content-fn-1">Needed </a></td></tr></tbody></table>
 
 {% hint style="info" %}
 Gyro data is recorded only in the **.braw** file format.&#x20;
@@ -62,3 +62,5 @@ Using the plugin is the best option anyway because you then have all RAW color c
 ## Shutter speed, ND filters and motion blur
 
 You should avoid motion blur when recording if you want to stabilize in post, read more why in the [📸 **Common filming tips and issues**](../common-filming-tips-and-issues.md).
+
+[^1]: Until it's fixed in the firmware update
