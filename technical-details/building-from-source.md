@@ -1,4 +1,4 @@
-# 🧪 Building from source
+# 🧪 Building from Source
 
 ## Dev environment
 
@@ -42,7 +42,7 @@ For working with QML I recommend to use Qt Creator and load all QML files there,
 {% endtab %}
 
 {% tab title="Android" %}
-1. Prerequisites: `git`, `7z`, working `powershell`, Android SDK and NDK. Android is not well supported yet, but the app can be built and somewhat works. Building is supported only on Windows
+1. Prerequisites: `git`, `7z`, working `powershell`, Android SDK and NDK. Building is supported only on Windows
 2. Get latest stable Rust language from: https://rustup.rs/
 3. Install `Just` by running `cargo install --force just`
 4. Clone the repo: `git clone https://github.com/gyroflow/gyroflow.git`
