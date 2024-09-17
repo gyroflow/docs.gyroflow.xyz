@@ -6,6 +6,12 @@ description: >-
 
 # 🐞 Troubleshooting
 
+## Failed to start on Windows
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+If you see the following message or similar mentioning `VCRUNTIME140.dll`, install [**VC redist**](https://aka.ms/vs/17/release/vc\_redist.x64.exe)
+
 ## Failed to export HEVC
 
 If you see an error message like this:
