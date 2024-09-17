@@ -1,4 +1,4 @@
-# 🔭 Lens profiles
+# 🔭 Lens Profiles
 
 ## TODO
 
@@ -7,6 +7,7 @@
     - custom sync points timestamps
     - interpolations
     - crop
+    - underwater adjustment
     - asymmetrical lens
     - Other lens models
     - zoom lenses
