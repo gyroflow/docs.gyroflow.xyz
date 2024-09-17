@@ -14,7 +14,10 @@ This is especially important when working with RAW files (like BRAW or R3D), whe
 
 * DaVinci Resolve (OpenFX)
 * MAGIX Vegas (OpenFX)
+* The Foundry Nuke (OpenFX)
 * ASSIMILATE Scratch (OpenFX)
+* Adobe Premiere
+* Adobe After Effects
 * Kdenlive (frei0r)
 * Shotcut (frei0r)
 * Final Cut Pro X
