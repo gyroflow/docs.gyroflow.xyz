@@ -5,6 +5,7 @@ TODO
 ```
     - Full screen mode
     - Background mode
+    - Stabilization overview split view
     - Safe area guide
     - Use GPU decoding
     - Format for R3D conversion

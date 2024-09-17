@@ -4,7 +4,7 @@ description: >-
   the background.
 ---
 
-# ⏩ Render queue
+# ⏩ Render Queue
 
 ### Where is render queue?
 
@@ -67,3 +67,8 @@ Default output directory for files dropped into the render queue is the same fol
 
 If you have some items in the render queue and you close the program (or it crashes), then all items should be restored when you start Gyroflow again.
 
+### Reordering items in the render queue
+
+Items can be reordered by right-clicking an item and choosing "Move up" or "Move down"
+
+Drag & drop is also supported, if you hold Ctrl (Command on Mac) key and drag the item
