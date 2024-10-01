@@ -20,19 +20,18 @@ Because Gyroflow development moves fast, and the software is constantly being up
 {% tab title="Mac" %}
 Open the `Terminal.app` and enter the following command:
 
-`rm -f $HOME/Library/Preferences/com.gyroflow-xyz.Gyroflow.plist ; killall cfprefsd`
+`rm -f "$HOME/Library/Application Support/Gyroflow/settings.json"`
 {% endtab %}
 
 {% tab title="Windows" %}
-1. Press **Windows + R** on your keyboard and type `regedit` or look for `Registry Editor` in the Start Menu.
-2. Go to `Computer\HKEY_CURRENT_USER\SOFTWARE\Gyroflow` (enter this in the top bar and hit **ENTER**).
-3. Delete the entire key.
+1. Open file explorer and enter this address: `%localappdata%/Gyroflow`
+2. Delete the `settings.json` file
 {% endtab %}
 
 {% tab title="Linux" %}
 Open Terminal and enter:
 
-`rm -f $HOME/.config/Gyroflow/Gyroflow.conf`
+`rm -f $HOME/.config/Gyroflow/settings.json`
 {% endtab %}
 {% endtabs %}
 
