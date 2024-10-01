@@ -28,6 +28,15 @@ The Gyroflow Adobe Plugin works on Mac and Windows:
 {% endtab %}
 {% endtabs %}
 
+## ✨ Features
+
+* Automatic loading of the project file, or gyro data from video file
+* Support for speed ramping and time remapping
+* Support for different aspect ratios and output sizes
+* In After Effects, you can create a 3D camera based on the gyro data
+* The plugin uses the clip trim range to calculate stabilization, so it doesn't consider data outside of your clip
+* Plugin loads the default preset if you created one in the app
+
 ## Source Code
 
 You can find the source code for this Adobe plugin on GitHub [here](https://github.com/gyroflow/gyroflow-plugins).
