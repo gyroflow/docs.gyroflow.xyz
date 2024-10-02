@@ -5,7 +5,7 @@ description: >-
   post-stabilization.
 ---
 
-# 🗄 Gyroflow protobuf
+# 🗄️ Gyroflow protobuf
 
 ## Download the .proto definition
 
@@ -199,14 +199,14 @@ message QuaternionData {
 
 message LensOISData {
     double sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
-    float x = 3; // Optical element shift value in the X axis. ??? Units to be determined ???
-    float y = 4; // Optical element shift value in the Y axis. ??? Units to be determined ???
+    float x = 3; // Optical element shift value in the X axis in nanometers
+    float y = 4; // Optical element shift value in the Y axis in nanometers
 }
 
 message IBISData {
     double sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
-    float shift_x = 2; // X Sensor shift value. ??? Units to be determined ???
-    float shift_y = 3; // Y Sensor shift value. ??? Units to be determined ???
+    float shift_x = 2; // X Sensor shift value in nanometers
+    float shift_y = 3; // Y Sensor shift value in nanometers
     float roll_angle_degrees = 4; // Sensor roll rotation angle in degrees.
 }
 
