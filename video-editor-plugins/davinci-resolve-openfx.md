@@ -216,35 +216,14 @@ If you intend to share the host (i.e. DaVinci Resolve) project to someone else, 
 
 ## Workflow
 
-### Vertical Video
+### Vertical Video or different aspect ratio
 
-For vertical video, you have two options:
+For vertical video, or if your timeline has different aspect ratio than your source video, you have two options:
 
 1. The preferred option is to add the Gyroflow OpenFX plugin in a Fusion node, then set the target resolution in the **Output size** area in the plugin. Then go to plugin Settings and check **Use plugin RoD for output size** and then you can continue on the vertical timeline in the edit/color pages.
 2. Alternatively, change your timeline scaling settings to **Scale image to fit** instead of **Scale image with crop** - this is easier method but if you have 16:9 video that you want to export as 9:16, it will negatively affect the quality.
 
-### Using on the Cut/Edit Page
-
-TODO
-
-### Using on the Color Page
-
-TODO
-
-### Using as a Fusion Node
-
-TODO
-
-## Troubleshooting
-
 ### Frame Rate Mismatch
 
-TODO
+If your timeline has different frame rate than the source file, you may experience broken stabilization. The plugin tries its best to adapt to the frame rate differences, but sometimes it's not possible and in that case, you have to add the plugin as a Fusion node instead.
 
-_Make sure your timeline framerate matches your clip framerate or use the plugin in Fusion_
-
-### Handling Different Aspect Ratios
-
-TODO
-
-_Use the plugin in Fusion_
