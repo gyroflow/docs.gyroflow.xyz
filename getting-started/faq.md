@@ -10,7 +10,7 @@ Most issues with settings can be solved by resetting them to defaults. Go to **A
 
 ## Where can I ask questions?
 
-You can get support and ask all questions on [**Discord**](https://discord.com/invite/BBJ2UVAr2D).
+You can get support and ask all questions on [**Discord**](https://discord.gg/YaUtNpWTUh).
 
 ## Forcefully Reset Settings
 
