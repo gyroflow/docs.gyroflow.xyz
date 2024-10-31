@@ -8,7 +8,7 @@ description: >-
 
 ## Failed to start on Windows
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you see the following message or similar mentioning `VCRUNTIME140.dll`, install [**VC redist**](https://aka.ms/vs/17/release/vc\_redist.x64.exe)
 

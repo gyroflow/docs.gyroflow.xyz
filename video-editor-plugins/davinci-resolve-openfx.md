@@ -218,9 +218,13 @@ If you intend to share the host (i.e. DaVinci Resolve) project to someone else, 
 
 ### Vertical Video or different aspect ratio
 
-For vertical video, or if your timeline has different aspect ratio than your source video, you have two options:
+For vertical video, or if your timeline has different aspect ratio than your source video, the first thing you have to do is change your timeline settings -> Mismatched resolution to "**Scale entire image to fit**"
 
-1. The preferred option is to add the Gyroflow OpenFX plugin in a Fusion node, then set the target resolution in the **Output size** area in the plugin. Then go to plugin Settings and check **Use plugin RoD for output size** and then you can continue on the vertical timeline in the edit/color pages.
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Then you have two options:
+
+1. The preferred option is to add the Gyroflow OpenFX plugin in a Fusion node, then set the target resolution in the **Output size** area in the plugin. Then go to plugin Settings and check **Use plugin RoD for output size** and then you can continue on the vertical timeline in the edit/color pages. For this to work correctly, you have to change **Clip attributes -> Image Orientation** to **0°**, and then in plugin set **Video rotation** to **90** or **-90** and **Input rotation** to **0°.**
 2. Alternatively, change your timeline scaling settings to **Scale image to fit** instead of **Scale image with crop** - this is easier method but if you have 16:9 video that you want to export as 9:16, it will negatively affect the quality.
 
 ### Frame Rate Mismatch

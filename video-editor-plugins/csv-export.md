@@ -8,7 +8,7 @@ description: Gyro data can be exported to multiple formats
 
 You can export the gyro data using the **Motion Data -> Export option** in the app
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 \- **Camera data** - contains original gyroscope and accelerometer data + integrated quaternions and euler angles. It can be exported to CSV, JSON, USD or JSX (which can be imported in Adobe After Effects by using File -> Run Script)\
 \- **Full metadata** - contains original metadata as parsed from the source file, without any Gyroflow calculations\
