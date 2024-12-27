@@ -22,6 +22,14 @@ The best option is to use **Standard** stabilization in camera (if your model ha
 
 List of current issues with Sony metadata is [here](https://github.com/gyroflow/gyroflow/issues/849). If your file doesn't work properly, but does work in Catalyst Browse, submit it in that [GitHub issue](https://github.com/gyroflow/gyroflow/issues/849).
 
+
+
+### Supported OSS Lenses
+
+The list of supported lenses with OSS enabled is available on the [Sony website](https://support.d-imaging.sony.co.jp/www/cscs/function/compatibility.php?fnc=1002\&area=gb\&lang=en\&ref=1). If the link ever stops working, here's the current list as Dec 2024:
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
 ## Zoom lenses
 
 Zoom lenses are supported automatically, and you can zoom in and out throughout the video.
