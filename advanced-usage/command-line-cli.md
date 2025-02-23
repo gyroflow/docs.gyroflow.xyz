@@ -15,9 +15,9 @@ One of more interesting CLI features is a **watch folder**, which can be used to
 All other options are pretty self-explanatory.
 
 ```
-Usage: Gyroflow.exe [<input...>] [-f] [-j <parallel-renders>] [-d <when-done>] [-p <out-params>] [-s <sync-params>] [--export-project <export-project>] [--export-metadata <export-metadata>] [--export-metadata-fields <export-metadata-fields>] [--export-stmap <export-stmap>] [--preset <preset>] [--open <open>] [--watch <watch>] [-g <gyro-file>]
+Usage: gyroflow [<input...>] [-f] [-j <parallel-renders>] [-d <when-done>] [-p <out-params>] [-t <suffix>] [-s <sync-params>] [--export-project <export-project>] [--export-metadata <export-metadata>] [--export-metadata-fields <export-metadata-fields>] [--export-stmap <export-stmap>] [--preset <preset>] [--open <open>] [--watch <watch>] [-g <gyro-file>] [-b <processing-device>] [-r <rendering-device>] [--version]
 
-Gyroflow v1.5.4
+Gyroflow v1.6.0
 Video stabilization using gyroscope data
 
 Positional Arguments:
@@ -29,10 +29,11 @@ Options:
                     number of parallel renders, default: 1
   -d, --when-done   when done: 1 - shut down; 2 - reboot; 3 - sleep; 4 -
                     hibernate; 5 - logout
-  -p, --out-params  output parameters, eg. "{ 'codec': 'H.265/HEVC', 'bitrate':
-                    150, 'use_gpu': true, 'audio': true }"
-  -s, --sync-params synchronization parameters, eg. "{ 'search_size': 3,
-                    'processing_resolution': 720 }"
+  -p, --out-params  output parameters, eg. "{{ 'codec': 'H.265/HEVC',
+                    'bitrate': 150, 'use_gpu': true, 'audio': true }}"
+  -t, --suffix      default output suffix, eg. "_stabilized"
+  -s, --sync-params synchronization parameters, eg. "{{ 'search_size': 3,
+                    'processing_resolution': 720 }}"
   --export-project  export project file instead of rendering: 1 - default
                     project, 2 - with gyro data, 3 - with processed gyro data, 4
                     - video + project file
@@ -41,18 +42,26 @@ Options:
                     data. Eg. "3:camera.json"
   --export-metadata-fields
                     fields to include in the exported camera metadata file.
-                    Defaults to all: "{ 'original': { 'gyroscope': true,
+                    Defaults to all: "{{ 'original': {{ 'gyroscope': true,
                     'accelerometer': true, 'quaternion': true, 'euler_angles':
-                    true }, 'stabilized': { 'quaternion': true,
-                    'euler_angles': true }, 'zooming': { 'minimal_fovs': true,
-                    'fovs': true, 'focal_length': true } }"
+                    true }}, 'stabilized': {{ 'quaternion': true,
+                    'euler_angles': true }}, 'zooming': {{ 'minimal_fovs':
+                    true, 'fovs': true, 'focal_length': true }} }}"
   --export-stmap    export STmap instead of rendering. <type>:<folder_path>,
                     where type is 1 - single frame, 2 - all frames. Eg.
                     "1:C:/stmaps/"
-  --preset          preset (file or content directly), eg. "{ 'version': 2,
-                    'stabilization': { 'fov': 1.5 } }"
+  --preset          preset (file or content directly), eg. "{{ 'version': 2,
+                    'stabilization': {{ 'fov': 1.5 }} }}"
   --open            open file in the GUI (video or project)
   --watch           watch folder for automated processing
   -g, --gyro-file   gyro file path
-  --help            display usage information
+  -b, --processing-device
+                    processing device index. By default it uses the one set in
+                    the GUI
+  -r, --rendering-device
+                    rendering device, specify the GPU type. Eg. "nvidia",
+                    "intel", "amd", "apple m"
+  --version         print app version
+  --help, help      display usage information
+
 ```
