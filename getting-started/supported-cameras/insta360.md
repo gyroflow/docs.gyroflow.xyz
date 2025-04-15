@@ -12,6 +12,8 @@ Insta360 has two types of cameras: action cameras and 360° cameras. Action came
 
 Most supported cameras have official lens profiles built-in, except for the older _Insta360 Go_
 
+Some of the cameras require use of FreeFrame video mode, for motion data to be saved. 
+
 ## Shutter speed, ND filters and motion blur
 
 You should avoid motion blur when recording, read more why in the [📸 **Common filming tips and issues**](../common-filming-tips-and-issues.md).
