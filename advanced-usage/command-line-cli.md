@@ -15,9 +15,9 @@ One of more interesting CLI features is a **watch folder**, which can be used to
 All other options are pretty self-explanatory.
 
 ```
-Usage: gyroflow [<input...>] [-f] [-j <parallel-renders>] [-d <when-done>] [-p <out-params>] [-t <suffix>] [-s <sync-params>] [--export-project <export-project>] [--export-metadata <export-metadata>] [--export-metadata-fields <export-metadata-fields>] [--export-stmap <export-stmap>] [--preset <preset>] [--open <open>] [--watch <watch>] [-g <gyro-file>] [-b <processing-device>] [-r <rendering-device>] [--version]
+Usage: gyroflow [<input...>] [-f] [-j <parallel-renders>] [-d <when-done>] [-p <out-params>] [-t <suffix>] [-s <sync-params>] [--stdout-progress] [--export-project <export-project>] [--export-metadata <export-metadata>] [--export-metadata-fields <export-metadata-fields>] [--export-stmap <export-stmap>] [--preset <preset>] [--open <open>] [--watch <watch>] [-g <gyro-file>] [-b <processing-device>] [-r <rendering-device>] [--no-gpu-decoding] [--version]
 
-Gyroflow v1.6.0
+Gyroflow v1.6.2
 Video stabilization using gyroscope data
 
 Positional Arguments:
@@ -34,6 +34,7 @@ Options:
   -t, --suffix      default output suffix, eg. "_stabilized"
   -s, --sync-params synchronization parameters, eg. "{{ 'search_size': 3,
                     'processing_resolution': 720 }}"
+  --stdout-progress print progress to stdout in addition to progress bars
   --export-project  export project file instead of rendering: 1 - default
                     project, 2 - with gyro data, 3 - with processed gyro data, 4
                     - video + project file
@@ -61,6 +62,7 @@ Options:
   -r, --rendering-device
                     rendering device, specify the GPU type. Eg. "nvidia",
                     "intel", "amd", "apple m"
+  --no-gpu-decoding don't use gpu video decoding, default: false
   --version         print app version
   --help, help      display usage information
 
