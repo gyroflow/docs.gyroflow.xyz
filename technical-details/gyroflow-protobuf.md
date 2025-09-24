@@ -146,13 +146,17 @@ message FrameMetadata {
     optional int32  shutter_speed_numerator   = 9; // Shutter speed numerator. E.g. 1 in case of 1/240 shutter speed.
     optional int32  shutter_speed_denumerator = 10; // Shutter speed denumerator. E.g. 240 in case of 1/240 shutter speed.
     optional float  shutter_angle_degrees     = 11; // Shutter angle in degrees. E.g. 180
+    optional float  crop_x                    = 12; // Sensor crop area in pixels, X coordinate
+    optional float  crop_y                    = 13; // Sensor crop area in pixels, Y coordinate
+    optional float  crop_width                = 14; // Sensor crop area in pixels, width
+    optional float  crop_height               = 15; // Sensor crop area in pixels, height
 
-    repeated LensData       lens        = 12; // Per-frame lens information, like focal length, distortion coefficients etc
-    repeated IMUData        imu         = 13; // Per-frame raw IMU data samples, will likely have multiple samples in one video frame
-    repeated QuaternionData quaternions = 14; // Per-frame quaternion data. Optional, can contain camera orientation after sensor fusion
-    repeated LensOISData    ois         = 15; // Per-frame Lens optical stabilization data. Not present when OIS is disabled.          ??? Exact data and format to be determined ???
-    repeated IBISData       ibis        = 16; // Per-frame in-body image stabilization (IBIS) data. Not present when IBIS is disabled. ??? Exact data and format to be determined ???
-    repeated EISData        eis         = 17; // Per-frame electronic in-camera stabilization data. Not present when EIS is disabled.  ??? Exact data and format to be determined ???
+    repeated LensData       lens        = 16; // Per-frame lens information, like focal length, distortion coefficients etc
+    repeated IMUData        imu         = 17; // Per-frame raw IMU data samples, will likely have multiple samples in one video frame
+    repeated QuaternionData quaternions = 18; // Per-frame quaternion data. Optional, can contain camera orientation after sensor fusion
+    repeated LensOISData    ois         = 19; // Per-frame Lens optical stabilization data. Not present when OIS is disabled.          ??? Exact data and format to be determined ???
+    repeated IBISData       ibis        = 20; // Per-frame in-body image stabilization (IBIS) data. Not present when IBIS is disabled. ??? Exact data and format to be determined ???
+    repeated EISData        eis         = 21; // Per-frame electronic in-camera stabilization data. Not present when EIS is disabled.  ??? Exact data and format to be determined ???
 }
 
 message LensData {
@@ -167,9 +171,9 @@ message LensData {
     DistortionModel distortion_model       = 1;
     repeated float distortion_coefficients = 2; // Distortion model coefficients as an array of float values.
     repeated float camera_intrinsic_matrix = 3; // Row-major 3x3 camera intrinsic matrix. Usually [[fx, 0, cx], [0, fy, cy], [0, 0, 1]], where fx and fy are focal length values in pixels (f_mm = f_pixels * sensor_width_mm / image_width_px ; f_pixels = f_mm / sensor_width_mm * image_width_px), and cx and cy is the principal point in pixels (usually width/2, height/2).
-    float focal_length_mm                  = 4; // Native lens focal length in mm
-    float f_number                         = 5; // Lens aperture number. E.g. 2.8
-    float focus_distance_mm                = 6; // Focal plane distance in millimeters
+    optional float focal_length_mm         = 4; // Native lens focal length in mm
+    optional float f_number                = 5; // Lens aperture number. E.g. 2.8
+    optional float focus_distance_mm       = 6; // Focal plane distance in millimeters
 }
 
 message IMUData {
@@ -199,8 +203,8 @@ message QuaternionData {
 
 message LensOISData {
     double sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds
-    float x = 3; // Optical element shift value in the X axis in nanometers
-    float y = 4; // Optical element shift value in the Y axis in nanometers
+    float x = 2; // Optical element shift value in the X axis in nanometers
+    float y = 3; // Optical element shift value in the Y axis in nanometers
 }
 
 message IBISData {
@@ -217,10 +221,10 @@ message EISData {
         MATRIX_4X4 = 2; // 4x4 matrix - rotation, translation and scaling. Indicates how the frame was transformed in the 3d space by the camera EIS, from pixels read from the sensor to the final pixels in the encoded video file.
     }
     optional double sample_timestamp_us = 1; // Exact timestamp of the sampling time from the internal camera clock. Unit: microseconds. Timestamp is ignored if there's only one entry of EISData per frame.
-    EISDataType type          = 2; // Type of EIS. Can be quaternion, mesh warp or 4x4 transform matrix.
-    Quaternion quaternion     = 3; // If type is QUATERNION, this field contains the quaternion data
-    MeshWarpData mesh_warp    = 4; // If type is MESH_WARP, this field contains the mesh values
-    repeated float matrix_4x4 = 5; // If type is MATRIX_4x4, this field contains the 16 float matrix values (row-major order).
+    EISDataType type                    = 2; // Type of EIS. Can be quaternion, mesh warp or 4x4 transform matrix.
+    optional Quaternion quaternion      = 3; // If type is QUATERNION, this field contains the quaternion data
+    optional MeshWarpData mesh_warp     = 4; // If type is MESH_WARP, this field contains the mesh values
+    repeated float matrix_4x4           = 5; // If type is MATRIX_4x4, this field contains the 16 float matrix values (row-major order).
 }
 
 message MeshWarpData {
