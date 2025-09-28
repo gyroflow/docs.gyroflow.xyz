@@ -10,7 +10,7 @@ Ultrawide and Normal lens modes are **not supported.**
 
 ## Supported models
 
-<table><thead><tr><th width="142">Model</th><th width="111">Gyro data</th><th width="124">Lens profile</th><th width="159">Synchronization</th><th>Remarks</th></tr></thead><tbody><tr><td>Avata<br>Avata 2</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>Neo</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>O3 Air Unit</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td>Needs to be soft-mounted</td></tr><tr><td>Action 2</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td>Since firmware v01.04.0510</td></tr><tr><td>Action 3</td><td>❌</td><td>❌</td><td>❌</td><td>❌ Won't be supported</td></tr><tr><td>Action 4<br>Action 5</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>DJI FPV</td><td>❌</td><td>❌</td><td>❌</td><td>❌ Won't be supported</td></tr></tbody></table>
+<table><thead><tr><th width="142">Model</th><th width="111">Gyro data</th><th width="124">Lens profile</th><th width="159">Synchronization</th><th>Remarks</th></tr></thead><tbody><tr><td>Avata<br>Avata 2</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>Neo</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>O3 Air Unit</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td>Needs to be soft-mounted</td></tr><tr><td>Action 2</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td>Since firmware v01.04.0510</td></tr><tr><td>Action 3</td><td>❌</td><td>❌</td><td>❌</td><td>❌ Won't be supported</td></tr><tr><td>Action 4<br>Action 5</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>Osmo Nano</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>DJI FPV</td><td>❌</td><td>❌</td><td>❌</td><td>❌ Won't be supported</td></tr><tr><td>Osmo 360</td><td>-</td><td>-</td><td>-</td><td>360 cameras are not supported</td></tr></tbody></table>
 
 ## Split recording
 
@@ -55,7 +55,7 @@ If your quadcopter is well tuned and doesn't vibrate by it's own, it's less like
 
 ### 5. Read the official O3 Air Unit manual for more details
 
-Check out page 7 in the [DJI O3 Air Unit user manual](https://dl.djicdn.com/downloads/DJI\_O3\_Air\_Unit/20221123/DJI\_O3\_Air\_Unit\_User\_Manual\_v1.0\_EN.pdf).
+Check out page 7 in the [DJI O3 Air Unit user manual](https://dl.djicdn.com/downloads/DJI_O3_Air_Unit/20221123/DJI_O3_Air_Unit_User_Manual_v1.0_EN.pdf).
 
 ### 6. Watch a video by Mads Tech about this issue
 
