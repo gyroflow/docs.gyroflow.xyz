@@ -26,9 +26,9 @@ List of current issues with Sony metadata is [here](https://github.com/gyroflow/
 
 ### Supported OSS Lenses
 
-The list of supported lenses with OSS enabled is available on the [Sony website](https://support.d-imaging.sony.co.jp/www/cscs/function/compatibility.php?fnc=1002\&area=gb\&lang=en\&ref=1). If the link ever stops working, here's the current list as Dec 2024:
+The list of supported lenses with OSS enabled is available on the [Sony website](https://support.d-imaging.sony.co.jp/www/cscs/function/compatibility.php?fnc=1002\&area=gb\&lang=en\&ref=1). If the link ever stops working, here's the current list as Oct 2025:
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/lenslist.png" alt=""><figcaption></figcaption></figure>
 
 ## Zoom lenses
 
