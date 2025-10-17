@@ -52,6 +52,7 @@
 * [🔀 IMU Orientation and rotation](advanced-usage/imu-orientation-and-rotation.md)
 * [🎨 Color Differences](advanced-usage/color-differences.md)
 * [🌀 Using External Gyro Source](advanced-usage/using-external-gyro-source/README.md)
+  * [NiYien-A1](advanced-usage/using-external-gyro-source/niyien-a1.md)
   * [Action Camera as a Logger](advanced-usage/using-external-gyro-source/action-camera-as-a-logger.md)
   * [Flight Controller](advanced-usage/using-external-gyro-source/flight-controller.md)
   * [ESP-gyrologger](advanced-usage/using-external-gyro-source/esp-gyrologger.md)
