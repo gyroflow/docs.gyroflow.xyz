@@ -14,6 +14,7 @@
   * [GoPro](getting-started/supported-cameras/gopro.md)
   * [DJI](getting-started/supported-cameras/dji.md)
   * [Sony](getting-started/supported-cameras/sony.md)
+  * [Canon](getting-started/supported-cameras/sony-1.md)
   * [Insta360](getting-started/supported-cameras/insta360.md)
   * [Blackmagic](getting-started/supported-cameras/blackmagic.md)
   * [RED](getting-started/supported-cameras/red.md)
