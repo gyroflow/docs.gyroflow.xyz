@@ -50,6 +50,10 @@ The list of supported lenses which work automatically in Gyroflow:
 * EF CN-E 14-35mm T1.7L F
 * EF CN-E 31.5-95mm T1.7L F
 
+{% hint style="warning" %}
+Make sure your camera and the lens are updated to latest firmware version.
+{% endhint %}
+
 ## Zoom lenses
 
 Zoom lenses are supported automatically, and you can zoom in and out throughout the video, if your lens is on the list provided above.
