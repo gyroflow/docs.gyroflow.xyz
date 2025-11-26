@@ -5,12 +5,12 @@ DJI started to add gyro data to their products with the release of DJI Avata. DJ
 {% hint style="warning" %}
 **Important!** In-camera stabilization (EIS/Rocksteady) needs to be **disabled**, and FOV needs to be set to **Wide.** Otherwise your camera **will not** record gyro data and won't be usable in Gyroflow.\
 \
-Ultrawide and Normal lens modes are **not supported.**
+Ultrawide, Normal or "Natural Wide" lens modes are **not supported.**
 {% endhint %}
 
 ## Supported models
 
-<table><thead><tr><th width="142">Model</th><th width="111">Gyro data</th><th width="124">Lens profile</th><th width="159">Synchronization</th><th>Remarks</th></tr></thead><tbody><tr><td>Avata<br>Avata 2</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>Neo</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>O3 Air Unit</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td>Needs to be soft-mounted</td></tr><tr><td>Action 2</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td>Since firmware v01.04.0510</td></tr><tr><td>Action 3</td><td>❌</td><td>❌</td><td>❌</td><td>❌ Won't be supported</td></tr><tr><td>Action 4<br>Action 5</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>Osmo Nano</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>DJI FPV</td><td>❌</td><td>❌</td><td>❌</td><td>❌ Won't be supported</td></tr><tr><td>Osmo 360</td><td>-</td><td>-</td><td>-</td><td>360 cameras are not supported</td></tr></tbody></table>
+<table><thead><tr><th width="142">Model</th><th width="111">Gyro data</th><th width="124">Lens profile</th><th width="159">Synchronization</th><th>Remarks</th></tr></thead><tbody><tr><td>Avata<br>Avata 2</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>Neo</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>O3 Air Unit<br>O4 Air Unit</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td>Needs to be soft-mounted</td></tr><tr><td>Action 2</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td>Since firmware v01.04.0510</td></tr><tr><td>Action 3</td><td>❌</td><td>❌</td><td>❌</td><td>❌ Won't be supported</td></tr><tr><td>Action 4<br>Action 5<br>Action 6</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>Osmo Nano</td><td>✅ </td><td>✅ Official</td><td>✅ Not needed</td><td></td></tr><tr><td>DJI FPV</td><td>❌</td><td>❌</td><td>❌</td><td>❌ Won't be supported</td></tr><tr><td>Osmo 360</td><td>-</td><td>-</td><td>-</td><td>360 cameras are not supported</td></tr></tbody></table>
 
 ## Split recording
 
@@ -20,7 +20,7 @@ Gyroflow can do that for you. Just drag & drop all your files in the sequence to
 
 You can find more information on the [**🎞 File joiner**](../file-joiner.md) page.
 
-## DJI O3 Air Unit vibration issues
+## DJI O3/O4 Air Unit vibration issues
 
 A common issue with the O3 Air Unit is that after stabilization, the video is more shaky than before. This happens because the camera module is very lightweight and is often hard-mounted to the drone frame, which makes it very prone to collect noise from the motors.
 
