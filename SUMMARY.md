@@ -13,6 +13,7 @@
 * [🎥 Supported Cameras](getting-started/supported-cameras/README.md)
   * [GoPro](getting-started/supported-cameras/gopro.md)
   * [DJI](getting-started/supported-cameras/dji.md)
+  * [Xtra](getting-started/supported-cameras/dji-1.md)
   * [Sony](getting-started/supported-cameras/sony.md)
   * [Canon](getting-started/supported-cameras/canon.md)
   * [Insta360](getting-started/supported-cameras/insta360.md)
