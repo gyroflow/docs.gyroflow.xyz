@@ -11,14 +11,14 @@ Hardware video encoding on macOS uses the _VideoToolbox_ framework from Apple. M
 Intel devices support basic H.264 and H.265 modes (8-bit only), while M1 chips and newer added more formats and the ProRes encoder.
 
 {% hint style="info" %}
-Apple Silicon (M1-M4) devices are recommended, because they support more video features, including ProRes encoder.
+Apple Silicon (M1-M5) devices are recommended, because they support more video features, including ProRes encoder.
 {% endhint %}
 
 It's also highly recommended to update to the newest macOS version, as the video encoding features are evolving pretty quickly.
 
 ## Hardware acceleration support
 
-<table><thead><tr><th width="240">Processor</th><th width="85">H.264</th><th width="91">H.265</th><th>ProRes</th></tr></thead><tbody><tr><td>Intel</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1 Air</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1 Pro/Max/Ultra</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>M2<br>M3<br>M4</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
+<table><thead><tr><th width="240">Processor</th><th width="85">H.264</th><th width="91">H.265</th><th>ProRes</th></tr></thead><tbody><tr><td>Intel</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1 Air</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1 Pro/Max/Ultra</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>M2<br>M3<br>M4<br>M5</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
 
 
 
