@@ -48,7 +48,7 @@ A dedicated desktop tool for batch stabilization:
 
 The support list is regularly updated — for the latest version, please refer to the display on the sales platform.
 
-<figure><img src="../../.gitbook/assets/niyien_support_list.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/副图4-支持相机型号.png" alt=""><figcaption></figcaption></figure>
 
 Samples:
 
@@ -68,12 +68,14 @@ Samples:
 ### 5. Purchase
 
 * 📦 **Amazon (US)**: [https://www.amazon.com/dp/B0FPMLBK45](https://www.amazon.com/dp/B0FPMLBK45)
-* 📦 **AliExpress**: [https://www.aliexpress.us/item/3256808861378990.html](https://www.aliexpress.us/item/3256808861378990.html)
+* 📦 **Amazon (US Prime)**: [https://www.amazon.com/dp/B0FWJRNP3W](https://www.amazon.com/dp/B0FWJRNP3W)
+* 📦 **Avito (Russia)**: [https://www.avito.ru/moskva/fototehnika/stabilizator\_dlya\_lyuboy\_kamery\_niyien\_senseflow\_a1\_7830074159](https://www.avito.ru/moskva/fototehnika/stabilizator_dlya_lyuboy_kamery_niyien_senseflow_a1_7830074159)
+* 📦 **AliExpress：**&#x53;earch "NiYien gyroscope"
 
 ***
 
 ### 6. Support
 
 * 📧 **Support Email**: Technical help (troubleshooting, setup issues) at support@niyien.com.
-* 📧 **Sales Email**: Inquiries about bulk orders, partnerships, or purchase quotes at sales@niyien.com.
+* 📧 **Sales Email**: Inquiries about bulk orders, partnerships, or purchase quotes at sales@niyien.com, rocky@niyien.com(US saler)
 * 💬 **Discord**: Join for real-time support, user discussions, and product update notifications at [https://discord.gg/dyna2DtqEA](https://discord.gg/dyna2DtqEA)
