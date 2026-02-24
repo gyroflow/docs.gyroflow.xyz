@@ -9,9 +9,7 @@ description: >-
 
 ## Download the .proto definition
 
-You can download the latest protobuf definition from telemetry-parser's git repository.
-
-**`TODO:`**` ``add info`
+You can download the latest protobuf definition from telemetry-parser's [git repository](https://github.com/AdrianEddy/telemetry-parser/blob/master/src/gyroflow/gyroflow.proto).
 
 ## Supported features
 
@@ -29,45 +27,13 @@ You can download the latest protobuf definition from telemetry-parser's git repo
 
 Typically the protobuf will be stored as binary data in a separate MP4 track of the video file. This makes it easy to read and write and it's the standard way to embed additional data in video files.
 
-**`TODO:`**` ``examples and screenshots`
+The data should be stored per-frame so that each video frame should have corresponding metadata in the metadata MP4 track.
 
-## Sample files
 
-**`TODO:`**` ``add sample files`
 
 ## Technical details
 
-Most fields in the **gyroflow.proto** have comments so the file should be self-explanatory. However, here are some additional details about more advanced features:
-
-### Frame capture pipeline
-
-**`TODO:`**` ``diagram and description`
-
-**`TODO:`**` ``timestamp_offset_us`
-
-### Lens OIS
-
-**`TODO:`**` ``diagram with the typical design and the values we can use`
-
-### IBIS
-
-**`TODO:`**` ``diagram with the typical design and the values we can use`
-
-### EIS
-
-**`TODO:`**` ``possible types and diagrams with examples`
-
-#### Quaternion-based EIS
-
-**`TODO:`**` ``add info`
-
-#### Mesh warp-based EIS
-
-**`TODO:`**` ``add info`
-
-#### 4x4 matrix based EIS
-
-**`TODO:`**` ``add info`
+Most fields in the **gyroflow.proto** have comments so the file should be self-explanatory.&#x20;
 
 
 
