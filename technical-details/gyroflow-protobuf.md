@@ -245,7 +245,110 @@ A standard 16-float row-major matrix representing an affine/perspective 3D trans
 
 ***
 
-## 8. Other
+### 8. JSONL - the text representation
+
+Everything above describes the binary protobuf embedded in an MP4 track. The exact same messages can also be written as **JSONL**: one `Main` message per line, each encoded with the protobuf **proto3 canonical JSON mapping**.
+
+The two representations are interchangeable and carry identical data. JSONL exists because writing an MP4 metadata track requires a muxer, while writing a text file does not - so it's a practical output for camera firmware, converters and test rigs, and it can be inspected in any text editor.
+
+Use the `.jsonl` file extension.
+
+#### Format rules
+
+1. One complete `Main` message per line. No pretty-printing - a message may not span multiple lines.
+2. The first line carries the `Header`, either together with the first `FrameMetadata` (mirroring the binary form) or on a line of its own. All subsequent lines contain only `FrameMetadata`.
+3. Lines are in playback order, one per video frame.
+4. Blank lines are ignored, and a UTF-8 BOM at the start of the file is tolerated.
+
+#### Encoding
+
+Any standard protobuf JSON serializer produces the right output - `google.protobuf.util.JsonFormat` (Java), `protojson` (Go), `protobuf.js`, `prost-reflect` (Rust). The mapping means:
+
+* Field names are lowerCamelCase: `startTimestampUs`. The original proto spelling (`start_timestamp_us`) is also accepted.
+* Enums are their declared name: `"frameReadoutDirection": "TopToBottom"`. Integers are accepted too.
+* `oneof` variants are flattened into the containing message: the distortion model appears directly in the `LensData` object as `"genericPolynomial": { ... }`, not nested under `distortion`.
+* Fields holding the proto3 default value are omitted entirely.
+
+{% hint style="warning" %}
+One deviation from the canonical mapping: numbers must be written as JSON numbers, not as quoted strings. The mapping permits quoting, but this schema has no 64-bit integer fields - the case quoting exists for - so the reader treats a quoted number as an error rather than guessing.
+{% endhint %}
+
+#### Timing
+
+There is no MP4 track to supply presentation times, so the reader reconstructs each frame's position on the video timeline from `frameNumber` and the clip frame rate. Producers should therefore set:
+
+* `frameNumber` on every frame, with the first frame of the clip set to `1`, and
+* one of `fileFrameRate` / `recordFrameRate` / `sensorFrameRate` in `ClipMetadata`.
+
+If no frame rate is present the reader falls back to deriving the timeline from `startTimestampUs` alone, which assumes a constant frame rate. The per-frame difference between `startTimestampUs` and the reconstructed timeline is preserved either way, so camera-clock jitter is not lost.
+
+#### Example
+
+The first line of a clip, abbreviated (real files have every IMU sample and one line per frame):
+
+{% code title="telemetry.jsonl" %}
+```json
+{"magicString":"GyroflowProtobuf","protocolVersion":1,"header":{"camera":{"cameraBrand":"Sony","cameraModel":"ILCE-7SM3","pixelPitchXNm":8400,"pixelPitchYNm":8400,"sensorPixelWidth":4240,"sensorPixelHeight":2392,"imuOrientation":"YXz"},"clip":{"frameWidth":1920,"frameHeight":1080,"durationUs":18518500.0,"recordFrameRate":59.94006,"sensorFrameRate":59.94006,"fileFrameRate":59.94006,"imuSampleRate":2000,"colorProfile":"CINE4 of EX1/EX3","pixelAspectRatio":1.0,"frameReadoutTimeUs":8852.0,"frameReadoutDirection":"TopToBottom"}},"frame":{"startTimestampUs":17269.0,"endTimestampUs":26121.0,"frameNumber":1,"iso":6400,"exposureTimeUs":227.0,"shutterSpeedNumerator":1,"shutterSpeedDenominator":4197,"cropX":1.0,"cropY":4.0,"cropWidth":4237.0,"cropHeight":2383.0,"lens":[{"cameraIntrinsicMatrix":[3776.2568,0.0,960.0,0.0,3776.752,540.0,0.0,0.0,1.0],"focalLengthMm":70.0,"fNumber":4.9948263,"focusDistanceMm":7570.0,"genericPolynomial":{"coefficients":[1.0135272,-0.8073628,20.804943]}}],"imu":[{"sampleTimestampUs":-3500.0,"gyroscopeX":0.96183205,"gyroscopeY":-3.8473282,"gyroscopeZ":-0.16793893,"accelerometerX":0.50517654,"accelerometerY":9.879673,"accelerometerZ":-0.59735334},{"sampleTimestampUs":-3000.0,"gyroscopeX":1.1755725,"gyroscopeY":-3.7709923,"gyroscopeZ":-0.24427481,"accelerometerX":0.50397944,"accelerometerY":9.88087,"accelerometerZ":-0.59974754}],"ibis":[{"sampleTimestampUs":21084.0,"shiftXNm":-1000.0,"shiftYNm":0.0,"rollAngleDegrees":-0.001}]}}
+```
+{% endcode %}
+
+Formatted for reading, the same message looks like this:
+
+```json
+{
+  "magicString": "GyroflowProtobuf",
+  "protocolVersion": 1,
+  "header": {
+    "camera": { "cameraBrand": "Sony", "cameraModel": "ILCE-7SM3", "imuOrientation": "YXz", ... },
+    "clip":   { "frameWidth": 1920, "frameHeight": 1080, "recordFrameRate": 59.94006,
+                "imuSampleRate": 2000, "frameReadoutTimeUs": 8852.0,
+                "frameReadoutDirection": "TopToBottom", ... }
+  },
+  "frame": {
+    "startTimestampUs": 17269.0,
+    "endTimestampUs": 26121.0,
+    "frameNumber": 1,
+    "lens": [ { "focalLengthMm": 70.0, "genericPolynomial": { "coefficients": [ ... ] }, ... } ],
+    "imu":  [ { "sampleTimestampUs": -3500.0, "gyroscopeX": 0.96183205, ... }, ... ],
+    "ibis": [ { "sampleTimestampUs": 21084.0, "shiftXNm": -1000.0, ... } ]
+  }
+}
+```
+
+#### Sidecar files
+
+A `.jsonl` file placed next to the video and named after it is loaded automatically, the same way `.gcsv` sidecars are:
+
+```
+MyClip.mp4
+MyClip.jsonl
+```
+
+Gyroflow reads the sidecar when the video itself carries no embedded telemetry. It can also be loaded manually at any time from **Motion data** → the file picker.
+
+#### Tools
+
+The [telemetry-parser](https://github.com/AdrianEddy/telemetry-parser) repository contains command-line tools for working with both representations, under `bin/`:
+
+<table><thead><tr><th width="270">Tool</th><th>Purpose</th></tr></thead><tbody><tr><td><code>gyroflow_proto_convert</code></td><td>Converts between the representations: binary ↔ JSONL, and extracts either one out of an MP4's metadata track.</td></tr><tr><td><code>gyroflow_proto_inject</code></td><td>Muxes telemetry, given in either representation, into an MP4 as a metadata track. The video is stream-copied, nothing is re-encoded.</td></tr></tbody></table>
+
+```bash
+# Extract the telemetry track of an MP4 to JSONL
+gyroflow_proto_convert MyClip.mp4 -o MyClip.jsonl
+
+# Convert JSONL to per-frame binary protobuf files, and back
+gyroflow_proto_convert MyClip.jsonl -o frames_dir
+gyroflow_proto_convert frames_dir -o MyClip.jsonl
+
+# Mux telemetry into a video as a metadata track
+gyroflow_proto_inject MyClip.jsonl -v MyClip.mp4 -o MyClip_with_telemetry.mp4
+```
+
+These are a practical way to validate a firmware implementation: write JSONL from the camera, inject it into the matching video, and check that Gyroflow stabilizes the result correctly.
+
+***
+
+## 9. Other
 
 If your camera has any specific needs, we're open to extend the protobuf to include any additional fields or features.
 
