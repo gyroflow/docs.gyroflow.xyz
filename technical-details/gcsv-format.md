@@ -2,11 +2,11 @@
 description: .gcsv gyro log format
 ---
 
-# 🗃 GCSV format
+# 🗃️ GCSV Format
 
 What follows is a text-based gyro log format that can be implemented in custom hardware/firmware called `.gcsv` (short for gyro csv or Gyroflow csv). As a text-based format this is meant to be easily implementable and inspectable (compatible with standard CSV reading software) at the cost of space efficiency.
 
-Firstly, for a video file called `videofilename.mp4`, the corresponding gyro log file is `videofilename.gcsv`, this is a case of the `.gcsv` acting as [sidecar files](https://en.wikipedia.org/wiki/Sidecar\_file). This allows for automatic log detection.
+Firstly, for a video file called `videofilename.mp4`, the corresponding gyro log file is `videofilename.gcsv`, this is a case of the `.gcsv` acting as [sidecar files](https://en.wikipedia.org/wiki/Sidecar_file). This allows for automatic log detection.
 
 The `.gcsv` file contains information about the gyro orientation, scaling, and a unique identifier. The following is an example of a .gcsv file from a logger supporting logging of gyro and accelerometer:
 
@@ -94,7 +94,7 @@ The following are all optional fields for the metadata block, but developers sho
 * `timestamp` is the UNIX timestamp when logging began.
 * `vendor` can contain the vendor or developer
 * `videofilename` is the name of the corresponding video file. Normally the `.gcsv` file name already matches, but this insures the information is kept if the filename changes.
-* `lensprofile` is the unique name of the lens preset and vendor folder. If it matches a lens profile in the [database](https://github.com/gyroflow/gyroflow/tree/master/resources/camera\_presets) it is automatically selected during loading.
+* `lensprofile` is the unique name of the lens preset and vendor folder. If it matches a lens profile in the [database](https://github.com/gyroflow/lens_profiles) it is automatically selected during loading.
 * `lens_info` is additional information about the lens/field of view not available in the metadata. This could be `wide`, `normal`, `narrow` for different FOV settings, `linear` for lens distortion correction. Most relevant for action cameras with different crop settings.
 * `frame_readout_time` is the time in milliseconds it takes to capture a full video frame using rolling shutter. This is used for rolling shutter correction.
 * `frame_readout_direction` is the direction of the readout. Most cameras with rolling shutter capture the top of the frame first. Note that Gyroflow currently only supports correcting 0 and 1.
