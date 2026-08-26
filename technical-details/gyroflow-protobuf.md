@@ -19,9 +19,10 @@ You can download the latest protobuf definition from telemetry-parser's [git rep
 * Frame capture metadata - ISO, shutter speed, white balance, etc.
 * Raw IMU samples - gyroscope, accelerometer, magnetometer readings
 * Quaternions - final camera orientation after sensor fusion
-* Lens OIS data - detailed information about lens OIS movements so we can stabilization when Lens OIS was enabled
+* Lens OIS data - detailed information about lens OIS movements, so we can support stabilization when Lens OIS was enabled
 * IBIS data - detailed information about the in-body image stabilization, so we can support stabilization when IBIS was enabled
 * EIS data - if the camera contains any form of electronic stabilization, the protobuf can contain what exactly it did to the image so we can account for it.
+* GPS / GNSS samples - position, altitude, speed and heading, with per-sample fix quality and accuracy estimates
 
 ***
 
@@ -79,7 +80,7 @@ The `Header` message acts as the foundational context for the entire video clip.
 
 * `CameraMetadata`: This defines the physical hardware used to capture the footage.
   * **Identification**: Fields like `camera_brand`, `camera_model`, `lens_brand`, and `lens_model` help identify the exact gear setup.
-  * **Sensor & Optics**: Fields like `sensor_pixel_width`, `sensor_pixel_height`, and `pixel_pitch_nm` define the physical characteristics of the sensor. The `lens_profile` field can be used to embed the lens profile, or the lens distortion metadata can be stored directly using fields in the `LensData`.
+  * **Sensor & Optics**: Fields like `sensor_pixel_width`, `sensor_pixel_height`, `pixel_pitch_x_nm` and `pixel_pitch_y_nm` define the physical characteristics of the sensor. The `lens_profile` field can be used to embed the lens profile, or the lens distortion metadata can be stored directly using fields in the `LensData`.
   * **Orientation**: `imu_orientation` and the optional `imu_rotation`/`quats_rotation` quaternions allow you to define base offsets for the sensor data, ensuring the software interprets the XYZ axes correctly.
 * `ClipMetadata`: This defines the specific parameters of the video file itself.
   * **Dimensions & Timing**: Standard video properties like `frame_width`, `frame_height`, and `duration_us`.
@@ -101,7 +102,7 @@ It's crucial to include accurate timestamps for both the sensor readouts and IMU
   * It also embeds mathematical distortion models and their corresponding `distortion_coefficients` and `camera_intrinsic_matrix` to accurately map lens warping at that specific moment in time.
 * **Motion Data**:
   * `IMUData`: This is the core raw telemetry. It contains arrays of gyroscope (rotation in degrees/sec) and accelerometer (acceleration in m/s²) readings, alongside precise `sample_timestamp_us` markers for each sample.
-  * `QuaternionData`: If the camera performs its own sensor fusion, this field provides the calculated orientation (W, X, Y, Z angles) mapped to a timestamp.
+  * `QuaternionData`: If the camera performs its own sensor fusion, this field provides the calculated orientation as a Hamilton unit quaternion (the `w`, `x`, `y`, `z` components) mapped to a timestamp.
 
 ***
 
@@ -113,8 +114,12 @@ Rolling shutter occurs because CMOS sensors read pixels row-by-row rather than i
 
 Gyroflow requires timestamps to be strictly linked to the internal camera clock, down to the microsecond (`_us`).
 
-* `start_timestamp_us`: The exact moment the first row of the crop area is exposed/read.
-* `end_timestamp_us`: The exact moment the last row of the crop area is exposed/read.
+* `start_timestamp_us`: The readout instant of the **first-read** row of the crop area - the moment that row finished integrating and was latched out by the readout chain. It is _not_ the moment the row started exposing, and _not_ the midpoint of its exposure. The exposure midpoint is derived by subtracting `exposure_time_us / 2`.
+* `end_timestamp_us`: The readout instant of the **last-read** row of the crop area, under the same convention.
+
+Which row counts as "first-read" follows `frame_readout_direction`: `TopToBottom` → the top row, `BottomToTop` → the bottom row, `LeftToRight` → the left column, `RightToLeft` → the right column. Producers whose hardware reports a different physical event (start of integration, or the exposure midpoint) must shift by ±`exposure_time_us / 2` before writing these fields.
+
+These two timestamps are authoritative for per-row interpolation. `frame_readout_time_us` is a `float` helper while the timestamps are `double`s measured directly on the camera clock, so derive per-row time by interpolating between `start_timestamp_us` and `end_timestamp_us` rather than from `start + frame_readout_time_us`.
 
 The `frame_readout_time_us` in `ClipMetadata` must represent the readout time of the _captured crop_ (not the whole physical sensor, unless reading the whole sensor).
 
@@ -125,7 +130,9 @@ TODO: diagram
 ```
 
 {% hint style="info" %}
-Gyroflow does not use IMU data outside of the captured pixels. The `IMUData` array provided in `FrameMetadata` can include all the IMU samples (even outside of the capture window), but you have to make sure the timestamps of the IMU samples and sensor the readouts are in sync, so Gyroflow can skip not needed samples.
+The `IMUData` array in `FrameMetadata` may include samples from outside that frame's capture window, and adjacent frames may repeat samples - the reader keys every sample by its timestamp, so overlap is harmless and duplicates collapse. What matters is that the IMU sample timestamps and the sensor readout timestamps come from the same clock: the per-row correction looks up the IMU trajectory at the interpolated row time, so a mismatch shifts the entire correction.
+
+Note that every sample you provide is ingested and used - for orientation integration and for smoothing across the whole clip - not only the ones falling inside a frame's readout window.
 {% endhint %}
 
 ***
@@ -136,29 +143,44 @@ To accurately stabilize a video, Gyroflow needs to undistort the image before ap
 
 #### Standard Models
 
-* [OpenCV Fisheye model](https://docs.opencv.org/4.13.0/db/d58/group__calib3d__fisheye.html): Default model used in gyroflow. It also works for non-fisheye lenses. Uses 4 coefficients (`p1, p2, p3, p4`)
-* [OpenCV Standard model](https://docs.opencv.org/4.13.0/d9/d0c/group__calib3d.html): Classic polynomial radial/tangential models (`k1,k2,p1,p2,k3,k4,k5,k6`).
-* [Poly3 / Poly5 / PTLens](https://lensfun.github.io/calibration-tutorial/lens-distortion.html): Lensfun models.
+* [OpenCV Fisheye model](https://docs.opencv.org/4.13.0/db/d58/group__calib3d__fisheye.html): Default model used in gyroflow. It also works for non-fisheye lenses. Uses exactly 4 coefficients (`k1, k2, k3, k4`).
+* [OpenCV Standard model](https://docs.opencv.org/4.13.0/d9/d0c/group__calib3d.html): Classic polynomial radial/tangential model. Variable length, following OpenCV's own conventions - 4 (`k1,k2,p1,p2`), 5 (`+k3`), 8 (`+k4,k5,k6`), 12 (`+s1..s4`, thin prism) or 14 (`+tx,ty`, tilt) coefficients.
+* [Poly3 / Poly5 / PTLens](https://lensfun.github.io/calibration-tutorial/lens-distortion.html): Lensfun models. 1, 2 and 3 coefficients respectively.
+* `NoDistortion`: pinhole (rectilinear) projection - the encoded pixels are already linearized so that $$r = f \cdot \tan(\theta)$$. Producers that fully correct lens distortion in-camera should emit this rather than fitting a polynomial to the result. If the in-camera correction is only _partial_, refit `GenericPolynomial` against the post-correction projection instead.
 
 #### Generic Polynomial
 
-For manufacturers using complex custom glass mapping, the `GenericPolynomial` model calculates physical distortion offsets.
+For manufacturers using complex custom glass mapping, the `GenericPolynomial` model maps the ray angle $$\theta$$ from the optical axis to a **dimensionless** normalized projected radius:
 
-Math implementation:
+$$r_{normalized} = \sum_i c_i \cdot \theta^{i+1} = c_0 \cdot \theta + c_1 \cdot \theta^2 + c_2 \cdot \theta^3 + \dots$$
 
-Let $$(X, Y)$$ be normalized image coordinates.
+`coefficients[i]` is the coefficient of $$\theta^{i+1}$$, so index 0 is the linear term. Both odd and even powers are allowed - that is the only structural difference from OpenCV Fisheye, which restricts itself to $$\theta^3, \theta^5, \theta^7, \theta^9$$ with an implicit leading coefficient of 1.0 (so OpenCV Fisheye is expressible here as `[1, 0, k1, 0, k2, 0, k3, 0, k4]`). Gyroflow evaluates up to 12 terms; report only as many as your calibration actually fitted, and do not pad with trailing zeros.
+
+Math implementation, for a point $$(X, Y)$$ in normalized image coordinates:
 
 1. Radius: $$r = \sqrt{X^2 + Y^2}$$
 2. Angle: $$\theta = \arctan(r)$$
-3.  Distortion calculation using polynomial coefficients ($$k_0$$ to $$k_5$$):
+3.  Polynomial evaluation:
 
-    $$\theta_d = \theta \cdot k_0 + \theta^2 \cdot k_1 + \theta^3 \cdot k_2 + \theta^4 \cdot k_3 + \theta^5 \cdot k_4 + \theta^6 \cdot k_5$$
+    $$\theta_d = \theta \cdot c_0 + \theta^2 \cdot c_1 + \theta^3 \cdot c_2 + \dots + \theta^{12} \cdot c_{11}$$
 4. Scaling factor: $$scale = \theta_d / r$$ (if $$r=0$$, scale is $$1.0$$)
-5.  Apply post-scale parameters ($$k_6$$, $$k_7$$):
+5.  Apply the scale, then convert to pixels using the **per-axis** focal lengths and principal point from `camera_intrinsic_matrix`. Scaling each axis independently is what handles non-square pixels and anamorphic cases where $$f_x \neq f_y$$:
 
-    $$X_{distorted} = X \cdot scale \cdot k_6$$
+    $$u = X \cdot scale \cdot f_x + c_x$$
 
-    $$Y_{distorted} = Y \cdot scale \cdot k_7$$
+    $$v = Y \cdot scale \cdot f_y + c_y$$
+
+There is no separate post-scale coefficient pair - an earlier revision of this model carried one, and it has been removed.
+
+Inverting the model ($$r_{normalized} \rightarrow \theta$$) requires numerical iteration; Newton's method on the polynomial converges in under 10 iterations for any physically reasonable lens.
+
+**Normalization requirements.** This model uses strict semantics:
+
+* `focal_length_mm` MUST be set on the parent `LensData` entry - the coefficients are normalized assuming a specific physical focal length.
+* The polynomial MUST be normalized so that $$c_0 \approx 1.0$$ for a paraxial ray. If your calibration produces coefficients in meters/radian^n, divide them all by the focal length in meters before writing them here. Consumers may reject a $$c_0$$ outside roughly $$[0.8, 1.2]$$ as malformed.
+* Reference projections under this normalization: equidistant fisheye $$r = \theta$$ gives `[1, 0, 0, ...]`; rectilinear $$r = \tan(\theta)$$ gives `[1, 0, 1/3, 0, 2/15, ...]`; stereographic $$r = 2\tan(\theta/2)$$ gives `[1, 0, 1/12, 0, 1/120, ...]`.
+
+The coefficients describe the projection of the **encoded pixels as they appear in the recorded image**, not the raw lens optics. If the camera applies any in-camera correction, geometric crop or desqueeze between sensor readout and encoding, the polynomial must be refit against the resulting projection. If it linearizes fully to pinhole, emit `NoDistortion` instead.
 
 Intrinsic Matrix:
 
@@ -176,9 +198,26 @@ The protobuf requires a row-major 3x3 intrinsic matrix. Usually defined as:
 
 Optical stabilization physically shifts a floating lens element to counteract camera shake. Because the glass moves independently of the camera body, the IMU (which is rigidly attached to the body) records rotation that the _sensor didn't actually see_.
 
-By supplying `LensOISData` (the X/Y shift of the optical element in nanometers at specific timestamps), Gyroflow mathematically calculates the exact optical deviation angle. It then subtracts the OIS movement from the IMU quaternion data to establish the absolute trajectory of the optical path before applying its own digital stabilization.
+`LensOISData` reports the **effective displacement of the image content on the sensor surface**, in nanometers, at specific timestamps - _not_ the mechanical position of the IS lens group. If your IS group has an image-plane magnification β ≠ 1, multiply the actuator displacement by β before writing it here, so the single pixel-conversion formula below applies regardless of lens design.
 
-The sampling rate of OIS data can be much lower than the IMU data, because it's a physical element, it will move slowly. Gyroflow will interpolate any gaps. Typically 3-10 samples of OIS data per frame should be enough.
+Gyroflow does not fold this into the IMU or quaternion data. It converts the shift to pixels:
+
+```
+shift_px_x = shift_x_nm * frame_width  / (crop_width  * pixel_pitch_x_nm)
+shift_px_y = shift_y_nm * frame_height / (crop_height * pixel_pitch_y_nm)
+```
+
+and applies it as a per-row offset in the image plane while sampling the source frame:
+
+```
+uv_source = uv_output + ois_shift_px + ibis_shift_px
+```
+
+The IMU trajectory is left untouched. The offset simply cancels the movement the lens already performed, so Gyroflow's own digital stabilization doesn't correct it a second time.
+
+**Sign convention:** the lens group moves the image, so report what the image did. If the image content shifted by +N nm on the sensor, write +N. Axes are sensor-native - +X right, +Y down, origin at the top-left of the sensor active area - and they do _not_ rotate with `rotation_degrees`.
+
+The sampling rate of OIS data can be much lower than the IMU data, because it's a physical element, it will move slowly. Gyroflow will interpolate any gaps. Typically 4-8 samples per frame is enough, plus a guard sample or two on each side for the spline tangents. The samples should at minimum cover the frame's row-exposure-midpoint span, i.e. `[start_timestamp_us - exposure_time_us/2, end_timestamp_us - exposure_time_us/2]` - a single sample per frame degenerates to per-frame correction, with no rolling shutter compensation.
 
 ```
   TODO: diagram
@@ -192,18 +231,22 @@ IBIS mechanically shifts and rolls the physical image sensor on its X, Y, and Ro
 
 How it works in the Protobuf:
 
-`IBISData` requires the exact timestamp, `shift_x`, `shift_y` (in nanometers), and `roll_angle_degrees`.
+`IBISData` carries `shift_x_nm`, `shift_y_nm` and `roll_angle_degrees`, plus `sample_timestamp_us` - which may be omitted only in the degenerate single-sample-per-frame case, and is required on every sample otherwise.
+
+**Sign convention:** IBIS moves the _sensor_, but like `LensOISData` it reports the displacement of the **image content**, which is the negative of the sensor's mechanical displacement. If the sensor moved +N nm, write -N. That keeps one consumer formula valid for both stabilizers.
 
 Since the sensor is physically moving inside the camera body during exposure, Gyroflow needs this data for the same reason it needs OIS: the IMU records the camera body moving, but the pixels being recorded are shifting within the body.
 
-The sampling rate of IBIS can be much lower than the IMU data, because it's a physical element, it will move slowly. Gyroflow will interpolate any gaps. Typically 3-10 samples of IBIS data per frame should be enough.
+The sampling rate of IBIS can be much lower than the IMU data, because it's a physical element, it will move slowly. Gyroflow will interpolate any gaps. Same cadence and coverage requirement as OIS above: typically 4-8 samples per frame plus guards, spanning the frame's row-exposure-midpoint range.
 
 #### IBIS interaction with IMU
 
 If IBIS is active, Gyroflow maps the mechanical sensor position at the exact `row_readout_time`.
 
-* Sensor X/Y Shift: Converted from nanometers to pixel offsets based on `pixel_pitch_nm`.
-* Sensor Roll: Added directly to the Z-axis rotation matrix before inverse-projection.
+* Sensor X/Y Shift: converted from nanometers to pixel offsets using the pixel pitch **and** the per-frame crop - `shift_x_nm * frame_width / (crop_width * pixel_pitch_x_nm)`, and likewise for Y - then added to the sampling coordinate, exactly like the OIS shift.
+* Sensor Roll: applied as a 2D rotation of the sampling coordinate in the image plane, after the inverse projection - _not_ as a Z rotation folded into the 3x3 orientation matrix. Positive = counterclockwise viewed from the lens toward the sensor, pivoting about the principal point.
+
+The IBIS mechanism has exactly three mechanical degrees of freedom - translation X, translation Y, and roll about the optical axis. The sensor does not pitch or yaw, since physically tilting it would defocus the image. So the X/Y pair captures all linear corrective output, including the correction for camera yaw/pitch shake, which manifests at the sensor as translation by approximately $$f \cdot \tan(\theta)$$.
 
 If IBIS completely countered a bump, Gyroflow relies on the `IBISData` to know that the frame is already stable at that specific timestamp, preventing Gyroflow from digitally correcting a bump that IBIS already fixed (preventing double-correction artifacts).
 
@@ -233,15 +276,28 @@ This method is used by GoPro (internal Hypersmooth)
 
 #### B. MESH\_WARP&#x20;
 
-The camera divides the video frame into a grid (`grid_width` x `grid_height`). The `values` array contains a list of floats representing how each grid intersection was displaced (X, Y) relative to the original sensor read.
+The camera describes its warp as a `grid_width` x `grid_height` grid of anchors, uniformly spaced over a `region_width` x `region_height` rectangle in **sensor-pixel coordinates relative to the per-frame `crop_x` / `crop_y` origin** - not over the encoded video frame:
 
-This allows to encode arbitrary internal frame distortions, including internal rolling shutter correction, lens distortion correction, and crop movements natively done by the camera. Gyroflow reads the displacement mesh, reverses the deformation per-pixel, and maps the original pixels to its own computed stable mesh.
+```
+anchor(i, j) = ( i * region_width  / (grid_width  - 1),
+                 j * region_height / (grid_height - 1) )
+```
+
+For each anchor in row-major order (index `k = j * grid_width + i`), the pair `(warped_xy[2k], warped_xy[2k+1])` gives the **absolute position the camera mapped that anchor to** - not a displacement. Typically that is the anchor itself plus a sub-pixel to few-pixel correction. Total length is `2 * grid_width * grid_height`.
+
+The mesh is the **forward** direction: it describes what the camera did, mapping sensor-native positions to encoded-frame positions. Gyroflow interpolates between anchors (cubic spline recommended, bilinear acceptable for low-precision use) and numerically inverts the result to map encoded positions back to sensor positions for sampling.
+
+This allows arbitrary internal frame distortions to be encoded, including internal rolling shutter correction, lens distortion correction, and crop movements natively done by the camera.
 
 This method is used by Sony (Active mode)
 
 #### C. MATRIX\_4X4
 
 A standard 16-float row-major matrix representing an affine/perspective 3D transform applied by the camera to the frame. Works similarly to QUATERNION but allows the camera to pass internal scaling and translations directly.
+
+{% hint style="warning" %}
+This variant is preliminary. It is defined in the schema, but there is no grounded producer yet and Gyroflow currently ignores it on read. Use QUATERNION or MESH\_WARP unless you've talked to us first.
+{% endhint %}
 
 ***
 
@@ -267,10 +323,10 @@ Any standard protobuf JSON serializer produces the right output - `google.protob
 * Field names are lowerCamelCase: `startTimestampUs`. The original proto spelling (`start_timestamp_us`) is also accepted.
 * Enums are their declared name: `"frameReadoutDirection": "TopToBottom"`. Integers are accepted too.
 * `oneof` variants are flattened into the containing message: the distortion model appears directly in the `LensData` object as `"genericPolynomial": { ... }`, not nested under `distortion`.
-* Fields holding the proto3 default value are omitted entirely.
+* Fields holding the proto3 default value are omitted entirely. The reader treats a missing field and an explicitly written default identically, so a producer that writes them out instead is fine too. (Gyroflow's own writer drops nulls, empty arrays and empty strings, but keeps numeric zeros and `false`.)
 
 {% hint style="warning" %}
-One deviation from the canonical mapping: numbers must be written as JSON numbers, not as quoted strings. The mapping permits quoting, but this schema has no 64-bit integer fields - the case quoting exists for - so the reader treats a quoted number as an error rather than guessing.
+One deviation from the canonical mapping: numbers must be written as JSON numbers, not as quoted strings. The mapping permits quoting, but this schema has no 64-bit integer fields - the case quoting exists for - so the reader refuses to guess. A line containing a quoted number fails to deserialize: that message is logged and skipped, costing you that one frame, and the rest of the stream is read normally.
 {% endhint %}
 
 #### Timing
@@ -330,7 +386,7 @@ Gyroflow reads the sidecar when the video itself carries no embedded telemetry. 
 
 The [telemetry-parser](https://github.com/AdrianEddy/telemetry-parser) repository contains command-line tools for working with both representations, under `bin/`:
 
-<table><thead><tr><th width="270">Tool</th><th>Purpose</th></tr></thead><tbody><tr><td><code>gyroflow_proto_convert</code></td><td>Converts between the representations: binary ↔ JSONL, and extracts either one out of an MP4's metadata track.</td></tr><tr><td><code>gyroflow_proto_inject</code></td><td>Muxes telemetry, given in either representation, into an MP4 as a metadata track. The video is stream-copied, nothing is re-encoded.</td></tr></tbody></table>
+<table><thead><tr><th width="270">Tool</th><th>Purpose</th></tr></thead><tbody><tr><td><code>gyroflow_proto_convert</code></td><td>Converts between the representations: binary ↔ JSONL, and extracts either one out of an MP4's metadata track.</td></tr><tr><td><code>gyroflow_proto_inject</code></td><td>Muxes telemetry, given in either representation, into an MP4 as a metadata track. The video stream is copied as-is, nothing is re-encoded. Note that audio is <em>not</em> carried over - the output holds the video plus the telemetry track only.</td></tr></tbody></table>
 
 ```bash
 # Extract the telemetry track of an MP4 to JSONL
@@ -348,7 +404,7 @@ These are a practical way to validate a firmware implementation: write JSONL fro
 
 ***
 
-## 9. Other
+### 9. Other
 
 If your camera has any specific needs, we're open to extend the protobuf to include any additional fields or features.
 
