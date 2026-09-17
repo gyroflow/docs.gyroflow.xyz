@@ -14,7 +14,7 @@ That list might not be exhaustive as Sony will probably add the motion data to a
 
 ## Supported modes
 
-Some recording modes will not store the motion data in files, for example Sony α7S III in 4k/120fps mode doesn't include the motion data.&#x20;
+Some recording modes will not store the motion data in files, for example Sony α7S III in 4k/120fps mode doesn't include the motion data.
 
 Currently Gyroflow supports reading most of the recorded metadata, which includes IBIS and OIS data. Therefore, you **can record with IBIS and OIS enabled.** Most newer or high-end lenses with OIS are supported, but there are some lenses where enabling OIS prevents proper stabilization, so check your setup first before enabling OIS. **Dynamic Active** mode is also not supported, but the regular **Active** is.
 
@@ -22,13 +22,11 @@ The best option is to use **Standard** stabilization in camera (if your model ha
 
 List of current issues with Sony metadata is [here](https://github.com/gyroflow/gyroflow/issues/849). If your file doesn't work properly, but does work in Catalyst Browse, submit it in that [GitHub issue](https://github.com/gyroflow/gyroflow/issues/849).
 
-
-
 ### Supported OSS Lenses
 
 The list of supported lenses with OSS enabled is available on the [Sony website](https://support.d-imaging.sony.co.jp/www/cscs/function/compatibility.php?fnc=1002\&area=gb\&lang=en\&ref=1). If the link ever stops working, here's the current list as of Oct 2025:
 
-<figure><img src="../../.gitbook/assets/lenslist.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/sony lenses.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Zoom lenses
 
