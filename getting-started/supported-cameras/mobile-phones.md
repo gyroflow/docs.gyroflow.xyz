@@ -7,6 +7,7 @@ You can also use your **iPhone** or **Android** phone to capture gyroscope data.
 * [Sensor Logger](https://apps.apple.com/us/app/sensor-logger/id1531582925)
 * [G-Field Recorder](https://apps.apple.com/at/app/g-field-recorder/id1154585693)
 * [Gyro](https://apps.apple.com/us/app/gyro-record-device-motion-data/id1161532981)
+* [GyLog](https://apps.apple.com/app/id6759689665)
 
 ### Android
 
@@ -15,6 +16,7 @@ You can also use your **iPhone** or **Android** phone to capture gyroscope data.
 * [Open Camera Sensors](https://github.com/MobileRoboticsSkoltech/OpenCamera-Sensors)
 * [MotionCam Pro](https://play.google.com/store/apps/details?id=com.motioncam.pro)
 * [Film it](https://play.google.com/store/apps/details?id=com.software.illusions.unlimited.filmit\&hl=en_US)
+* [GyLog](https://play.google.com/store/apps/details?id=com.kumoinc.gylogrecorder)
 
 ### Using as a camera
 
