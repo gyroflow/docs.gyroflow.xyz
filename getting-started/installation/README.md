@@ -90,6 +90,24 @@ GPU specific packages:
 `.AppImage`is also available, but it's recommended to run the `.tar.gz` package
 {% endhint %}
 
+## Install with Flatpak
+
+Gyroflow is also available as a Flatpak from [FlatPark](https://flatpark.org/apps/xyz.gyroflow.Gyroflow). It installs the official `Gyroflow-linux64.tar.gz` unmodified, and FlatPark updates it for each new Gyroflow release, so `flatpak update` keeps it up to date. It runs on any distro with Flatpak, and you don't need to install the packages listed above.
+
+```
+flatpak remote-add --if-not-exists flatpark https://dl.flatpark.org/flatpark.flatpakrepo
+flatpak install flatpark xyz.gyroflow.Gyroflow
+```
+
+* The Flatpak has access to your `Videos` folder and to removable drives (`/run/media` and `/media`). Gyroflow saves the render next to the source clip by default, so if your footage is stored anywhere else, give it access to your home folder with `flatpak override --user --filesystem=home xyz.gyroflow.Gyroflow`
+* Settings and your own lens profiles are stored in `~/.var/app/xyz.gyroflow.Gyroflow`
+* OpenCL isn't available inside the Flatpak, so GPU processing uses Vulkan
+* Video editor plugins aren't part of the Flatpak. Install them as described in [Video editor plugins](../../video-editor-plugins/general-plugin-workflow.md)
+
+{% hint style="info" %}
+The Flatpak package is maintained by FlatPark, not by the Gyroflow team. Report problems with the package itself at [github.com/flatpark/flatpark](https://github.com/flatpark/flatpark/issues).
+{% endhint %}
+
 
 
 ## Minimum system requirements
