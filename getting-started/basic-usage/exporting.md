@@ -8,7 +8,9 @@ description: >-
 
 ## Render range
 
-You can set the desired section of your video to be renderred by setting the Trim range on the timeline. You can use `[` and `]` buttons or `i` and `o` keys to set the start and end of the range you want to export.
+You can set the desired section of your video to be rendered by setting the Trim range on the timeline. You can use `[` and `]` buttons or `i` and `o` keys to set the start and end of the range you want to export.
+
+You can also add more trim ranges with `Ctrl+[` and `Ctrl+]` (or `Ctrl+I` and `Ctrl+O`), or by right-clicking on the timeline and choosing `Trim range -> Add new range`. They're exported as one video, or as separate videos with **Export trim ranges as separate videos** in `Export settings -> Advanced`.
 
 <figure><img src="../../.gitbook/assets/trim_range.png" alt=""><figcaption><p>Trim range</p></figcaption></figure>
 
@@ -18,15 +20,17 @@ You can enter the desired location and file name for the output file at the bott
 
 ## Export codec
 
-<table><thead><tr><th width="176">Codec</th><th>Description</th></tr></thead><tbody><tr><td><strong>H.264/AVC</strong></td><td>Most widely supported codec. It should work on all computers, mobile phones and on the web. Faster to render than H.265 but less efficient.<br><br>Hardware accelerated encoder supports only 8-bit files with this codec.</td></tr><tr><td><strong>H.265/HEVC</strong></td><td>Newer and more efficient codec than H.264/AVC. Requires more processing power to encode and to decode. If you have older hardware, it's possible HEVC file will be hard to playback. In this case choose H.264.<br>If your hardware supports it well, you can prefer it over H.264, as it delivers better quality at the same bitrate.<br><br>Supports 10-bit encoding with hardware (depending on the GPU).</td></tr><tr><td><strong>ProRes</strong></td><td>Professional video codec, especially good for working on the files later in a video editor (it's fast to decode). Good for maintaining maximum video quality. <br><br>Hardware acceleration for ProRes is available only on macOS with M1 Pro/Max/Ultra (but not M1 Air) and M2 chips (including M2 Air).</td></tr><tr><td><strong>DNxHD</strong></td><td>Similar to ProRes. No hardware acceleration is available.</td></tr><tr><td><strong>CineForm</strong></td><td>Similar to ProRes and DNxHD. No hardware acceleration is available.</td></tr><tr><td><strong>EXR sequence</strong></td><td>Image sequence in the <code>.exr</code> format. Data is stored as 32-bit float. Compression is lossless.</td></tr><tr><td><strong>PNG sequence</strong></td><td>Image sequence in the <code>.png</code> format. Data is stored either as 8-bit or 16-bit. Compression is lossless.</td></tr></tbody></table>
+<table><thead><tr><th width="176">Codec</th><th>Description</th></tr></thead><tbody><tr><td><strong>H.264/AVC</strong></td><td>Most widely supported codec. It should work on all computers, mobile phones and on the web. Faster to render than H.265 but less efficient.<br><br>Hardware accelerated encoder supports only 8-bit files with this codec. When you open a 10-bit video, Gyroflow switches to H.265 by default.</td></tr><tr><td><strong>H.265/HEVC</strong></td><td>Newer and more efficient codec than H.264/AVC. Requires more processing power to encode and to decode. If you have older hardware, it's possible HEVC file will be hard to playback. In this case choose H.264.<br>If your hardware supports it well, you can prefer it over H.264, as it delivers better quality at the same bitrate.<br><br>Supports 10-bit encoding with hardware (depending on the GPU).</td></tr><tr><td><strong>AV1</strong></td><td>Newer and more efficient than H.265/HEVC (available since Gyroflow 1.7.0).<br><br>It can only be encoded on the GPU, so it needs an NVIDIA GeForce RTX 40, AMD Radeon RX 7000, Intel Arc or newer GPU (Windows and Linux), or a phone that can encode AV1 (Android). It's not available on macOS and iOS. If your GPU can't encode AV1, Gyroflow tells you when you select it.</td></tr><tr><td><strong>ProRes</strong></td><td>Professional video codec, especially good for working on the files later in a video editor (it's fast to decode). Good for maintaining maximum video quality. <br><br>Hardware acceleration for ProRes is available only on macOS with M1 Pro/Max/Ultra (but not the base M1) and M2 or newer chips (including the base M2).</td></tr><tr><td><strong>DNxHD</strong></td><td>Similar to ProRes. No hardware acceleration is available.</td></tr><tr><td><strong>CineForm</strong></td><td>Similar to ProRes and DNxHD. No hardware acceleration is available.</td></tr><tr><td><strong>EXR sequence</strong></td><td>Image sequence in the <code>.exr</code> format. Data is stored as 32-bit float. Compression is lossless.</td></tr><tr><td><strong>PNG sequence</strong></td><td>Image sequence in the <code>.png</code> format. Data is stored either as 8-bit or 16-bit. Compression is lossless.</td></tr></tbody></table>
 
 ## Output size
 
 You can control the exported resolution here. If you want to output a different size or aspect ratio, you can enter it here.
 
+The settings icon next to the size opens the output size presets, grouped by aspect ratio. **Proportional** is the largest size of that aspect ratio that fits in the original video, and **Based on "Max zoom"** is that size reduced by the current maximum zoom, so the stabilized video isn't upscaled. You can change the list with **Edit sizes**.
+
 If you want to change the aspect ratio (e.g. 4:3 source rendered as 16:9 video), you can also do that here. The resulting resolution is the rectangle that the stabilized video can move around in. Therefore it also affects the stabilization, it's not a static crop. \
 \
-If you have a horizontal video and want to output 9:16 for social media, you can set 9:16 resolution here.  It's also common to keyframe the center offset (`Stabilization -> Zooming -> Advanced -> Zooming center offset`) and move the video right-left to keep the subject in frame.
+If you have a horizontal video and want to output 9:16 for social media, you can set 9:16 resolution here.  It's also common to keyframe the yaw of the additional rotation (`Stabilization -> Advanced -> Additional 3D rotation`) and move the video right-left to keep the subject in frame.
 
 ## Bitrate
 
@@ -47,7 +51,9 @@ For most use cases the difference will be negligible and enabling GPU encoding i
 
 ## Audio
 
-Audio can be exported as well, and it will be transcoded to AAC or PCM format.&#x20;
+Audio can be exported as well, and it will be transcoded to AAC or PCM format. You can choose the format in `Export settings -> Advanced -> Audio codec`.&#x20;
+
+Since Gyroflow 1.7.0, you can also choose **Copy** there, to keep the original audio without re-encoding it. If the output format can't store the original audio codec, AAC is used.
 
 ## Advanced
 

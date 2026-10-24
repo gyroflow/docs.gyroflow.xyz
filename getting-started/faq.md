@@ -5,7 +5,7 @@ description: Frequently Asked Questions
 # ❓ FAQ
 
 {% hint style="info" %}
-Most issues with settings can be solved by resetting them to defaults. Go to **Advanced** on bottom right and click <mark style="color:red;">**Reset all settings to defaults.**</mark>
+Most issues with settings can be solved by resetting them to defaults. Go to **Advanced** on bottom right and click <mark style="color:red;">**Reset all settings to default.**</mark>
 {% endhint %}
 
 ## Where can I ask questions?
@@ -31,7 +31,9 @@ Open the `Terminal.app` and enter the following command:
 {% tab title="Linux" %}
 Open Terminal and enter:
 
-`rm -f $HOME/.config/Gyroflow/settings.json`
+`rm -f $HOME/.local/share/Gyroflow/settings.json`
+
+With the Flatpak, the file is `~/.var/app/xyz.gyroflow.Gyroflow/data/Gyroflow/settings.json`.
 {% endtab %}
 {% endtabs %}
 
@@ -43,15 +45,15 @@ Support for codecs and modes varies greatly between GPU brands and models, for m
 
 If your computer is older than 2016, chances are H.265/HEVC will not be available, and if it's older than 2012, H.264 may also not be available.
 
-H.264 doesn't support 10-bit GPU encoding, and ProRes is accelerated only on M1/M2 macs.
+H.264 doesn't support 10-bit GPU encoding, and ProRes is accelerated only on Macs with M1 Pro/Max/Ultra, or M2 and newer.
 
-## I'm using O3 Air Unit and I have a lot of vibrations after stabilizing
+## I'm using O3/O4 Air Unit and I have a lot of vibrations after stabilizing
 
-Read more [**in the DJI section**](supported-cameras/dji.md#dji-o3-air-unit-vibration-issues).
+Try to reduce the vibrations in hardware first (e.g. soft mount the camera). If you can't, enable **Optical correction** in the Motion data panel and click **Analyze** (since Gyroflow 1.7.0). Read more [**in the DJI section**](supported-cameras/dji.md#dji-o3-o4-air-unit-vibration-issues).
 
 ## I see only black screen when stabilization is enabled.
 
-Most likely you have **Fixed camera** method selected in the Stabilization section. Change to **Default** or use **Advanced -> Reset all settings to defaults** (on the bottom right)**.**
+Most likely you have **Fixed camera** method selected in the Stabilization section. Change to **Default** or use **Advanced -> Reset all settings to default** (on the bottom right)**.**
 
 ## I'm getting a crash when trying to export and I'm using macOS with Intel processor
 

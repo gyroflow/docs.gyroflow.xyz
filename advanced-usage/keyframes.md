@@ -22,11 +22,21 @@ Then, go to a time in the video when you want the value to be different and just
 
 ### Keyframe easing
 
-You can right-click the keyframe point to enable or disable easing (it's enabled by default).
+You can right-click the keyframe point to change its easing:
+
+* **Smooth** - the value follows a smooth curve through the neighbouring keyframes, without overshooting, instead of slowing to a stop at each keyframe. Since Gyroflow 1.7.0, it's the default for new keyframes.
+* **Ease in** and/or **Ease out** - the value slows down when it arrives at the keyframe and/or when it leaves it.
+* With none of them checked, the value changes linearly.
 
 <figure><img src="../.gitbook/assets/keyframe_easing_menu.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../.gitbook/assets/keyframe_easing.png" alt=""><figcaption><p>Ease in + out vs. linear keyframe</p></figcaption></figure>
+
+{% hint style="warning" %}
+Projects with **Smooth** keyframes will load without any keyframes in Gyroflow 1.6.x and older.
+{% endhint %}
+
+You can jump to the previous or next keyframe with **Shift+Page Up** and **Shift+Page Down** (or **Shift+Left** and **Shift+Right**), or by Shift+clicking the previous/next frame buttons below the video.
 
 ### Removing/disabling keyframes
 
@@ -37,9 +47,12 @@ You can right-click the keyframe point to delete it, or to disable all keyframin
 * Smoothness
 * FOV
 * Zooming speed
-* Zooming center offset
+* Zoom limit
 * Horizon lock amount / roll correction
+* Horizon lock pitch angle (since Gyroflow 1.7.0)
 * Lens correction strength
+* Lens is under water
+* Additional 3D rotation
 * Max smoothness
 * Max smoothness at high velocity
 * Pitch/Roll/Yaw smoothness
@@ -53,6 +66,4 @@ You can right-click the keyframe point to delete it, or to disable all keyframin
 
 ## Caveat
 
-When keyframing zooming speed and the speed changes are significant, make sure to switch the zooming algorithm to **Envelope follower.**&#x20;
-
-There is a known bug with the **Gaussian filter** algorithm which may lead to black borders in view when keyframing zooming speed.
+The **Gaussian filter** zooming method may show black borders when the zooming speed is keyframed. When you enable keyframing of the zooming speed, Gyroflow switches the zooming method to **Envelope follower**, and shows a warning if you switch it back.

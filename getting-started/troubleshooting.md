@@ -77,5 +77,3 @@ If you see an error message like this:
 <figure><img src="../.gitbook/assets/existing-red-transcode.png" alt=""><figcaption></figcaption></figure>
 
 ...and you're working with RED `R3D` files, try deleting the `MOV` file that Gyroflow created next to the `R3D` file, and try again.
-
-##

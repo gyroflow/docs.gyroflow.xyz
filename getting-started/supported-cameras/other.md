@@ -1,5 +1,13 @@
 # Other Cameras
 
+## HOVERAir
+
+Since Gyroflow 1.7.0, Gyroflow reads the motion data that HOVERAir cameras record in the video file. Its timing isn't exact, so make sure the clip is synchronized, see [⌛ Synchronization](../basic-usage/synchronization.md).
+
+## Gyroflow Protobuf
+
+Cameras and apps can embed the motion data, lens and IBIS/OIS information in the video file, or in a .jsonl sidecar file, using the open [Gyroflow Protobuf](../../technical-details/gyroflow-protobuf.md) format. Gyroflow supports it since version 1.7.0.
+
 ## WitMotion
 
 Gyroflow supports motion data recorded with [WT901 ](https://www.wit-motion.com/BLE/52.html)device from WitMotion. While it works, users reported some inaccuracies when recording with faster sample rate, so that device is generally not recommended

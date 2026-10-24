@@ -6,9 +6,16 @@ description: Newer Canon mirrorless cameras are supported out of the box.
 
 ## Supported models
 
-<table><thead><tr><th width="289">Model</th><th width="174">Gyro data</th><th width="320">Lens profile</th></tr></thead><tbody><tr><td>EOS C50<br>EOS C80<br>EOS C400</td><td>✅</td><td>✅ Automatic <sup><sub>(see</sub></sup> <a href="canon.md#supported-lenses-for-automatic-lens-profile"><sup><sub>Supported Lenses</sub></sup></a><sup><sub>)</sub></sup></td></tr><tr><td>EOS R6 Mark II<br>EOS R6 Mark III</td><td>❌<br>✅</td><td>❌<br>⚠️ Manual <sup><sub>(see</sub></sup> <a href="../lens-calibration.md"><sup><sub>Lens Calibration</sub></sup></a><sup><sub>)</sub></sup></td></tr><tr><td>EOS R5<br>EOS R5 Mark II</td><td>❌<br>✅</td><td>❌<br>⚠️ Manual <sup><sub>(see</sub></sup> <a href="../lens-calibration.md"><sup><sub>Lens Calibration</sub></sup></a><sup><sub>)</sub></sup></td></tr></tbody></table>
+<table><thead><tr><th width="289">Model</th><th width="174">Gyro data</th><th width="320">Lens profile</th></tr></thead><tbody><tr><td>EOS C50<br>EOS C80<br>EOS C400</td><td>✅</td><td>✅ Automatic <sup><sub>(see</sub></sup> <a href="canon.md#supported-lenses-for-automatic-lens-profile"><sup><sub>Supported Lenses</sub></sup></a><sup><sub>)</sub></sup></td></tr><tr><td>EOS R6 Mark II<br>EOS R6 Mark III</td><td>❌<br>✅</td><td>❌<br>✅ Automatic <sup><sub>(see</sub></sup> <a href="canon.md#supported-lenses-for-automatic-lens-profile"><sup><sub>Supported Lenses</sub></sup></a><sup><sub>)</sub></sup></td></tr><tr><td>EOS R6 V</td><td>✅</td><td>✅ Automatic <sup><sub>(see</sub></sup> <a href="canon.md#supported-lenses-for-automatic-lens-profile"><sup><sub>Supported Lenses</sub></sup></a><sup><sub>)</sub></sup></td></tr><tr><td>EOS R5<br>EOS R5 Mark II</td><td>❌<br>✅</td><td>❌<br>✅ Automatic <sup><sub>(see</sub></sup> <a href="canon.md#supported-lenses-for-automatic-lens-profile"><sup><sub>Supported Lenses</sub></sup></a><sup><sub>)</sub></sup></td></tr></tbody></table>
 
 That list might not be exhaustive as Canon will probably add the motion data to all their new cameras.&#x20;
+
+With a supported lens, Gyroflow reads the motion data and the focal length of every frame from the clip, so no lens profile is needed and zooms are followed.
+
+## Supported formats
+
+* **MP4** and **MXF** files play in Gyroflow, and the motion data is read from the same file.
+* **Cinema RAW Light** (.crm) - Gyroflow can't play these files, but it can read their motion data. Open a playable copy of the clip (e.g. the proxy recorded by the camera, or a transcode) as the video, and then load the original **.crm** file in **Motion data -> Open file**.
 
 ## Supported modes
 
@@ -57,6 +64,8 @@ Make sure your camera and the lens are updated to latest firmware version.
 ## Zoom lenses
 
 Zoom lenses are supported automatically, and you can zoom in and out throughout the video, if your lens is on the list provided above.
+
+If you want to smooth out fast zooms, enable **Stabilize focal length** in the Stabilization panel. Learn more in [🔭 **Advanced usage -> Lens profiles**](../../advanced-usage/lens-profiles.md#zoom-lenses).
 
 ## My lens is not on that list
 

@@ -8,7 +8,7 @@ description: >-
 
 ## Supported models
 
-<table><thead><tr><th width="167">Model</th><th width="117">Gyro data</th><th width="126">Lens profile</th><th width="159">Synchronization</th><th>Remarks</th></tr></thead><tbody><tr><td>Hero 4 or older</td><td>❌</td><td>❌</td><td>❌</td><td></td></tr><tr><td>Hero 5 Black<br>Hero 5 Session</td><td>✅</td><td>✅ Official</td><td>❗Needed</td><td>❌ <a data-footnote-ref href="#user-content-fn-1">Bad on FPV drone</a><br><a data-footnote-ref href="#user-content-fn-2">🚧 Superview</a></td></tr><tr><td>Hero 6 Black</td><td>✅</td><td>✅ Official</td><td>❗Needed</td><td><a href="http://everythingfpv.com/how-to-downgrade-your-gopro-hero6-to-1-6/">Firmware v1.6</a><a data-footnote-ref href="#user-content-fn-3"> recommended.</a><br><a data-footnote-ref href="#user-content-fn-2">🚧 Superview</a></td></tr><tr><td>Hero 7 White<br>Hero 7 Silver</td><td>❌</td><td>❌</td><td>❌</td><td></td></tr><tr><td>Hero 7 Black</td><td>✅</td><td>✅ Official</td><td>❗Needed</td><td>❌ <a data-footnote-ref href="#user-content-fn-1">Bad on FPV drone</a><br><a data-footnote-ref href="#user-content-fn-4">❌ Hypersmooth<br></a><a data-footnote-ref href="#user-content-fn-2">🚧 Superview</a></td></tr><tr><td>Hero 8 Black<br>Hero 9 Black<br>Hero 10 Black</td><td>✅</td><td>✅ Official</td><td>✅ Not needed</td><td><a data-footnote-ref href="#user-content-fn-5">✅ Hypersmooth<br></a><a data-footnote-ref href="#user-content-fn-2">🚧 Superview</a></td></tr><tr><td>Hero 11 Black<br>Hero 11 Mini<br>Hero 12 Black<br>Hero 13 Black</td><td>✅</td><td>✅ Official</td><td>✅ Not needed</td><td><p><a data-footnote-ref href="#user-content-fn-5">✅ Hypersmooth</a></p><p>✅ Autoboost<br>✅ Superview<br>✅ Hyperview</p></td></tr></tbody></table>
+<table><thead><tr><th width="167">Model</th><th width="117">Gyro data</th><th width="126">Lens profile</th><th width="159">Synchronization</th><th>Remarks</th></tr></thead><tbody><tr><td>Hero 4 or older</td><td>❌</td><td>❌</td><td>❌</td><td></td></tr><tr><td>Hero 5 Black<br>Hero 5 Session</td><td>✅</td><td>✅ Official</td><td>❗Needed</td><td>❌ <a data-footnote-ref href="#user-content-fn-1">Bad on FPV drone</a><br><a data-footnote-ref href="#user-content-fn-2">🚧 Superview</a></td></tr><tr><td>Hero 6 Black</td><td>✅</td><td>✅ Official</td><td>❗Needed</td><td><a href="http://everythingfpv.com/how-to-downgrade-your-gopro-hero6-to-1-6/">Firmware v1.6</a><a data-footnote-ref href="#user-content-fn-3"> recommended.</a><br><a data-footnote-ref href="#user-content-fn-2">🚧 Superview</a></td></tr><tr><td>Hero 7 White<br>Hero 7 Silver</td><td>❌</td><td>❌</td><td>❌</td><td></td></tr><tr><td>Hero 7 Black</td><td>✅</td><td>✅ Official</td><td>❗Needed</td><td>❌ <a data-footnote-ref href="#user-content-fn-1">Bad on FPV drone</a><br><a data-footnote-ref href="#user-content-fn-4">❌ Hypersmooth<br></a><a data-footnote-ref href="#user-content-fn-2">🚧 Superview</a></td></tr><tr><td>Hero 8 Black<br>Hero 9 Black<br>Hero 10 Black</td><td>✅</td><td>✅ Official</td><td>✅ Not needed</td><td><a data-footnote-ref href="#user-content-fn-5">✅ Hypersmooth<br></a><a data-footnote-ref href="#user-content-fn-2">🚧 Superview</a></td></tr><tr><td>Hero 11 Black<br>Hero 11 Mini<br>Hero 12 Black<br>Hero 13 Black</td><td>✅</td><td>✅ <a data-footnote-ref href="#user-content-fn-6">From the file</a></td><td>✅ Not needed</td><td><p><a data-footnote-ref href="#user-content-fn-5">✅ Hypersmooth</a></p><p>✅ Autoboost<br>✅ Superview<br>✅ Hyperview</p></td></tr></tbody></table>
 
 ## Sensor and aspect ratio
 
@@ -20,9 +20,15 @@ Gyroflow will output 16:9 aspect ratio by default after stabilization. This can 
 
 All lens modes are supported, but it's best to choose `Wide`.
 
-Superview and Hyperview modes are supported, but not recommended. They capture full sensor information (4:3 and 8:7 respectively) and digitally stretch that video to 16:9 in camera, in a non-linear way (center is less stretched and sides are more stretched).
+Superview and Hyperview modes capture full sensor information (4:3 and 8:7 respectively) and digitally stretch that video to 16:9 in camera, in a non-linear way (center is less stretched and sides are more stretched).
 
-These modes use proprietary stretching equation which is not exactly mapped in Gyroflow, so stabilization will not be as accurate in these modes.
+Since Gyroflow 1.7.0, Hero 11 and newer models use the lens calibration that GoPro records in every video, including the Superview and Hyperview stretch, so these modes are stabilized accurately and no lens profile has to be selected.
+
+On older models, these modes use a proprietary stretching equation which is not exactly mapped in Gyroflow, so stabilization will not be as accurate in these modes and they're not recommended.
+
+## Proxy files (.LRV)
+
+Since Gyroflow 1.7.0, you can also open the low-resolution **.LRV** proxy files that GoPro records next to the video.
 
 ## Split recording
 
@@ -66,3 +72,5 @@ In general try to avoid these cameras if possible. If you want a budget-friendly
 
 [^5]: Hypersmooth mode is supported.\
     This means you can record with in-camera stabilization turned on and then stabilize further in Gyroflow
+
+[^6]: Since Gyroflow 1.7.0, the lens calibration recorded by the camera in every video is used, so no lens profile has to be selected

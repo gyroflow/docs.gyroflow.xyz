@@ -18,7 +18,7 @@ It contains 4 layers of data:
 <figure><img src="../../.gitbook/assets/timeline.png" alt=""><figcaption><p>Timeline elements overview</p></figcaption></figure>
 
 {% hint style="info" %}
-When using **sync-less video files (GoPro Hero 8+, DJI, Sony, Blackmagic RAW & Insta360)** you can skip this part entirely, as the synchronization is already correct and accurate, and no additional sync points should be added.
+When using **sync-less video files (GoPro Hero 8+, DJI, Sony, Blackmagic RAW, RED, Z CAM, Xtra & Insta360)** you can skip this part entirely, as the synchronization is already correct and accurate, and no additional sync points should be added.
 {% endhint %}
 
 **The goal is to have the lighter lines lined up with the darker lines.**
@@ -30,8 +30,9 @@ In order to do that, synchronization points need to be added, which shift the da
 To see what's actually going on on the chart, you'll need to zoom it in. Use:
 
 * **mouse wheel** to zoom in and out horizontally
-* **Alt + mouse wheel** (on macOS: Control + Shift + mouse wheel) to zoom in and out vertically
-* **middle mouse button** or **Ctrl + mouse wheel** (on macOS: Command + mouse wheel) - to pan the view left and right
+* **Alt + mouse wheel** (on macOS: Option + scroll) to zoom in and out vertically
+* **middle mouse button** drag or **Ctrl + mouse wheel** (on macOS: scroll sideways, e.g. with two fingers on the trackpad) - to pan the view left and right
+* **double click** to reset the zoom
 
 {% embed url="https://gyroflow.xyz/demo/docs/?v=timeline-zoom-pan" %}
 Example of zooming in to inspect the sync points
@@ -79,13 +80,21 @@ Estimating gyro bias can help achieve better stabilization results. To estimate 
 
 This function was created to help estimating the rolling shutter value, but in practice it's rarely accurate and its use is discouraged. Read more about figuring out the rolling shutter time on the [**🔥Stabilization -> Rolling shutter correction**](stabilization.md#rolling-shutter-correction) page.
 
+#### Delete all sync points
+
+Removes all sync points, e.g. before syncing again after changing the settings listed in [Settings that affect the synchronization algorithm](synchronization.md#settings-that-affect-the-synchronization-algorithm).
+
+#### Trim range
+
+**Add new range** adds another trim range here, **Delete this range** removes the one under the playhead, and **Clear all** removes all of them. **Restrict playback to trim range** (on by default) keeps the playback within the trim range.
+
 #### Chart display mode
 
 The motion data chart can show 4 different data sources: Gyroscope, Accelerometer, Magnetometer and Quaternions
 
-Quaternions are always available because they are either provided by the camera, or created from Gyroscope and Accelerometer by using a _sensor fusion_ algorithm. For example DJI cameras contain only Quaternions without gyro data, because the _sensor fusion_ is ran inside the camera.&#x20;
+Quaternions are always available because they are either provided by the camera, or created from Gyroscope and Accelerometer by using a _sensor fusion_ algorithm. For example most DJI cameras contain only Quaternions without gyro data, because the _sensor fusion_ is ran inside the camera.&#x20;
 
-Gyroscope readings represent a speed of rotation (rotating up/down/right/left) and Accelerometer readings represent a speed of translation (moving up/down/right/left). By using these values over time, we can calculate the quaternion - a 3d camera orientation in space, and that is used for all stabilization algorithms in Gyroflow.
+Gyroscope readings represent a speed of rotation (rotating up/down/right/left) and Accelerometer readings represent acceleration, including gravity (so they show which way is down). By using these values over time, we can calculate the quaternion - a 3d camera orientation in space, and that is used for all stabilization algorithms in Gyroflow.
 
 {% hint style="info" %}
 In the quaternion chart mode, lighter lines represent **smoothed orientation**, instead of optical flow data.
@@ -102,6 +111,10 @@ The fourth button on the right \[`S`] can be used to show the sync points line f
 The bottom half of the chart contains dynamic zooming information - it's the light filled overlay on the chart, and it indicates how much a video is zoomed in at that time. It can be enabled or disabled by clicking the "Z" button on the left side of the chart.&#x20;
 
 If you increase FOV value to more than 1 or disable dynamic zooming, the chart will also show a red overlay. This indicates that the video is showing the background at that time, i.e. source video pixels don't cover the entire output frame at that time.
+
+## Focal length
+
+If the file records the focal length of every frame (e.g. a zoom lens on Sony, Canon, Blackmagic, RED, Nikon or Z CAM), there's also an **FL** button on the left side of the chart. It shows the original focal length and the smoothed one (when **Stabilize focal length** is enabled in the Stabilization panel).
 
 ## Sync points
 

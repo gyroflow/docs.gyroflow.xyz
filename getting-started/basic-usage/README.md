@@ -4,6 +4,8 @@
 
 Gyroflow works by using motion data recorded by the camera to recreate camera motion in real world and compensate for the camera movements, therefore creating a new, stabilized world view.
 
+If your video has no motion data, or the motion data is bad (e.g. because of vibrations), Gyroflow can also measure the camera motion from the video itself. Read more in [**Optical correction**](../../advanced-usage/input-data.md#optical-correction).
+
 In order to do that, Gyroflow must know exactly how the camera was oriented in space when the video frame was captured. It is **very important** for the motion data to be accurately representing the video frames.
 
 Most cameras record the motion data outside of the video pipeline and this causes time difference between capturing actual pixels and capturing camera position. In order to compensate for that, we have to figure out that time offset so Gyroflow can know exactly where the camera was at a particular pixel of the video.
@@ -45,7 +47,7 @@ All value fields can be adjusted by using _Up_ and _Down_ keys on your keyboard,
 
 This section contains the input file and the detected information about it.
 
-You can see the detected camera and lens info, resolution, duration, frame rate, codec, pixel format, audio, rotation and whether the gyro data was detected in that video file.
+You can see the detected camera and lens info, resolution, duration, frame rate, codec, pixel format, audio, rotation and whether the gyro data was detected in that video file. If the camera records them, it also shows the shooting settings, like shutter speed, ISO, white balance, iris and focal length.
 
 There are 2 editable fields here: Frame rate and rotation
 
@@ -58,6 +60,8 @@ This section contains the lens profile for your video. Lens profile is very impo
 
 Some cameras have the lens profile built-in and loaded automatically.
 
+If your video is already undistorted (it was recorded with a rectilinear lens, or the distortion was corrected in camera) and there's no lens profile for it, you can check **No distortion, focal length only** and enter the 35 mm equivalent focal length instead of loading a lens profile.
+
 You can also mark lens profile as a favorite by clicking the star icon.
 
 Lens profiles can be scaled, i.e. it's OK to load a lens profile created for 4k video, to a 1080p video, as long as the aspect ratio is the same and the camera uses the same sensor area.
@@ -66,19 +70,21 @@ For this reason, search box validates the aspect ratio and fades out lens profil
 
 In some cameras (like RED), different resolutions always use different part of the sensor, so the lens profile can't be scaled and you need to use one created for the same exact resolution. Have this in mind when troubleshooting stabilization issues.
 
-The search box here can also hold your [⚙ **settings presets**](../../advanced-usage/settings-presets.md) if you place your preset in the `camera_presets` directory. Presets can also be favorited and are searchable.
+The search box here can also hold your [⚙ **settings presets**](../../advanced-usage/settings-presets.md), if you save them with **Save to lens profile directory**. Presets can also be favorited and are searchable.
 
-The search box also understands shortcuts for some common camera names: `bmpcc4k, bmpcc6k, bmpcc, gopro5, gopro6, gopro7, gopro8, gopro9, gopro10, gopro11, session5, a73, a74, a7r3, a7r4, a7s2, a7s3`
+The search box also understands shortcuts for some common camera names: `bmpcc4k, bmpcc6k, bmpcc, gopro5, gopro6, gopro7, gopro8, gopro9, gopro10, gopro11, gopro12, gopro13, session5, a73, a74, a75, a7r3, a7r4, a7r5, a7s2, a7s3`
 
 To learn how to calibrate your own lens, go to [🏁 **Lens calibration**](../lens-calibration.md)
 
-To learn more about advanced lens profile features, see [🔭 **Advanced usage -> Lens profile**](../../advanced-usage/lens-profiles.md).
+To learn more about advanced lens profile features, like the output projection for very wide lenses, lens breathing compensation and zoom lenses, see [🔭 **Advanced usage -> Lens profile**](../../advanced-usage/lens-profiles.md).
 
 ### Motion data
 
 This section contains the motion data for the actual stabilization. For most common use cases, it will be automatically loaded from the video file. If you want to use a different motion data source (like external gyro logger, drone blackbox or a different camera), you can load the motion data file here.
 
 For more details about using external motion data file, go to [🌀 **Using external gyro source**](../../advanced-usage/using-external-gyro-source/).
+
+If your video has no motion data, or the motion data is bad, enable **Optical correction** and click **Analyze**, to measure the camera motion from the video. Read more in [🎬 **Advanced usage -> Input data**](../../advanced-usage/input-data.md#optical-correction).
 
 ### Once you have all the input files loaded, proceed to the [📈 Timeline and gyro chart](timeline-and-gyro-chart.md)
 

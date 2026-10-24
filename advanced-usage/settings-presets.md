@@ -18,18 +18,22 @@ Then simply select settings you want to include in the preset:
 
 <figure><img src="../.gitbook/assets/select_preset_settings.png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="info" %}
-If you save the preset in `camera_presets` directory, it will show up in the Lens profile search box. It can be favorited and searched.
-{% endhint %}
+Since Gyroflow 1.7.0, the preset dialog also has the **Disable lens stretch (for plugins)** option. Use it when your video editor does the anamorphic desqueeze itself: the [video editor plugins](../video-editor-plugins/general-plugin-workflow.md) then don't apply the input stretch from the lens profile again.
+
+At the bottom of the dialog, choose where to save the preset:
+
+* **Save to file** - anywhere you want. You can then drag & drop it in the UI or in the render queue.
+* **Save to lens profile directory** - the preset shows up in the Lens profile search box, where it can be favorited and searched.
+* **Save as default preset** - see [Default preset](settings-presets.md#default-preset).
 
 <figure><img src="../.gitbook/assets/search_preset.png" alt=""><figcaption><p>Preset in the lens profile search box</p></figcaption></figure>
 
+{% hint style="info" %}
+The lens profile directory is the `lens_profiles` folder in Gyroflow's data folder (`Advanced -> Open data folder`). Presets saved there aren't replaced when Gyroflow is updated.
+{% endhint %}
+
 ## Default preset
 
-If you save your preset as `default.gyroflow` in the `camera_presets` directory, it will be loaded automatically with every video.
+The default preset (`default.gyroflow` in the lens profile directory) is loaded automatically with every video, in the main window, in the render queue and in the video editor plugins.
 
-`default.gyroflow` loads in the main window, as well as in the render queue.&#x20;
-
-{% hint style="info" %}
-On macOS, the `camera_presets` directory is located by right-clicking on the Gyroflow app -> Show package contents -> Contents -> Resources -> camera\_presets
-{% endhint %}
+The old location, `default.gyroflow` in the `camera_presets` folder of the Gyroflow installation, still works, but it's replaced when Gyroflow is updated, and the one in the lens profile directory takes precedence.

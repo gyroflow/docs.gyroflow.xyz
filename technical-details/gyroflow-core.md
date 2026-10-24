@@ -67,7 +67,7 @@ Video pixels can be passed as:
 * Vulkan `VkImage`
 * Metal texture `MTLTexture`
 * Metal buffer `MTLBuffer`
-* CUDA buffer `Cudeviceptr`
+* CUDA buffer `CUdeviceptr`
 
 It's also able to handle hybrid solutions, like providing a Metal texture and returning `&[u8]` array in memory.
 
@@ -79,12 +79,12 @@ The **OpenFX** plugin uses pixels provided by the host (e.g. DaVinci Resolve), a
 
 **Gyroflow Toolbox**, the **Final Cut Pro X** plugin, uses a `MTLTexture` provided by Final Cut Pro via the [FxPlug4 API](https://developer.apple.com/documentation/professional\_video\_applications/fxplug). It has the ability to import a `.gyroflow` project file, or it can programatically create a new internal Gyroflow Project if you're using a camera format that doesn't require synchronisation within the main Gyroflow application. Gyroflow Toolbox is primarily written in Objective-C, with a C interface to some Rust functions.
 
-Optionally, **OpenCV** is used in Gyroflow Core for one of the optical flow algorithms (**DISOpticalFlow**) and the main app uses it as the default. However, if you're just loading a `.gyroflow` project file, then the optical flow is not needed, as it's only used to determine the offsets and not for the actual stabilization process.
+Optionally, **OpenCV** is used in Gyroflow Core for the optical flow (**DIS** and **PyrLK**) and pose estimation used by the synchronization, and for the point tracking of the optical correction. However, if you're just loading a `.gyroflow` project file, then the optical flow is not needed, as it's only used to determine the offsets and measure the motion, not for the actual stabilization process.
 
 Main app also uses **OpenCV** in the lens calibrator.
 
 ## Examples
 
 * [The hero Gyroflow Application & GUI (Rust & QML)](https://github.com/gyroflow/gyroflow/blob/master/src/controller.rs)
-* [The OpenFX Plugin for DaVinci Resolve (Rust)](https://github.com/gyroflow/gyroflow-ofx/blob/main/src/gyroflow.rs)
+* [The OpenFX Plugin for DaVinci Resolve (Rust)](https://github.com/gyroflow/gyroflow-plugins/blob/main/openfx/src/gyroflow.rs)
 * [Gyroflow Toolbox - FxPlug4 Plugin for Final Cut Pro (Rust & Objective-C)](https://github.com/latenitefilms/GyroflowToolbox/blob/main/Source/Frameworks/gyroflow/src/lib.rs)

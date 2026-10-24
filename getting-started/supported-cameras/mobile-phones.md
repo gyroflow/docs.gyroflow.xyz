@@ -20,11 +20,15 @@ You can also use your **iPhone** or **Android** phone to capture gyroscope data.
 
 ### Using as a camera
 
-If you're filming on your phone, it's best to use the app that records video and gyro (GyroCam or MotionCam) at the same time, it will be easier to synchronize.
+If you're filming on your phone, it's best to use an app that records the video and the gyro at the same time (e.g. MotionCam Pro, Film it or Open Camera Sensors), it will be easier to synchronize.
 
 If your phone has OIS (Optical image Stabilization) and it's not possible to disable it - it will interfere with stabilization results.
 
 Gyroflow will not work if you had any internal stabilization enabled on your phone.
+
+### MotionCam Pro RAW video
+
+Since Gyroflow 1.7.0, Gyroflow reads the motion data and the lens calibration from MotionCam Pro RAW video files (.mcraw), but it can't play these files. Open a playable copy of the clip (e.g. a transcode or a proxy) as the video, and then load the original **.mcraw** file in **Motion data -> Open file**.
 
 ### Using as external gyro logger
 

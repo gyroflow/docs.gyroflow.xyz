@@ -15,7 +15,7 @@ description: >-
 ## Manual install:
 
 1. Download the latest version from [https://gyroflow.xyz/download](https://gyroflow.xyz/download)
-2. Extract `Gyroflow-windows64.zip` somewhere
+2. Extract `Gyroflow-windows64.zip` (or `Gyroflow-windows-arm64.zip` on Windows on ARM) somewhere
 3. Open the extracted folder and run `Gyroflow.exe`
 4. If it shows an error about `VCRUNTIME140.dll`, [install VC redist](https://aka.ms/vs/17/release/vc_redist.x64.exe)
 
@@ -67,7 +67,7 @@ Both Intel and Apple Silicon are supported natively.
 
 ### Hardware acceleration support:
 
-<table><thead><tr><th width="287">Processor</th><th width="85">H.264</th><th width="91">H.265</th><th>ProRes</th></tr></thead><tbody><tr><td>Intel</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1 Air</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1 Pro/Max/Ultra</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>M2 and newer</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
+<table><thead><tr><th width="287">Processor</th><th width="85">H.264</th><th width="91">H.265</th><th>ProRes</th></tr></thead><tbody><tr><td>Intel</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1 Pro/Max/Ultra</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>M2 and newer</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
 {% endtab %}
 
 {% tab title="Linux" %}

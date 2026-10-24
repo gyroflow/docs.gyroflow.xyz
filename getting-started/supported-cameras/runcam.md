@@ -26,7 +26,7 @@ Moreover because they are very lightweight, they are prone to receive a lot of v
 
 It may be difficult to correctly sync the RunCam cameras. By default Gyroflow uses a special sync points pattern to try to sync the video when the frames are duplicated or dropped, thus giving you the best chance of correct synchronization.&#x20;
 
-With some videos this may not work by default so you'll need to adjust these sync points, deleting some and adding new ones in different places. Make sure to learn how to use Gyroflow by reading the [🔧 **Basic usage**](../basic-usage/), [📈**Timeline and gyro chart**](../basic-usage/timeline-and-gyro-chart.md) and [⌛ **Synchronization**](runcam.md#synchronization) sections.
+With some videos this may not work by default so you'll need to adjust these sync points, deleting some and adding new ones in different places. Make sure to learn how to use Gyroflow by reading the [🔧 **Basic usage**](../basic-usage/), [📈**Timeline and gyro chart**](../basic-usage/timeline-and-gyro-chart.md) and [⌛ **Synchronization**](../basic-usage/synchronization.md) sections.
 
 Correct synchronization of RunCam cameras can be a pain sometimes so if you want to save yourself trouble and frustration, avoid RunCam cameras and get something else instead.
 
@@ -47,7 +47,7 @@ Ignore sync point colors with RunCam cameras, some will be red and some will be 
 * Color style: Normal (Flat squeezes the range and doesn’t actually provide more dynamic range)
 * Distortion correction: Disabled
 * Electronic Image Stabilization: Disabled
-* General settings (there were just found to work decently decently well, but do some testing yourself)
+* General settings (these were just found to work decently well, but do some testing yourself)
   * Saturation: Medium
   * Exposure compensation: 0
   * Contrast: Low

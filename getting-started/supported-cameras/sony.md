@@ -16,11 +16,11 @@ That list might not be exhaustive as Sony will probably add the motion data to a
 
 Some recording modes will not store the motion data in files, for example Sony α7S III in 4k/120fps mode doesn't include the motion data.
 
-Currently Gyroflow supports reading most of the recorded metadata, which includes IBIS and OIS data. Therefore, you **can record with IBIS and OIS enabled.** Most newer or high-end lenses with OIS are supported, but there are some lenses where enabling OIS prevents proper stabilization, so check your setup first before enabling OIS. **Dynamic Active** mode is also not supported, but the regular **Active** is.
+Gyroflow reads all of the stabilization metadata recorded by the camera, which includes IBIS and OIS data. Therefore, you **can record with IBIS and OIS enabled.** The **Active** and **Dynamic Active** modes are supported as well (Dynamic Active since Gyroflow 1.7.0).
 
-The best option is to use **Standard** stabilization in camera (if your model has IBIS) and add Gyroflow on top of that.
+The best option is to use **Standard** stabilization in camera (if your model has IBIS) and add Gyroflow on top of that, because Active and Dynamic Active also crop the image in camera.
 
-List of current issues with Sony metadata is [here](https://github.com/gyroflow/gyroflow/issues/849). If your file doesn't work properly, but does work in Catalyst Browse, submit it in that [GitHub issue](https://github.com/gyroflow/gyroflow/issues/849).
+All known issues with Sony metadata are fixed since Gyroflow 1.7.0. If your file still doesn't work properly, but does work in Catalyst Browse, submit it in [this GitHub issue](https://github.com/gyroflow/gyroflow/issues/849).
 
 ### Supported OSS Lenses
 
@@ -31,6 +31,17 @@ The list of supported lenses with OSS enabled is available on the [Sony website]
 ## Zoom lenses
 
 Zoom lenses are supported automatically, and you can zoom in and out throughout the video.
+
+* If you want to smooth out fast zooms, enable **Stabilize focal length** in the Stabilization panel.
+* Some lenses report the focal length a few frames late (e.g. some Tamron zooms). If the picture jumps or wobbles during zooms, set **Lens metadata delay** in `Lens profile -> Advanced`, or click **Analyze** next to it to measure it from the zooms in the clip.
+
+Learn more in [🔭 **Advanced usage -> Lens profiles**](../../advanced-usage/lens-profiles.md#zoom-lenses).
+
+## Lens breathing compensation
+
+Many lenses change the field of view slightly when focusing (this is called focus breathing). Since Gyroflow 1.7.0, Gyroflow can keep the field of view constant while focusing, using the lens breathing data recorded by the camera. That's the case for supported Sony lenses on cameras like the α7 IV, α7C II, α7R V, α6700 and ZV-E1.
+
+When the file contains this data, **Lens breathing compensation** shows up in the Lens profile panel, and it's enabled by default.
 
 ## Shutter speed, ND filters and motion blur
 

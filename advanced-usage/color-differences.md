@@ -1,27 +1,40 @@
 # 🎨 Color differences
 
-**`TODO:`**` ``Cleanup this page`
+If the colors look different after exporting from Gyroflow, in most cases the pixels didn't change: a player or video editor just interprets the color range or the gamma of the file differently.
 
-color range is either Full/JPEG (0-255) or Limited/MPEG (16-235), and is generally in metadata&#x20;
+## What Gyroflow does
 
-Gyroflow tries really hard to maintain all original video parameters, but there is a huge mess with color range metadata across video players, editors, and tools&#x20;
+Gyroflow processes the video directly in its original YUV format, without converting the colors. The exported file gets the same color metadata as the original: the color range, the color matrix, the transfer curve (gamma) and the color primaries.
 
-in Resolve, you can go to clip attributes and change Color range to Full or Video and it may look different in different players or video editors, you can search online about color range issues it will depend on your exact case and environment so you'll have to figure out a workflow that works for you
+A few encoders don't store all of it:
 
-you have to test the colors on all stages of your editing and make the changes as necessary your original file from gopro can also be interpreted in 2 different ways there is no rule to this, your file may look the same or different at all stages: original file, processed in gyroflow, playing in VLC, playing in resolve, exported from resolve and played in VLC, uploaded to youtube etc&#x20;
+* GPU encoding on macOS (VideoToolbox) doesn't write the transfer curve.
+* ProRes encoded on the GPU on macOS from 8-bit 4:2:0 video is always limited range (Gyroflow converts the pixels to match, to work around an encoder bug).
+* The H.264/H.265 GPU encoder on Intel Macs ignores the requested color range.
 
-in addition to the color range, there's also a gamma curve, which also makes a difference at different stages and for example on youtube&#x20;
+## Color range
 
-google a common problem with colors looking different on the exported file, and in the uploaded video on youtube (not related to gyroflow)
+The color range is either **Full** (0-255, also called JPEG or Data levels) or **Limited** (16-235, also called MPEG or Video levels), and it's stored in the file metadata. Players, video editors and websites don't always read it the same way:
 
-but there is such a mess that there are multiple workarounds and different rules that it's impossible to be certain across applications
+* Limited range shown as full looks washed out (grey blacks, dull whites).
+* Full range shown as limited looks too contrasty (crushed blacks, clipped whites).
 
-[https://cinelerra-gg.org/download/CinelerraGG\_Manual/Color\_Space\_Color\_Range\_Aff.html](https://cinelerra-gg.org/download/CinelerraGG\_Manual/Color\_Space\_Color\_Range\_Aff.html)\
-\
-also there are bugs, eg video encoder on Intel macOS basically ignores the requested color range
+In DaVinci Resolve, you can change it in `Clip Attributes -> Data Levels` (Auto, Video or Full).
 
-[https://referencehometheater.com/2014/commentary/rgb-full-vs-limited/](https://referencehometheater.com/2014/commentary/rgb-full-vs-limited/)\
-\
-[https://coloraggio.github.io/davinci-resolve-manuals/12.5\_Manual/6.pdf](https://coloraggio.github.io/davinci-resolve-manuals/12.5\_Manual/6.pdf) "Data Levels Settings and Conversions"\
-\
-it's best to use the OpenFX plugin to avoid this issue
+## Gamma
+
+The transfer curve (gamma) can also be interpreted differently, for example by QuickTime on macOS, or after uploading to YouTube. This happens with any video, not only with files from Gyroflow.
+
+## How to find the cause
+
+Your file can look the same or different at every stage: the original file, the export from Gyroflow, played in VLC, imported in your video editor, exported from the editor, uploaded to YouTube etc. Compare them in the same player, and change one thing at a time. There's no single rule, so find a workflow that works for your setup.
+
+Read more about color range:
+
+* [Color Space and Color Range](https://cinelerra-gg.org/download/CinelerraGG\_Manual/Color\_Space\_Color\_Range\_Aff.html) (Cinelerra-GG manual)
+* [RGB Full vs. Limited](https://referencehometheater.com/2014/commentary/rgb-full-vs-limited/)
+* [Data Levels Settings and Conversions](https://coloraggio.github.io/davinci-resolve-manuals/12.5\_Manual/6.pdf) (DaVinci Resolve manual)
+
+## Avoiding it altogether
+
+Use one of the [video editor plugins](../video-editor-plugins/general-plugin-workflow.md). The editor then reads the original file and applies the stabilization itself, so there's no extra file whose colors could be interpreted differently.

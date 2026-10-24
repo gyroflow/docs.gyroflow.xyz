@@ -18,7 +18,7 @@ ProRes (.mov) doesn't include the gyro data.
 
 ## BRAW playback
 
-Gyroflow supports loading **.braw** files directly in the main app, so there's no need for transcoding. That feature was kindly sponsored by the community.
+Gyroflow supports loading **.braw** files directly in the main app, so there's no need for transcoding. That feature was kindly sponsored by the community. Since Gyroflow 1.7.0, it also works on Windows on ARM.
 
 ## Project frame rate
 
@@ -26,9 +26,9 @@ If you shoot in a VFR mode (e.g. 120 fps stored as 30 fps file, slowed down), th
 
 ## Zoom lenses
 
-Blackmagic metadata contains lens focal length per frame, but it only contains whole numbers like 14mm, 15mm etc., without e.g. 14.2mm.
+Blackmagic metadata contains lens focal length per frame, and since Gyroflow 1.7.0 the lens profile follows it. However, it only contains whole numbers like 14mm, 15mm etc., without e.g. 14.2mm.
 
-This means you could create a lens profile for zoom lenses which works for different zoom levels, but changing zoom throughout the video will create "steps", because we don't have the exact focal length information. Such lens profile could work however for scenarios where you use the zoom lens for different scenes, but the zoom is not changing throughout the shot.
+This means a lens profile for a zoom lens works for different zoom levels, but changing zoom throughout the video can create "steps", because we don't have the exact focal length information. It works best for scenarios where you use the zoom lens for different scenes, but the zoom is not changing throughout the shot.
 
 Learn more about zoom lens profiles in the [🔭 **Advanced usage -> Lens profile**](../../advanced-usage/lens-profiles.md) section.
 

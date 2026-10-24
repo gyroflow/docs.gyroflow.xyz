@@ -22,7 +22,7 @@ The default value, indicating no direction changes is `XYZ`. This means that the
 
 If we need to invert an axis, the letter will be lowercased, so `xYZ` will mean the X axis corresponds to the inverted expected X axis, and Y and Z are not changed.&#x20;
 
-If we need to swap the axes, we can put another axis on the expcted position, for example `ZYX` will mean that the X axis corresponds to the Z axis, and Z axis corresponds to the X axis, and Y axis is not changed.
+If we need to swap the axes, we can put another axis on the expected position, for example `ZYX` will mean that the X axis corresponds to the Z axis, and Z axis corresponds to the X axis, and Y axis is not changed.
 
 The first letter describes what axis is expected at the X axis, the second letter at the Y axis, and third at the Z axis.
 

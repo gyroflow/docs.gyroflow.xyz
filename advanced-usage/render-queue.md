@@ -23,17 +23,19 @@ There are 2 ways to add a file to the render queue:
 
 You can also drag & drop the .gyroflow project file to the render queue.
 
+Since Gyroflow 1.7.0, files added to the render queue together are sorted by name.
+
 {% hint style="info" %}
 When you add a video file directly to the render queue, it will use the settings that are currently set in the main window.
 {% endhint %}
 
 ### Settings presets
 
-Instead of using the current GUI settings, you can also apply your **settings preset** to all items in the render queue. Simply drag & drop the preset (.gyroflow file) into the render queue and it will apply it to all items. Note that the preset is only applied to items in the queue. Once you add new files, you have to use the preset again to apply for new files. You can also use the `default.gyroflow` preset to automatically apply for all new items. Read more in the [**⚙ Settings presets**](render-queue.md#settings-presets) section.
+Instead of using the current GUI settings, you can also apply your **settings preset** to all items in the render queue. Simply drag & drop the preset (.gyroflow file) into the render queue and it will apply it to all items. Note that the preset is only applied to items in the queue. Once you add new files, you have to use the preset again to apply for new files. You can also use the default preset to automatically apply for all new items. Read more in the [**⚙ Settings presets**](settings-presets.md) section.
 
 ### Automatic synchronization in the render queue
 
-If your file requires [**⌛synchronization**](../getting-started/basic-usage/synchronization.md) (anything other than GoPro 8+ or DJI), it can also be done in the render queue. For that, the lens profile needs to have the synchronization parameters included (read more on [**Advanced usage -> 🔭 Lens profiles**](lens-profiles.md)), or your settings preset needs to have synchronization parameters and **Do autosync** checked.
+If your file requires [**⌛synchronization**](../getting-started/basic-usage/synchronization.md) (see the list of cameras that don't need it on that page), it can also be done in the render queue. For that, the lens profile needs to have the synchronization parameters included (read more on [**Advanced usage -> 🔭 Lens profiles**](lens-profiles.md)), or your settings preset needs to have synchronization parameters and **Do autosync** checked.
 
 ### Apply specific settings to all items in the queue
 
@@ -51,9 +53,9 @@ You can choose how many files you want to render in parallel. Gyroflow is design
 
 You can choose default action to take when the output file already exists on disk.
 
-**Export mode**
+#### Export mode
 
-Render queue can also be used to export project files, instead of rendering a stabilized video file. This can be useful if you have a lot of videos you want to use with the [**Video editor plugin**](../video-editor-plugins/general-plugin-workflow.md). You can add all your video files to the render queue as usual and then click on the **Queue settings -> Export mode -> Project file (with gyro data)**. This mode will create a `.gyroflow` project file for each video in the queue, instead of rendering stabilized video.
+Render queue can also be used to export project files, instead of rendering a stabilized video file. This can be useful if you have a lot of videos you want to use with the [**Video editor plugin**](../video-editor-plugins/general-plugin-workflow.md). You can add all your video files to the render queue as usual and then click on the **Queue settings -> Export mode -> Project file (including gyro data)**. This mode will create a `.gyroflow` project file for each video in the queue, instead of rendering stabilized video. **Stabilized video + Project file with gyro data** does both.
 
 #### Action when done
 

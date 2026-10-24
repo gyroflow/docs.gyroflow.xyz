@@ -6,7 +6,7 @@ description: >-
 
 # 🟢 NVIDIA
 
-NVIDIA GPUs since GeForce GTX 600 (2012) have the hardware accelerated video encoder called NVENC. At first it was just supporting H.264/AVC, but H.265/HEVC is also supported since GTX 750 (2015).
+NVIDIA GPUs since GeForce GTX 600 (2012) have the hardware accelerated video encoder called NVENC. At first it was just supporting H.264/AVC, but H.265/HEVC is also supported since the GeForce GTX 900 series (2014).
 
 The NVENC encoder is well supported in Gyroflow and offers fast video render times on Windows and Linux.
 
@@ -24,12 +24,20 @@ Read more about NVENC on [Wikipedia](https://en.wikipedia.org/wiki/Nvidia\_NVENC
 
 ## 10-bit support
 
-Hardware accelerated encoding of 10-bit videos is supported only by the latest video cards. Refer to the official [Support Matrix](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new) to check if your GPU supports 10-bit video encoding.
+H.265 10-bit encoding is supported since the GeForce GTX 10 series (Pascal). AV1 supports 10-bit as well. Refer to the official [Support Matrix](https://developer.nvidia.com/video-encode-and-decode-gpu-support-matrix-new) for your GPU.
+
+## AV1 support
+
+Since Gyroflow 1.7.0, you can export AV1. It's encoded on the GPU only, so it needs a GeForce RTX 40 series or newer card.
 
 ## ProRes/DNxHD support
 
-NVIDIA's NVENC supports only H.264 and H.265. No other codec is hardware accelerated on NVIDIA cards.
+NVIDIA's NVENC supports only H.264, H.265 and AV1. No other codec is hardware accelerated on NVIDIA cards.
 
 ## Maximum supported resolution
 
-8192x8192 is the maximum supported resolution on modern cards, and 4096x4096 on older. Check the [Wikipedia](https://en.wikipedia.org/wiki/Nvidia\_NVENC) article to learn more.
+* H.264 - 4096x4096 on all cards.
+* H.265 - 4096x4096 on the GTX 900 series, 8192x8192 since the GTX 10 series.
+* AV1 - 8192x8192.
+
+Check the [Wikipedia](https://en.wikipedia.org/wiki/Nvidia\_NVENC) article to learn more.

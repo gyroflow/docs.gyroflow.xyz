@@ -4,7 +4,7 @@
 
 _Gyroflow_ is written in [Rust](https://www.rust-lang.org/), with UI written in [QML](https://doc.qt.io/qt-6/qmlfirststeps.html). It uses _Qt_, _ffmpeg_, _OpenCV_ and _mdk-sdk_ external dependencies for the main program, but the core library is written in pure Rust without any external dependencies.
 
-OpenCV usage is kept to a minimum, used only for lens calibration and optical flow (`src/core/calibration/mod.rs` and `src/core/synchronization/opencv.rs`). Core algorithms and undistortion don't use OpenCV.
+OpenCV usage is kept to a minimum, used only for lens calibration (`src/core/calibration/`) and for the optical flow and pose estimation of the synchronization and the optical correction (`src/core/synchronization/`). Core algorithms and undistortion don't use OpenCV.
 
 GPU stuff supports _DirectX_, _OpenGL_, _Metal_ and _Vulkan_ thanks to _Qt RHI_ and _wgpu_. For GPU processing we use _OpenCL_ or _wgpu_, with highly parallelized CPU implementation as a fallback.
 

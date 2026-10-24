@@ -1,5 +1,5 @@
 # 🟢 Android
 
-Hardware accelerated video encoding is not yet supported on Android, but it's coming soon.
+On Android, Gyroflow encodes H.264/AVC and H.265/HEVC with the phone's hardware video encoder (MediaCodec).
 
-You can track [this](https://github.com/gyroflow/gyroflow/issues/33) issue for updates.
+Since Gyroflow 1.7.0, you can also export AV1 on phones that can encode AV1.

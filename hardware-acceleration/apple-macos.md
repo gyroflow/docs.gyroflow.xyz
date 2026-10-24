@@ -18,7 +18,11 @@ It's also highly recommended to update to the newest macOS version, as the video
 
 ## Hardware acceleration support
 
-<table><thead><tr><th width="240">Processor</th><th width="85">H.264</th><th width="91">H.265</th><th>ProRes</th></tr></thead><tbody><tr><td>Intel</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1 Air</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1 Pro/Max/Ultra</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>M2<br>M3<br>M4<br>M5</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
+<table><thead><tr><th width="240">Processor</th><th width="85">H.264</th><th width="91">H.265</th><th>ProRes</th></tr></thead><tbody><tr><td>Intel</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1</td><td>✅</td><td>✅</td><td>❌</td></tr><tr><td>M1 Pro/Max/Ultra</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>M2<br>M3<br>M4<br>M5</td><td>✅</td><td>✅</td><td>✅</td></tr></tbody></table>
+
+{% hint style="info" %}
+AV1 export (added in Gyroflow 1.7.0) isn't available on macOS and iOS, because VideoToolbox has no AV1 encoder.
+{% endhint %}
 
 
 

@@ -10,7 +10,9 @@ RED cameras record motion data internally in the **.R3D** files and Gyroflow sup
 
 ## Supported models
 
-<table><thead><tr><th width="208">Model</th><th width="110">Gyro data</th><th width="129">Lens profile</th><th width="166">Synchronization</th></tr></thead><tbody><tr><td>RED V-Raptor</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>❗Needed</td></tr><tr><td>RED KOMODO</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>❗Needed</td></tr></tbody></table>
+<table><thead><tr><th width="208">Model</th><th width="110">Gyro data</th><th width="129">Lens profile</th><th width="166">Synchronization</th></tr></thead><tbody><tr><td>RED V-Raptor</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>✅ Not needed</td></tr><tr><td>RED KOMODO</td><td>✅</td><td><mark style="color:yellow;">⚠️</mark> By users</td><td>✅ Not needed</td></tr></tbody></table>
+
+Since Gyroflow 1.7.0, the RED gyro data is accurately timed, so synchronization (autosync) is no longer needed.
 
 {% hint style="info" %}
 Gyro data is recorded only in the **.R3D** file format.&#x20;
@@ -20,7 +22,7 @@ ProRes (.mov) doesn't include the gyro data.
 
 ## RED RAW playback
 
-Gyroflow supports loading **.R3D** files directly in the main app, so there's no need for transcoding. That feature was kindly sponsored by the community.
+Gyroflow supports loading **.R3D** files directly in the main app, so there's no need for transcoding. That feature was kindly sponsored by the community. Since Gyroflow 1.7.0, it also works on Windows on ARM.
 
 ## Project frame rate
 
@@ -65,6 +67,10 @@ Using the plugin is the best option anyway because you then have all RAW color c
 Gyroflow will also read lens name and focal length from the **.R3D** file if it's provided by the camera. This allows it to autofill all the needed settings in the lens calibrator and to uniquely identify the lens profile to load it automatically.
 
 If the lens name is not provided by the camera, you can edit the metadata in REDCINE-X and Gyroflow will also read it from there (it is stored in the .RMD file).
+
+## Zoom lenses
+
+Since Gyroflow 1.7.0, the lens profile follows the focal length recorded for every frame, so you can zoom during the shot. If you want to smooth out fast zooms, enable **Stabilize focal length** in the Stabilization panel. Learn more in [🔭 **Advanced usage -> Lens profiles**](../../advanced-usage/lens-profiles.md#zoom-lenses).
 
 ## Gyro bias
 

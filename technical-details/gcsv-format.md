@@ -8,6 +8,8 @@ What follows is a text-based gyro log format that can be implemented in custom h
 
 Firstly, for a video file called `videofilename.mp4`, the corresponding gyro log file is `videofilename.gcsv`, this is a case of the `.gcsv` acting as [sidecar files](https://en.wikipedia.org/wiki/Sidecar_file). This allows for automatic log detection.
 
+Since Gyroflow 1.7.0, this also works for image sequences. For `sequence_00001.dng`, `sequence_00002.dng` etc., the log file can be called either `sequence.gcsv` or `sequence_00001.gcsv`.
+
 The `.gcsv` file contains information about the gyro orientation, scaling, and a unique identifier. The following is an example of a .gcsv file from a logger supporting logging of gyro and accelerometer:
 
 ```csv
@@ -97,7 +99,7 @@ The following are all optional fields for the metadata block, but developers sho
 * `lensprofile` is the unique name of the lens preset and vendor folder. If it matches a lens profile in the [database](https://github.com/gyroflow/lens_profiles) it is automatically selected during loading.
 * `lens_info` is additional information about the lens/field of view not available in the metadata. This could be `wide`, `normal`, `narrow` for different FOV settings, `linear` for lens distortion correction. Most relevant for action cameras with different crop settings.
 * `frame_readout_time` is the time in milliseconds it takes to capture a full video frame using rolling shutter. This is used for rolling shutter correction.
-* `frame_readout_direction` is the direction of the readout. Most cameras with rolling shutter capture the top of the frame first. Note that Gyroflow currently only supports correcting 0 and 1.
+* `frame_readout_direction` is the direction of the readout. Most cameras with rolling shutter capture the top of the frame first. When it's missing, top to bottom is assumed.
   * 0: Top to bottom
   * 1: Bottom to top
   * 2: Left to right

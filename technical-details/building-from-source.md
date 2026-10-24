@@ -4,7 +4,7 @@
 
 `Visual Studio Code` with `rust-analyzer` extension.
 
-For working with QML I recommend to use Qt Creator and load all QML files there, as it has auto-complete and syntax highlighting. The project also supports UI live reload, it's a super quick way of working with the UI. Just change `live_reload = true` in `gyroflow.rs` and it should work right away. Now every time you change any QML file, the app should reload it immediately.
+For working with QML I recommend to use Qt Creator and load all QML files there, as it has auto-complete and syntax highlighting. The project also supports UI live reload, it's a super quick way of working with the UI. Just change `let ui_live_reload = false;` to `true` in `src/gyroflow.rs` and it should work right away. Now every time you change any QML file, the app should reload it immediately.
 
 ## Building steps
 
@@ -46,7 +46,7 @@ For working with QML I recommend to use Qt Creator and load all QML files there,
 2. Get latest stable Rust language from: https://rustup.rs/
 3. Install `Just` by running `cargo install --force just`
 4. Clone the repo: `git clone https://github.com/gyroflow/gyroflow.git`
-5. Install Android SDK and NDK r23c and update paths in `_scripts/android.just`
+5. Install Android SDK and NDK r27d and update paths in `_scripts/android.just`
 6. Enter the project directory and:
    * Install dependencies: `just android install-deps`
    * Compile the apk and install on device: `just android deploy`

@@ -13,7 +13,11 @@ Synchronization in Gyroflow is the process of adding sync points - the time offs
 Most cameras record the motion data outside of the video pipeline and this causes time difference between capturing actual pixels and capturing camera position. In order to compensate for that, we have to figure out that time offset so Gyroflow can know exactly where the camera was at a particular pixel of the video.
 
 {% hint style="info" %}
-Synchronization is needed for all cameras except **GoPro Hero 8+, DJI, Insta360, Sony and Blackmagic RAW**.
+Synchronization is needed for all cameras except **GoPro Hero 8+, DJI, Insta360, Sony, Blackmagic RAW, RED, Z CAM and Xtra**.
+{% endhint %}
+
+{% hint style="info" %}
+If the video has no motion data at all, there's nothing to synchronize. Since Gyroflow 1.7.0, **Auto sync** on such a file runs the optical analysis instead, which measures the camera motion from the video. Read more in [**Optical correction**](../../advanced-usage/input-data.md#optical-correction).
 {% endhint %}
 
 {% hint style="warning" %}
@@ -88,7 +92,7 @@ If everything else fails, there's also an option to figure out the offset manual
 
 By moving the slider or entering a different value, you'll see the gyro data moving left or right on the chart. You can then try to match it with the optical flow, or (if optical flow failed) you can change the value in intervals and observe the video visually until it's stable.
 
-The default range of the slider is -VALUE to +VALUE, so the more value (time offset) the point has, the slider will have greater range. By default it starts with 15ms, but you can enter any higher value in the value field, and the range of the slider will adjust.
+The slider covers the current value plus or minus that value (but at least ±15 ms), so the larger the time offset, the larger the range of the slider. You can enter any value in the value field, and the range of the slider will adjust.
 
 **`TODO:`**` ``example with optical flow`
 

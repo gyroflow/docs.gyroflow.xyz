@@ -8,7 +8,13 @@ description: >-
 
 ## Installation
 
-The Gyroflow Adobe Plugin works on Mac and Windows:
+The Gyroflow Adobe Plugin works on Mac and Windows.
+
+{% hint style="success" %}
+**The easiest way** to install or update the plugin is from the Gyroflow app: in the **Video editor plugins** panel at the bottom of the right side, below **Advanced**, click **Install** (or **Update**) next to **Adobe**. The panel shows up when Adobe Premiere Pro or After Effects is installed.
+{% endhint %}
+
+To install it manually:
 
 {% tabs %}
 {% tab title="Mac" %}
@@ -36,6 +42,11 @@ The Gyroflow Adobe Plugin works on Mac and Windows:
 * In After Effects, you can create a 3D camera based on the gyro data
 * The plugin uses the clip trim range to calculate stabilization, so it doesn't consider data outside of your clip
 * Plugin loads the default preset if you created one in the app
+* Pasted or duplicated effects, the pieces of a cut clip and effects applied with a preset each have their own stabilization
+* An effect copied to another clip loads that clip's project and keeps your adjustments
+* The effect follows relinked or moved media, also when the project is opened on another computer
+* Premiere Pro subclips are stabilized with the right part of the motion data
+* In After Effects, the stabilization updates when keyframes are moved, eased or removed in the timeline, and after an undo
 
 ## Source Code
 

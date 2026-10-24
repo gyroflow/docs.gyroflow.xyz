@@ -21,12 +21,12 @@ The lens calibration process is divided into 2 steps:
 2. Display the calibration pattern on a **flat** computer monitor (a curved display will **not** work), in full screen. In general, larger calibration patterns are preferred since focus will be closer to the focus during actual use, so use your largest screen/monitor. If you have a large flatscreen TV, it's preferred to display it on the TV (you can use HDMI, or the TV browser to open this page). A bright screen with a slightly darkened room works well.
 3. Select the desired camera settings to calibrate for. Most importantly the field of view/focal length and aspect ratio, if applicable. Framerate and resolution doesn't matter, only if the resolution changes the field of view. Use high shutter speed to avoid motion blur, and make sure the calibration target stays in focus.
 4. Record the pattern while slowly moving around to different angles and distances in one clip. 60 seconds is typically enough. Try to avoid motion blur and rolling shutter distortion with slow and steady movements, and make sure the full chessboard is in view. The following angles are recommended for getting distortion information from the full frame:
-5. Chessboard filling whole frame
-6. Chessboard seen from distance.
-7. Chessboard seen at an angle.
-8. Each edge of video frame aligned with edge of chessboard.
-9. Corner of chessboard aligned with corner of video.
-10. Finally, get fast motion for rolling shutter reference/estimation by doing a fast side-to-side yaw motions with the camera. This will produce rolling shutter effect where the lines will be bent, instead of straight.
+   * Chessboard filling whole frame
+   * Chessboard seen from distance.
+   * Chessboard seen at an angle.
+   * Each edge of video frame aligned with edge of chessboard.
+   * Corner of chessboard aligned with corner of video.
+5. Finally, get fast motion for rolling shutter reference/estimation by doing a fast side-to-side yaw motions with the camera. This will produce rolling shutter effect where the lines will be bent, instead of straight.
 
 Here's an example of a calibration footage that covers all needed angles:
 
@@ -61,11 +61,30 @@ An alternative and much more accurate method doesn't require gyro data, but inst
 3. Either begin auto calibration or manually add frames using `Add calibration point` from the timeline context menu. Note: **Skip the final fast side-to-side motion during this step, by setting the end of trim range just before it.**
 4. After all required frames are added and processed, the straight lines should be straight in the undistorted video. `Reprojection error` should typically be under 5 (pixels) with excellent calibrations giving values below 1. The larger the video resolution the bigger this error can be.
 5. Fill in the preset information and export the lens profile. Try to add all relevant information about the camera/lens combination including field of view setting and lens focal length if applicable.
-6. If rolling shutter information is known in advance, fill in the frame readout time.
+6. If rolling shutter information is known in advance, fill in the frame readout time. For a global shutter camera, check **Sensor is global shutter** instead.
 7. If a successful calibration was achieved with a low reprojection error and no obvious artefacts, the profile can be submitted with the `Upload lens profile to the database` checkbox.
 8. You're now ready to use the new lens preset. These are stored as `.json` files.
 
-## What about anamorphic lenses? <a href="#video-guide" id="video-guide"></a>
+## Distortion model and calibration method
+
+Since Gyroflow 1.7.0, you can choose the **Distortion model** the lens profile is fitted to:
+
+* **OpenCV fisheye** (default) - fisheye model (Kannala-Brandt). Right for action cameras, drones and any wide lens.
+* **OpenCV standard** - pinhole with radial and tangential distortion. For rectilinear lenses with little distortion: it can't describe anything 90° or more from the center.
+* **Generic polynomial** - fisheye model with both odd and even powers of the angle, for lenses the fisheye model doesn't fit well. It's always calibrated with Gyroflow's method.
+
+You can also choose the **Calibration method**:
+
+* **OpenCV** (default) - OpenCV's own calibration of the model, on random sets of frames. Its fisheye calibration can't calibrate a lens that sees more than 180°, and often fails close to it.
+* **Gyroflow** - Gyroflow's own calibration, on all frames at once. With a fisheye model it also calibrates lenses that see more than 180°, and it leaves out frames that don't agree with the rest, like ones bent by the rolling shutter of a fast move.
+
+Changing the model or the method fits the patterns already found again, without analyzing the video again, so you can quickly compare the results.
+
+{% hint style="info" %}
+To view the whole picture of a lens that sees more than 180°, change the **Output projection** in the main window. Read more in [🔭 **Advanced usage -> Lens profiles**](../advanced-usage/lens-profiles.md#output-projection).
+{% endhint %}
+
+## What about anamorphic lenses? <a href="#what-about-anamorphic-lenses" id="what-about-anamorphic-lenses"></a>
 
 Refer to [Input stretch](lens-calibration.md#input-stretch)
 
@@ -89,7 +108,7 @@ For cameras with minimal fisheye distortion, or even with pincushion distortion,
 
 ### Sharpness limit <a href="#sharpness-limit" id="sharpness-limit"></a>
 
-Sets the minimum required sharpness for the calibration pattern. If the pattern failed to detect due to focus or blurriness, try increasing this limit.
+Sets the minimum required sharpness for the calibration pattern (default 8 px, the width of the blurred edges). If the pattern failed to detect due to focus or blurriness, try increasing this limit.
 
 ### Input stretch
 
@@ -101,7 +120,7 @@ Another example is a digital processing in camera, like Superview/Hyperview in G
 
 In case of GoPro, the stretch is a custom equation and you can set `Digital lens` to `GoPro Superview`
 
-In case or RunCam, the XV mode is a simple linear stretch, so to reverse it's effect, enter `1.3333` in the `Input vertical stretch` field.
+In case of RunCam, the XV mode is a simple linear stretch, so to reverse its effect, enter `1.3333` in the `Input vertical stretch` field.
 
 ### Focal length and crop factor
 

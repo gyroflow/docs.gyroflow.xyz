@@ -8,7 +8,13 @@ description: >-
 
 ## Installation
 
-The Gyroflow OpenFX Plugin works on Mac, Windows and Linux:
+The Gyroflow OpenFX Plugin works on Mac, Windows and Linux.
+
+{% hint style="success" %}
+**The easiest way** to install or update the plugin is from the Gyroflow app: in the **Video editor plugins** panel at the bottom of the right side, below **Advanced**, click **Install** (or **Update**) next to **OpenFX**. The panel shows up on Windows and macOS when DaVinci Resolve or another OpenFX host is installed.
+{% endhint %}
+
+To install it manually:
 
 {% tabs %}
 {% tab title="Mac" %}
@@ -16,7 +22,7 @@ The Gyroflow OpenFX Plugin works on Mac, Windows and Linux:
 
 1. Download the latest version from [https://gyroflow.xyz/download#plugins](https://gyroflow.xyz/download#plugins)&#x20;
 2. Create the OFX folder: `/Library/OFX/Plugins`. You can do that in Finder or in the Terminal: `sudo mkdir -p /Library/OFX/Plugins ; open /Library/OFX/Plugins`.
-3. Run `Gyroflow-ofx-macosx.dmg`
+3. Run `Gyroflow-OpenFX-macos.dmg`
 4. Copy `Gyroflow.ofx.bundle` folder to `/Library/OFX/Plugins/`
 
 {% hint style="info" %}
@@ -36,7 +42,7 @@ Gyroflow OFX plugin supports **Metal** acceleration on Mac.
 ### Installing the OpenFX plugin
 
 1. Download the latest version from [https://gyroflow.xyz/download#plugins](https://gyroflow.xyz/download#plugins)
-2. Extract `Gyroflow-ofx-windows.zip` somewhere
+2. Extract `Gyroflow-OpenFX-windows.zip` somewhere
 3. Create the OFX folder: `C:\Program Files\Common Files\OFX\Plugins`.
 4. Copy `Gyroflow.ofx.bundle` folder to `C:\Program Files\Common Files\OFX\Plugins`
 
@@ -55,7 +61,7 @@ Gyroflow OFX plugin supports **OpenGL**, **OpenCL** and **CUDA** acceleration on
 1. Download the latest version from [https://gyroflow.xyz/download#plugins](https://gyroflow.xyz/download#plugins)&#x20;
 2. Create the OFX folder: `/usr/OFX/Plugins`.&#x20;
    1. You can do that in the Terminal: `sudo mkdir -p /usr/OFX/Plugins && sudo chown $USER /usr/OFX/Plugins`.
-3. Extract`Gyroflow-ofx-linux.zip` to `/usr/OFX/Plugins`
+3. Extract `Gyroflow-OpenFX-linux.zip` to `/usr/OFX/Plugins`
 
 <figure><img src="../.gitbook/assets/openfx_install_linux.png" alt=""><figcaption><p>Properly installed plugin on Linux</p></figcaption></figure>
 
@@ -130,9 +136,7 @@ Clicking the **Load preset/lens profile** button allows you to select a **Preset
 
 Lens calibration is a very important piece of the stabilization algorithm and it's very important to use accurate lens profile when stabilizing a video in Gyroflow. You can learn more [here](../getting-started/lens-calibration.md).
 
-On macOS, the built-in Lens Profiles are located at:
-
-`/Applications/Gyroflow.app/Contents/Resources/camera_presets`
+The built-in lens profiles are stored in one compressed file, so you can't pick them here directly. You can download a lens profile (`.json`) from the [lens profile database](https://github.com/gyroflow/lens_profiles). Your own lens profiles and presets are in the `lens_profiles` folder in Gyroflow's data folder (`Advanced -> Open data folder` in the app).
 
 <figure><img src="../.gitbook/assets/davinci-resolve-mac-gyroflow-load-preset.png" alt=""><figcaption></figcaption></figure>
 
@@ -156,13 +160,15 @@ This is a convenince function that allows you to load the last saved project in 
 
 #### Status Message
 
-Underneath the **Last save project** button is a checkbox that displays a status message. This is useful to determine if everything is working correctly, or if there's any issues or problems - for example, a frames per second mismatch:
+Underneath the **Last saved project** button is a checkbox that displays a status message. This is useful to determine if everything is working correctly, or if there's any issues or problems - for example, a frames per second mismatch:
 
 <figure><img src="../.gitbook/assets/davinci-resolve-mac-gyroflow-mismatch.png" alt=""><figcaption></figcaption></figure>
 
 If everything is correct and working, you'll see this:
 
 <figure><img src="../.gitbook/assets/davinci-resolve-mac-gyroflow-ok.png" alt=""><figcaption></figcaption></figure>
+
+If the file doesn't contain motion data, the status shows **No gyro data in this file**. DaVinci Resolve gives the plugin exact timing at any frame rate, so in Resolve the frame rate mismatch status isn't shown.
 
 ### Adjust Parameters
 
@@ -218,7 +224,9 @@ If you intend to share the host (i.e. DaVinci Resolve) project to someone else, 
 
 ### Vertical Video or different aspect ratio
 
-For vertical video, or if your timeline has different aspect ratio than your source video, the first thing you have to do is change your timeline settings -> Mismatched resolution to "**Scale entire image to fit**"
+Vertical footage on a vertical timeline works directly, when the footage and the timeline have the same aspect ratio.
+
+If your timeline has different aspect ratio than your source video (e.g. horizontal footage on a vertical timeline), the first thing you have to do is change your timeline settings -> Mismatched resolution to "**Scale entire image to fit**"
 
 <figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
@@ -229,5 +237,7 @@ Then you have two options:
 
 ### Frame Rate Mismatch
 
-If your timeline has different frame rate than the source file, you may experience broken stabilization. The plugin tries its best to adapt to the frame rate differences, but sometimes it's not possible and in that case, you have to add the plugin as a Fusion node instead.
+In DaVinci Resolve, the plugin's timing is exact at any timeline frame rate.
+
+In other OpenFX hosts, if your timeline has different frame rate than the source file, you may experience broken stabilization. The plugin tries its best to adapt to the frame rate differences, but sometimes it's not possible.
 

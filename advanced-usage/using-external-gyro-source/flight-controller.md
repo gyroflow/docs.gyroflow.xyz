@@ -65,12 +65,16 @@ set blackbox_disable_gps = ON
 
 <figure><img src="../../.gitbook/assets/betaflight_setup_1.png" alt=""><figcaption></figcaption></figure>
 
+### Camera angle <a href="#camera-angle" id="camera-angle"></a>
+
+The flight controller is mounted flat, while the camera is usually tilted up. Enter the camera angle in `Motion data -> Rotation -> Pitch`: positive when the camera is tilted up, negative when it's tilted down. For example, for a camera tilted up 30°, enter `30`.
+
+If the stabilization still drifts or wobbles, adjust the angle by a few degrees and compare the lines on the chart, see [🔀 IMU orientation and rotation](../imu-orientation-and-rotation.md).
+
+### Multiple logs in one file <a href="#multiple-logs" id="multiple-logs"></a>
+
+A blackbox file can contain several logs, e.g. one per flight. Gyroflow then shows **Select log** in the Motion data panel, where you can choose the log of your flight, or **All logs combined**.
+
 ### Acknowledgements <a href="#acknowledgements" id="acknowledgements"></a>
 
 * [logger-presets](https://github.com/gyroflow/logger-presets): Forked from betaflight/firmware-persets
-
-```
-TODO
-    - logger from fpvframe.ch
-    - Camera angle
-```

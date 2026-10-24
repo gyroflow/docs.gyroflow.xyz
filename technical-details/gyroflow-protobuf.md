@@ -126,7 +126,21 @@ The `frame_readout_time_us` in `ClipMetadata` must represent the readout time of
 #### Readout & IMU Interpolation Diagram
 
 ```
-TODO: diagram
+camera clock (µs) ─────────────────────────────────────────────────────────────►
+
+IMU samples        |     |     |     |     |     |     |     |     |     |     |
+                   (sample_timestamp_us of every IMUData entry)
+
+row 0 (first-read)       [▓▓▓▓ exposure ▓▓▓▓]
+                                            ▲ start_timestamp_us
+row k                           [▓▓▓▓ exposure ▓▓▓▓]
+                                                   ▲ t(k)
+row N-1 (last-read)                    [▓▓▓▓ exposure ▓▓▓▓]
+                                                          ▲ end_timestamp_us
+
+t(k)        = start_timestamp_us + (end_timestamp_us - start_timestamp_us) * k / (N - 1)
+midpoint(k) = t(k) - exposure_time_us / 2   ◄─ the IMU trajectory is interpolated here
+                                               to get the orientation of row k
 ```
 
 {% hint style="info" %}
@@ -220,7 +234,19 @@ The IMU trajectory is left untouched. The offset simply cancels the movement the
 The sampling rate of OIS data can be much lower than the IMU data, because it's a physical element, it will move slowly. Gyroflow will interpolate any gaps. Typically 4-8 samples per frame is enough, plus a guard sample or two on each side for the spline tangents. The samples should at minimum cover the frame's row-exposure-midpoint span, i.e. `[start_timestamp_us - exposure_time_us/2, end_timestamp_us - exposure_time_us/2]` - a single sample per frame degenerates to per-frame correction, with no rolling shutter compensation.
 
 ```
-  TODO: diagram
+scene ──► [ lens ] ──► [ IS group shifts ] ──► image moved on the sensor by (shift_x_nm, shift_y_nm)
+                                                (image content, +X right, +Y down, sensor-native axes)
+camera body ──► IMU ──► motion data             (the IMU doesn't see the IS group move)
+
+camera clock ─────────────────────────────────────────────────────────────►
+row exposure midpoints of frame n:   |◄── start - exp/2 ........ end - exp/2 ──►|
+LensOISData samples:              o  o     o     o     o     o     o     o  o
+                                  ▲ guard                               guard ▲
+
+Gyroflow, for every output row (at that row's time):
+    ois_shift_px = shift_nm * frame_size / (crop_size * pixel_pitch_nm)
+    uv_source    = uv_output + ois_shift_px + ibis_shift_px
+    (the motion data stays untouched)
 ```
 
 ***
@@ -251,7 +277,16 @@ The IBIS mechanism has exactly three mechanical degrees of freedom - translation
 If IBIS completely countered a bump, Gyroflow relies on the `IBISData` to know that the frame is already stable at that specific timestamp, preventing Gyroflow from digitally correcting a bump that IBIS already fixed (preventing double-correction artifacts).
 
 ```
-  TODO: diagram
+sensor moves (mechanical)          what you write in IBISData (image content)
++N nm right            ──►         shift_x_nm = -N
++N nm down             ──►         shift_y_nm = -N
+rolls about the axis   ──►         roll_angle_degrees
+
+Gyroflow, for every output row (at that row's time, interpolated between the samples):
+    ibis_shift_px = shift_nm * frame_size / (crop_size * pixel_pitch_nm)
+    roll          ──► 2D rotation of the sampling coordinate about the principal point
+    uv_source     = uv_output + ois_shift_px + ibis_shift_px
+    (the motion data stays untouched)
 ```
 
 ***
@@ -261,7 +296,14 @@ If IBIS completely countered a bump, Gyroflow relies on the `IBISData` to know t
 When the camera applies internal _digital_ stabilization (EIS), the pixels stored in the final MP4 are vastly different from the raw sensor readout. To stabilize this in post, Gyroflow needs to know exactly how the camera deformed the original sensor crop.
 
 ```
-  TODO: diagram
+camera:    sensor readout ──► EIS warp ──► encoded video frame
+           (crop_x, crop_y,      │
+            crop_width/height)   └──► EISData: what the warp did
+                                        QUATERNION  - rotation applied to the frame
+                                        MESH_WARP   - grid of anchors: sensor position ──► encoded position
+                                        MATRIX_4X4  - 3D transform (preliminary)
+
+Gyroflow:  encoded frame ──► undo EISData ──► sensor image ──► own stabilization ──► output
 ```
 
 There are three options to choose from:
