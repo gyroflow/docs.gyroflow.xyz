@@ -8,6 +8,7 @@ You can also use your **iPhone** or **Android** phone to capture gyroscope data.
 * [G-Field Recorder](https://apps.apple.com/at/app/g-field-recorder/id1154585693)
 * [Gyro](https://apps.apple.com/us/app/gyro-record-device-motion-data/id1161532981)
 * [GyLog](https://apps.apple.com/app/id6759689665)
+* [GyLog Cam](https://apps.apple.com/app/id6830048109)
 
 ### Android
 
