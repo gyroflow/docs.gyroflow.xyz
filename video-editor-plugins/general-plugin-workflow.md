@@ -10,7 +10,7 @@ If your camera requires synchronization (RunCam, Hawkeye, phone apps, blackbox, 
 
 This exported project file is then loaded inside the Gyroflow plugin in your video editor and the plugin will process your pixels directly inside your editor according to the gyro data and all your parameters, but without any transcoding, recompression or additional processing.
 
-This is especially important when working with RAW files (like BRAW or R3D), where you retain all your RAW controls like ISO, White Balance etc.
+This is especially important when working with RAW files (like BRAW, R3D or Canon's CRM), where you retain all your RAW controls like ISO, White Balance etc.
 
 The plugins use the same stabilization engine as the app, so the improvements in Gyroflow 1.7.0 (Sony support, lens breathing compensation and the new lens math) apply in the plugins as well. The **Output projection** and the **Static zoom** zoom level from projects and presets made in the app are used too.
 

@@ -46,7 +46,7 @@
 * [x] Xtra (Edge, Edge Pro)
 * [x] Blackmagic RAW (\*.braw)
 * [x] RED RAW (V-Raptor, KOMODO) (\*.r3d)
-* [x] Canon (C50, C80, C400, R6 Mk3, R5 Mk2, R6 V) (\*.mp4, \*.mov, \*.mxf; motion data only: Cinema RAW Light \*.crm)
+* [x] Canon (C50, C80, C400, R6 Mk3, R5 Mk2, R6 V) (\*.mp4, \*.mov, \*.mxf, Cinema RAW Light \*.crm)
 * [x] Z CAM (E2-M4 Mk2, E2-S6 Mk2, E2-F6 Mk2, E2-F8 Mk2, E2-M4G Mk2, E2-S6G Mk2, E2N Mk2) (\*.mp4, \*.mov; motion data only: ZRAW \*.zraw)
 * [x] HOVERAir
 * [x] Freefly (Ember)

@@ -15,7 +15,21 @@ With a supported lens, Gyroflow reads the motion data and the focal length of ev
 ## Supported formats
 
 * **MP4** and **MXF** files play in Gyroflow, and the motion data is read from the same file.
-* **Cinema RAW Light** (.crm) - Gyroflow can't play these files, but it can read their motion data. Open a playable copy of the clip (e.g. the proxy recorded by the camera, or a transcode) as the video, and then load the original **.crm** file in **Motion data -> Open file**.
+* **Cinema RAW Light** (.crm) files play in Gyroflow since version 1.7.1, and the motion data is read from the same file. They can't be rendered in the app, see [Cinema RAW Light playback](canon.md#cinema-raw-light-playback) below.
+
+## Cinema RAW Light playback
+
+Since Gyroflow 1.7.1, Gyroflow opens **.crm** files directly in the main app, so there's no need for transcoding. They're decoded with the Canon RAW SDK, which Gyroflow downloads the first time you open such a file.
+
+It works on Windows and Linux (x64) and on macOS. The Canon SDK processes the frames on the GPU only: with CUDA on NVIDIA GPUs, OpenCL on other GPUs, and Metal on macOS.
+
+On other platforms (Windows on ARM, Android, iOS) and in older versions of Gyroflow, open a playable copy of the clip (e.g. the proxy recorded by the camera, or a transcode) as the video, and then load the original **.crm** file in **Motion data -> Open file**.
+
+### Exporting
+
+Exporting directly from Gyroflow when using a **.crm** file is not supported, like with Blackmagic RAW. Instead, export a project file and use one of the [video editor plugins](../../video-editor-plugins/general-plugin-workflow.md) to render out from your video editor. That's the best option anyway, because you keep all RAW color controls.
+
+If you need to render in Gyroflow, open a playable copy of the clip (e.g. a ProRes transcode) as the video, and then load the original **.crm** file in **Motion data -> Open file**.
 
 ## Supported modes
 
