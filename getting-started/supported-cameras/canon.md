@@ -43,16 +43,20 @@ The list of supported lenses which work automatically in Gyroflow:
 
 #### RF Lenses
 
+* RF 14mm F1.4L VCM
 * RF 20mm F1.4L VCM
 * RF 24mm F1.4L VCM&#x20;
 * RF 35mm F1.4L VCM&#x20;
 * RF 50mm F1.4L VCM&#x20;
 * RF 85mm F1.4L VCM
+* RF 45mm F1.2 STM
+* RF 20-50mm F4L IS USM PZ
 * RF 24-105mm F2.8L IS USM Z <sup>(RF 1.4x or 2x Extender are also compatible)</sup>
 * RF 70-200mm F2.8L IS USM Z <sup>(RF 1.4x or 2x Extender are also compatible)</sup>
 
 #### RF Cinema Lenses
 
+* RF CN30x40 IAS J/R1
 * RF CN7x17 KAS T/R1
 * RF CN5x11 IAS T/R1
 * RF CN-R 14mm T3.1L F
